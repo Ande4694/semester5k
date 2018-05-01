@@ -3,7 +3,7 @@
 https://docs.google.com/document/d/12TV4IAxQ_o6-0uMLRrOfoG3CyDs8Ko5L-p2G0msD1wc/edit#heading=h.7mhcx36v09f2
 # Software design
 - Use case
-www.https://docs.google.com/document/d/1D6yZhAuvAsTn0rYSFte0JHNDCjE3MFYeEYbpEbjREtY/edit?usp=sharinglink.dk
+https://docs.google.com/document/d/1D6yZhAuvAsTn0rYSFte0JHNDCjE3MFYeEYbpEbjREtY/edit?usp=sharinglink.dk
 - Furps+
 https://docs.google.com/document/d/1AYZYQ3HRqcVONZlMWODoIzCzZSlN0B8SBFUdLh1nfk8/edit?usp=sharing
 - Kanban
