@@ -4,6 +4,8 @@ https://docs.google.com/document/d/12TV4IAxQ_o6-0uMLRrOfoG3CyDs8Ko5L-p2G0msD1wc/
 # Software design
 - Use case
 https://docs.google.com/document/d/1D6yZhAuvAsTn0rYSFte0JHNDCjE3MFYeEYbpEbjREtY/edit?usp=sharinglink.dk
+- Nouns & verbes
+https://docs.google.com/document/d/1FdKMifI8vwAUyv3opXDwYIv2L4Sz07yHYVXCjYlaJcQ/edit?usp=sharing
 - Furps+
 https://docs.google.com/document/d/1AYZYQ3HRqcVONZlMWODoIzCzZSlN0B8SBFUdLh1nfk8/edit?usp=sharing
 - Kanban
