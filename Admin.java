@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Admin{
+public class Admin extends Trainer{
    private String username;
    private String password;
    private boolean Admin = true;
@@ -16,6 +16,7 @@ public class Admin{
       this.password = password;
    }
    
+   /* NO NEED FOR THIS DUE TO EXTENDS
    public void setPassword(String password){
       this.password = password;
    }
@@ -31,6 +32,6 @@ public class Admin{
    public String getPassword(){
       return password;
    }
-
+   */
 
 }
