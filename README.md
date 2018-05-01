@@ -1,6 +1,6 @@
 # semester5k
 - Opgavebeskrivelse
-https://docs.google.com/document/d/12TV4IAxQ_o6-0uMLRrOfoG3CyDs8Ko5L-p2G0msD1wc/edit#heading=h.7mhcx36v09f2
+https://docs.google.com/document/d/1druj0wX1JdYzTP9jwNiLd8FyuFndSpOKfOykJGdc77w/edit?usp=sharing
 # Software design
 - Use case
 https://docs.google.com/document/d/1D6yZhAuvAsTn0rYSFte0JHNDCjE3MFYeEYbpEbjREtY/edit?usp=sharinglink.dk
