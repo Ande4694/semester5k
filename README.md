@@ -1,22 +1,26 @@
 # semester5k
 - Opgavebeskrivelse
 https://docs.google.com/document/d/12TV4IAxQ_o6-0uMLRrOfoG3CyDs8Ko5L-p2G0msD1wc/edit#heading=h.7mhcx36v09f2
+# Software design
 - Use case
-<link>
+www.link.dk
 - Furps+
-<link>
+www.link.dk
 - Kanban
-<link>
+www.link.dk
 - Use case diagram
-<link>
+www.link.dk
 - Domain model
-<link>
+www.link.dk
 - Class diagram
-<link>
+www.link.dk
 - SSD
-<link>
+www.link.dk
 - Sequence diagram
-<link>
+www.link.dk
+# ITO
 - Intressent analyse
-<link>
+www.link.dk
+- Swot analyse
+www.link.dk
 # Metode navne:
