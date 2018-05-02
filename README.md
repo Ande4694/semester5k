@@ -9,7 +9,6 @@ https://docs.google.com/document/d/1FdKMifI8vwAUyv3opXDwYIv2L4Sz07yHYVXCjYlaJcQ/
 - Furps+
 https://docs.google.com/document/d/1AYZYQ3HRqcVONZlMWODoIzCzZSlN0B8SBFUdLh1nfk8/edit?usp=sharing
 - Kanban
-sign up https://trello.com/invite/b/qzizBT7h/a326951167c47963fefd723871d084f5/5k-semesterprojekt
 https://trello.com/b/qzizBT7h/5k-semesterprojekt
 - Use case diagram
 https://drive.google.com/file/d/1sk_Jc5Po04ytgcV0-dcdpC0GtFKnBuQx/view?usp=sharing
