@@ -27,6 +27,7 @@ https://drive.google.com/file/d/1FIQJs85ruhx3f7-Kcvu6Iz901W9w67RO/view?usp=shari
 - Sequence diagram change password
 https://drive.google.com/file/d/1i_Wx-0GoXtBnqOzCbjUe-pKPdtX7hlNS/view?usp=sharing
 - Sequence diagram Create new member
+https://drive.google.com/file/d/18wiF2wrOyOZ4fhWSnJCJ9AElFYrAXW6k/view?usp=sharing
 
 # ITO
 - Intressent analyse
