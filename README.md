@@ -22,8 +22,12 @@ https://drive.google.com/file/d/14bCRw2Uz8SSSm3VoEdxTTaAcpf1_KQ1p/view?usp=shari
  https://drive.google.com/file/d/1nKxQme6-QXktejLlhKdXafpUnxy1LvjW/view?usp=sharing
  - SSD Create new member
  https://drive.google.com/file/d/1IwCltab7sxVQXNkBEzDBAbuMM1ILI8II/view?usp=sharing
-- Sequence diagram
+- Sequence diagram Login
 https://drive.google.com/file/d/1FIQJs85ruhx3f7-Kcvu6Iz901W9w67RO/view?usp=sharing
+- Sequence diagram change password
+https://drive.google.com/file/d/1i_Wx-0GoXtBnqOzCbjUe-pKPdtX7hlNS/view?usp=sharing
+- Sequence diagram Create new member
+
 # ITO
 - Intressent analyse
 https://docs.google.com/document/d/1D8b6tcwnfaV7480wxswZ7aXw98uPzHlgvE8Q7LF_cHs/edit?usp=sharing
