@@ -77,12 +77,13 @@ public class SvømmeklubbenDelphinen{
                   loggedInUser = user;
                   if (loggedInUser == listOfAdmins[0]){
                      trainer = true;
+                     User.SetTrainer(true);
                   }
                   else if (loggedInUser == listOfAdmins[1]){
-                     admin = true;
+                     User.SetAdmin(true);
                   }
                   else if (loggedInUser == listOfAdmins[2]){
-                     cashier = true;
+                     User.SetCashier(true);
                   }
                
                   break;
@@ -97,18 +98,17 @@ public class SvømmeklubbenDelphinen{
       {
          System.out.println("\nUser successfully logged in: "+loggedInUser.getUsername()+"\n");
          
-         if (trainer == true){
+         if (User.getTrainer() == true){
             Menu.TrainerCase();
          }
-         else if (admin == true){
+         else if (User.getAdmin() == true){
             Menu.AdminCase();
          }
-         else if (cashier == true){
+         else if (User.getCashier() == true){
             Menu.CashierCase();
          }else{
             System.out.println("Not working");
          }
-      
       }
         
       else

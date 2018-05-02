@@ -87,14 +87,14 @@ public class Member{
       boolean tempBreast = false;
       boolean tempPayed = false;
       System.out.print("Please enter the age of new member: ");
-      int tempAge = antiJarl();
+      int tempAge = SvømmeklubbenDelphinen.antiJarl();
       System.out.println();
       System.out.print("Please enter the name of the new member: ");
       String tempName = scan.nextLine();
       System.out.println("Is the member status competetiv or recreation?");
       System.out.println("1: competetiv\n2: recreation");
       while(choice){
-         option = antiJarl();
+         option = SvømmeklubbenDelphinen.antiJarl();
          switch(option){
             case 1:
                tempComp = true;
@@ -110,7 +110,7 @@ public class Member{
       choice = true;
       System.out.println("Does the member wish to be active or passive\n1: Active\n2: passive");
       while (choice){
-         option = antiJarl();
+         option = SvømmeklubbenDelphinen.antiJarl();
          switch(option){
             case 1:
                tempAct = true;
@@ -126,7 +126,7 @@ public class Member{
       choice = true;
       System.out.println("Does the member wish to join the crawl team?\n1: yes\n2: no");
       while (choice){
-         option = antiJarl();
+         option = SvømmeklubbenDelphinen.antiJarl();
          switch(option){
             case 1:
                tempCrawl = true;
@@ -141,7 +141,7 @@ public class Member{
       choice = true;
       System.out.println("Does the member wish to join the breast team?\n1: yes\n2: no");
       while (choice){
-         option = antiJarl();
+         option = SvømmeklubbenDelphinen.antiJarl();
          switch(option){
             case 1:
                tempBreast = true;
@@ -156,7 +156,7 @@ public class Member{
       choice = true;
       System.out.println("Does the member wish to join the back team?\n1: yes\n2: no");
       while (choice){
-         option = antiJarl();
+         option = SvømmeklubbenDelphinen.antiJarl();
          switch(option){
             case 1:
                tempBack = true;
@@ -180,7 +180,7 @@ public class Member{
       System.out.println("The anual fee for the new member is "+anualFee+"\nDoes "+tempName+" wish to pay now?\n1: pay now\n2: pay later");
       choice = true;
       while (choice){
-         option = antiJarl();
+         option = SvømmeklubbenDelphinen.antiJarl();
          switch(option){
             case 1:
                tempPayed = true;
@@ -227,22 +227,5 @@ public class Member{
    public Member(){
    }
    
-   public static int antiJarl(){
-      Scanner input = new Scanner(System.in);      
-      while (!input.hasNextInt()) {
-         input.next();
-         System.out.println("Not an integer, try again Jarl..");
-      }
-      return input.nextInt();
-      
-   }
-   
-   public static void antiJarlCustom(String text){
-      Scanner input = new Scanner(System.in);      
-      while (!input.hasNextInt()) {
-         input.next();
-         System.out.println(text);
-      }
-      
-   }
+
 }

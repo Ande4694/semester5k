@@ -5,9 +5,9 @@ public class User{
 
    private String username;
    private String password;
-   private boolean trainer = false;
-   private boolean admin = false;
-   private boolean cashier = false;
+   private static boolean trainer = false;
+   private static boolean admin = false;
+   private static boolean cashier = false;
    
    public User(String username, String password){
       this.username = username;
@@ -30,28 +30,28 @@ public class User{
       return password;
    }
    
-   public boolean getTrainer(){
+   public static boolean getTrainer(){
       return trainer;
    }
    
-   public boolean getAdmin(){
+   public static boolean getAdmin(){
       return admin;
    }
    
-   public boolean getCashier(){
+   public static boolean getCashier(){
       return cashier;
    }
    
-   public void SetTrainer(boolean trainer){
-      this.trainer = trainer;
+   public static void SetTrainer(boolean trainer1){
+      trainer = trainer1;
    }
    
-   public void SetAdmin(boolean admin){
-      this.admin = admin;
+   public static void SetAdmin(boolean admin1){
+      admin = admin1;
    }
    
-   public void SetCashier(boolean cashier){
-      this.cashier = cashier;
+   public static void SetCashier(boolean cashier1){
+      cashier = cashier1;
    }
 
 

@@ -8,32 +8,33 @@ public class Menu{
       System.out.println("0: Exit");
    }
 
-   public static void TrainerMenu(){
-   
-      System.out.println("1: Change password");
-      System.out.println("2: Register Time");
-      System.out.println("3: View Times");
-      System.out.println("4: View member");
-      System.out.println();
-      System.out.println("5: log off");
-      System.out.println("0: Close System");
-   }
-   public static void AdminMenu(){
-      System.out.println("1: Change password");
-      System.out.println("2: Create new Member");
-      System.out.println("3: View restance");
-      System.out.println("4: View member");
-      System.out.println("5: Administrate member");
-      System.out.println();
-      System.out.println("6: log off");
-      System.out.println("0: Close System");
-   }
-   public static void CashierMenu(){
-      System.out.println("1: Change password");
-      System.out.println("2: View member");
-      System.out.println();
-      System.out.println("3: log off");
-      System.out.println("0: Close System");
+   public static void MenuCase(){
+      if(User.getTrainer() == true){
+         System.out.println("1: Change password");
+         System.out.println("2: Register Time");
+         System.out.println("3: View Times");
+         System.out.println("4: View member");
+         System.out.println();
+         System.out.println("5: log off");
+         System.out.println("0: Close System");
+      }
+      else if (User.getAdmin() == true){
+         System.out.println("1: Change password");
+         System.out.println("2: Create new Member");
+         System.out.println("3: View restance");
+         System.out.println("4: View member");
+         System.out.println("5: Administrate member");
+         System.out.println();
+         System.out.println("6: log off");
+         System.out.println("0: Close System");
+      }
+      else if (User.getCashier() == true){
+         System.out.println("1: Change password");
+         System.out.println("2: View member");
+         System.out.println();
+         System.out.println("3: log off");
+         System.out.println("0: Close System");
+      }
    }
    
    public static void TrainerCase()throws IOException{
@@ -41,7 +42,7 @@ public class Menu{
       int option;
       Scanner scan = new Scanner(System.in);
       
-      TrainerMenu();
+      MenuCase();
       while (choice){
       
          option = SvømmeklubbenDelphinen.antiJarl();
@@ -49,29 +50,31 @@ public class Menu{
          switch(option){
                        
             case 1:
-               System.out.println("Change password");
-               TrainerMenu();
+               if(User.getTrainer() == true){
+                  System.out.println("Change password");
+                  MenuCase();
+               }else{System.out.println("HEJ");
+               }
                break;
          
-            
             case 2:
                System.out.println("Register Time");
-               TrainerMenu();
+               MenuCase();
                break;
          
-            
             case 3:
                System.out.println("View Times");
-               TrainerMenu();
+               MenuCase();
                break;
                
             case 4:
                System.out.println("View member");
-               TrainerMenu();
+               MenuCase();
                break;
          
             case 5:
                System.out.println("Trainer is now logged off");
+               User.SetTrainer(false);
                SvømmeklubbenDelphinen.restart();
                break;
             
@@ -89,7 +92,7 @@ public class Menu{
       int option;
       Scanner scan = new Scanner(System.in);
       
-      AdminMenu();
+      MenuCase();
       while (choice){
       
          option = SvømmeklubbenDelphinen.antiJarl();
@@ -98,34 +101,33 @@ public class Menu{
                        
             case 1:
                System.out.println("Change password");
-               AdminMenu();
+               MenuCase();
                break;
          
-            
             case 2:
                System.out.println("Create new Member");
                Member.addMember();
-               AdminMenu();
+               MenuCase();
                break;
          
-            
             case 3:
                System.out.println("View restance");
-               AdminMenu();
+               MenuCase();
                break;
                
             case 4:
                System.out.println("View member");
-               AdminMenu();
+               MenuCase();
                break;
          
             case 5:
                System.out.println(" Administrate member");
-               AdminMenu();
+               MenuCase();
                break;
                
             case 6:
                System.out.println("Admin is now logged off");
+               User.SetAdmin(false);
                SvømmeklubbenDelphinen.restart();
                break;
             
@@ -143,7 +145,7 @@ public class Menu{
       int option;
       Scanner scan = new Scanner(System.in);
       
-      CashierMenu();
+      MenuCase();
       while (choice){
       
          option = SvømmeklubbenDelphinen.antiJarl();
@@ -152,16 +154,17 @@ public class Menu{
                        
             case 1:
                System.out.println("Change password");
-               CashierMenu();
+               MenuCase();
                break;
             
             case 2:
                System.out.println("View member");
-               CashierMenu();
+               MenuCase();
                break;
          
             case 3:
                System.out.println("Cashier is now logged off");
+               User.SetCashier(false);
                SvømmeklubbenDelphinen.restart();
                break;
             
