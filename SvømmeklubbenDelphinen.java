@@ -13,7 +13,10 @@ public class SvømmeklubbenDelphinen{
  
    public static void Run() throws IOException{
       String username;
-      String password; 
+      String password;
+      boolean trainer = false;
+      boolean admin = false;
+      boolean cashier = false;
    
       User loggedInUser = null;
        
@@ -70,16 +73,16 @@ public class SvømmeklubbenDelphinen{
                {
                     
                   loggedInUser = user;
-                  if (loggedInUser == listOfAdmins[1]){
-                     user.SetTrainer(true);
-                     if (loggedInUser == listOfAdmins[2]){
-                        user.SetAdmin(true);
-                        if (loggedInUser == listOfAdmins[3]){
-                           user.SetCashier(true);
-                        }
-                     }
+                  if (loggedInUser == listOfAdmins[0]){
+                     trainer = true;
                   }
-               
+                  else if (loggedInUser == listOfAdmins[1]){
+                     admin = true;
+                  }
+                  else if (loggedInUser == listOfAdmins[2]){
+                     cashier = true;
+                  }
+  
                   break;
                }
             }
@@ -91,67 +94,27 @@ public class SvømmeklubbenDelphinen{
       if (loggedInUser != null)
       {
          System.out.println("\nUser successfully logged in: "+loggedInUser.getUsername()+"\n");
+         
+         if (trainer == true){
+            Menu.TrainerCase();
+         }
+         else if (admin == true){
+            Menu.AdminCase();
+         }
+         else if (cashier == true){
+            Menu.CashierCase();
+         }else{
+            System.out.println("Not working");
+         }
+      
       }
         
       else
       {
          System.out.println("Invalid username or password");
-         SvømmeklubbenDelphinen.restart();
+         restart();
       }
-   
-   
-           
-      boolean choice = true;
-      int option;
-      Scanner scan = new Scanner(System.in);
-      
-      Menu.AdminMenu();
-     
-      while (choice){
-      
-         option = antiJarl();
-             
-         switch(option){
-                       
-            case 1:
-               System.out.println("List");
-               Menu.AdminMenu();
-               break;
-            
-            case 2:
-               System.out.println("Add");
-               Menu.AdminMenu();
-               break;
-            
-            case 3:
-               System.out.println("Edit");
-               Menu.AdminMenu();
-               break;
-               
-            case 4:
-               System.out.println("Remove");
-               Menu.AdminMenu();
-               break;
-            
-            case 5:
-               System.out.println("Team list");
-               Menu.AdminMenu();
-               break;
-               
-            case 6:
-               System.out.println(loggedInUser.getUsername()+" has logged off");
-               SvømmeklubbenDelphinen.restart();
-               break;
-            
-            case 0:
-               System.out.println("");
-               choice = false;
-               break;
-                  
-         
-         }
-      }
-   
+
    }
    
    public static int antiJarl(){
@@ -175,5 +138,4 @@ public class SvømmeklubbenDelphinen{
    public static void restart()throws IOException{
       main(new String[0]);
    }
-
 }
