@@ -29,6 +29,30 @@ public class User{
    public String getPassword(){
       return password;
    }
+   
+   public boolean getTrainer(){
+      return trainer;
+   }
+   
+   public boolean getAdmin(){
+      return admin;
+   }
+   
+   public boolean getCashier(){
+      return cashier;
+   }
+   
+   public void SetTrainer(boolean trainer){
+      this.trainer = trainer;
+   }
+   
+   public void SetAdmin(boolean admin){
+      this.admin = admin;
+   }
+   
+   public void SetCashier(boolean cashier){
+      this.cashier = cashier;
+   }
 
 
 }

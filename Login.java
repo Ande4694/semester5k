@@ -9,21 +9,13 @@ public class Login{
       String username;
       String password; 
    
-      Admin loggedInUser = null;
-      
-      boolean Formand;
-      boolean Kassere;
-      boolean Træner;
-      Formand = false;
-      Kassere = false;
-      Træner = false;
+      User loggedInUser = null;
+       
+      User[] listOfAdmins = new User[4];       
         
-      Admin[] listOfAdmins = new Admin[6];       
-        
-      listOfAdmins[0] = new Admin("Thomas","1234");
-      listOfAdmins[1] = new Admin("Anders","7894");
-      listOfAdmins[2] = new Admin("Jonathan","1337");
-      listOfAdmins[3] = new Admin("Gustav","3396");
+      listOfAdmins[0] = new User("Trainer","1234");
+      listOfAdmins[1] = new User("Admin","7894");
+      listOfAdmins[2] = new User("Cashier","1337");
         
    
       BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -67,7 +59,7 @@ public class Login{
       password = br.readLine();
    
       try{
-         for (Admin user : listOfAdmins)
+         for (User user : listOfAdmins)
          {
          
             if (user.getUsername().equals(username))
@@ -78,11 +70,11 @@ public class Login{
                     
                   loggedInUser = user;
                   if (loggedInUser == listOfAdmins[1]){
-                     Formand = true;
+                     user.SetTrainer(true);
                      if (loggedInUser == listOfAdmins[2]){
-                        Kassere = true;
+                        user.SetAdmin(true);
                         if (loggedInUser == listOfAdmins[3]){
-                           Træner = true;
+                           user.SetCashier(true);
                         }
                      }
                   }
