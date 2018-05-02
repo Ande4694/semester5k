@@ -23,7 +23,7 @@ https://drive.google.com/file/d/14bCRw2Uz8SSSm3VoEdxTTaAcpf1_KQ1p/view?usp=shari
  - SSD Create new member
  https://drive.google.com/file/d/1IwCltab7sxVQXNkBEzDBAbuMM1ILI8II/view?usp=sharing
 - Sequence diagram Login
-https://www.draw.io/?state=%7B%22ids%22:%5B%221hgN4cd4enxUIjeqn0-pB31Q_RLjnPi8Y%22%5D,%22action%22:%22open%22,%22userId%22:%22109798964427921471227%22%7D#G1hgN4cd4enxUIjeqn0-pB31Q_RLjnPi8Y
+https://drive.google.com/file/d/1qW1acB_R-x09bYEW519uFw7zUtDKIk6C/view?usp=sharing
 - Sequence diagram change password
 https://drive.google.com/file/d/1i_Wx-0GoXtBnqOzCbjUe-pKPdtX7hlNS/view?usp=sharing
 - Sequence diagram Create new member
