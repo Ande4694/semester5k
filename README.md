@@ -15,7 +15,7 @@ https://drive.google.com/file/d/1sk_Jc5Po04ytgcV0-dcdpC0GtFKnBuQx/view?usp=shari
 - Domain model
 https://drive.google.com/file/d/1z6_Xqqnjh4qO68_sg6L0mStS81mJwc-l/view?usp=sharing
 - Class diagram
-https://drive.google.com/file/d/1N8zYo3anNIBvI3Sak3QscIVlwwU0Eyny/view?usp=sharing
+https://drive.google.com/file/d/1qW1acB_R-x09bYEW519uFw7zUtDKIk6C/view?usp=sharing
 - SSD Login
 https://drive.google.com/file/d/14bCRw2Uz8SSSm3VoEdxTTaAcpf1_KQ1p/view?usp=sharing
  - SSD Change password
