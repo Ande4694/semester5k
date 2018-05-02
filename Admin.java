@@ -16,6 +16,16 @@ public class Admin extends Trainer{
       this.password = password;
    }
    
+   public String getUsername(){
+      return username;
+   }
+      
+   
+   public String getPassword(){
+      return password;
+   }
+
+   
    /* NO NEED FOR THIS DUE TO EXTENDS
    public void setPassword(String password){
       this.password = password;

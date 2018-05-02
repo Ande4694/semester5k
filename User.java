@@ -1,17 +1,15 @@
 import java.io.*;
 import java.util.*;
 
-public class Trainer{
+public class User{
 
    private String username;
    private String password;
+   private boolean trainer = false;
+   private boolean admin = false;
+   private boolean cashier = false;
    
-   public Trainer(){
-      username = "Bjarne";
-      password = "brandbil123";
-   }
-   
-   public Trainer(String username, String password){
+   public User(String username, String password){
       this.username = username;
       this.password = password;
    }
