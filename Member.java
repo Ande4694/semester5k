@@ -6,13 +6,14 @@ public class Member{
    private int age;
    private String name;
    private boolean active;
-   private boolean junior = age>18; 
+   private boolean junior = age<18; 
    private boolean competetive;
+   private boolean olding = age>60;
    private Disciplin disciplin;
-   private boolean payed;
+   private static boolean payed;
    private ArrayList<Double> swimTimes = new ArrayList<Double>();
    private static ArrayList<Member> listOfMembers = new ArrayList<Member>();
-   private int anualFee = 1600;
+   private static int anualFee = 1600;
    
    public void setAge(int age){
       this.age = age;
@@ -68,6 +69,7 @@ public class Member{
       boolean tempCrawl = false;
       boolean tempBack = false;
       boolean tempBreast = false;
+      boolean tempPayed = false;
       System.out.print("Please enter the age of new member: ");
       int tempAge = antiJarl();
       System.out.println();
@@ -150,7 +152,32 @@ public class Member{
                break;
          }
       }
-      Member member = new Member(tempAge, tempName, tempAct, tempComp, tempCrawl, tempBack, tempBreast);
+      if (!tempAct){
+         anualFee = 500;
+      }
+      if (tempAge<18){
+         anualFee = 1000;
+      }
+      if (tempAge>60){
+         anualFee -= (anualFee*0.75);
+      }
+      System.out.println("The anual fee for the new member is "+anualFee+"\nDoes "+tempName+" wish to pay now?\n1: pay now\n2: pay later");
+      choice = true;
+      while (choice){
+         option = antiJarl();
+         switch(option){
+            case 1:
+               tempPayed = true;
+               choice = false;
+               break;
+            
+            case 2:
+               choice = false;
+               break;
+            
+         }
+      }
+      Member member = new Member(tempAge, tempName, tempAct, tempComp, tempCrawl, tempBack, tempBreast, tempPayed);
       listOfMembers.add(member);
       
       
@@ -158,7 +185,7 @@ public class Member{
    
    //toString
    
-   public Member(int age, String name, boolean active, boolean competetive, boolean crawl, boolean back, boolean breast){
+   public Member(int age, String name, boolean active, boolean competetive, boolean crawl, boolean back, boolean breast, boolean payed){
       this.age = age;
       this.name= name;
       this.active = active;
@@ -172,6 +199,7 @@ public class Member{
       if(breast){
          disciplin.setBreastChosen();
       }
+      this.payed = payed;
    }
    
    public Member(){
