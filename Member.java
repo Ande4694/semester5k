@@ -3,12 +3,12 @@ import java.util.*;
 
 public class Member{
  
-   private int age;
-   private String name;
-   private boolean active;
-   private boolean junior = age<18; 
-   private boolean competetive;
-   private boolean olding = age>60;
+   private static int age;
+   private static String name;
+   private static boolean active;
+   private static boolean junior = age<18; 
+   private static boolean competetive;
+   private static boolean olding = age>60;
    private Disciplin disciplin;
    private static boolean payed;
    private ArrayList<Double> swimTimes = new ArrayList<Double>();
