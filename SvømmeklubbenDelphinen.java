@@ -18,7 +18,7 @@ public class SvømmeklubbenDelphinen{
       boolean trainer = false;
       boolean admin = false;
       boolean cashier = false;
-
+   
    
       User loggedInUser = null;
        
@@ -51,7 +51,7 @@ public class SvømmeklubbenDelphinen{
                break;
          
             default:
-               System.out.println("Please chose 1 or 2.");6
+               System.out.println("Please chose 1 or 0.");
                break;
          
          }
@@ -84,7 +84,7 @@ public class SvømmeklubbenDelphinen{
                   else if (loggedInUser == listOfAdmins[2]){
                      cashier = true;
                   }
-  
+               
                   break;
                }
             }
@@ -116,60 +116,6 @@ public class SvømmeklubbenDelphinen{
          System.out.println("Invalid username or password");
          restart();
       }
-   
-   
-           
-      boolean choice = true;
-      int option;
-      Scanner scan = new Scanner(System.in);
-      
-      Menu.AdminMenu();
-     
-      while (choice){
-      
-         option = antiJarl();
-             
-         switch(option){
-                       
-            case 1:
-               System.out.println("List");
-               Menu.AdminMenu();
-               break;
-            
-            case 2:
-               member.addMember();
-               Menu.AdminMenu();
-               break;
-            
-            case 3:
-               System.out.println("Edit");
-               Menu.AdminMenu();
-               break;
-               
-            case 4:
-               System.out.println("Remove");
-               Menu.AdminMenu();
-               break;
-            
-            case 5:
-               System.out.println("Team list");
-               Menu.AdminMenu();
-               break;
-               
-            case 6:
-               System.out.println(loggedInUser.getUsername()+" has logged off");
-               SvømmeklubbenDelphinen.restart();
-               break;
-            
-            case 0:
-               System.out.println("");
-               choice = false;
-               break;
-                  
-         
-         }
-      }
-   
    }
    
    public static int antiJarl(){
