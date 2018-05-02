@@ -2,27 +2,16 @@ import java.io.*;
 import java.util.*;
 
 public class Member{
-   
-   private String name;
+ 
    private int age;
-   private Disciplin disc;
-   private boolean payedFee;
-   
-   public void setPayFeeTrue(){
-      payedFee = true;
-   }
-   
-   public void setPayFeeFalse(){
-      payedFee = false;
-   }
-   
-   //public void setDisciplin(){
-      //
-   //}
-   
-   public void setName(String name){
-      this.name = name;
-   }
+   private String name;
+   private boolean active;
+   private boolean junior = age>18; 
+   private boolean competetive;
+   private Disciplin disciplin;
+   private boolean payed;
+   private ArrayList<Double> swimTimes = new ArrayList<Double>();
+   private int anualFee = 1600;
    
    public void setAge(int age){
       this.age = age;
@@ -32,16 +21,55 @@ public class Member{
       return age;
    }
    
+   public void setName(String name){
+      this.name = name;
+   }
+   
    public String getName(){
       return name;
    }
    
-   //public Disciplin getDisc(){
-     // return Disciplin;
-   //}
-   
-   public boolean getPayStatus(){
-      return payedFee;
+   public void setActive(){
+      active = true;
    }
-
+   
+   public void setPassive(){
+      active = false;
+   }
+   
+   public void setCompetetive(){
+      competetive = true;
+   }
+   
+   public void setRecreation(){
+      competetive = false;
+   }
+   
+   public void setDisciplinCrawl(){
+      disciplin.setCrawlChosen();
+   }
+   
+   public void setDisciplinBack(){
+      disciplin.setBackChosen();
+   }
+   
+   public void setDisciplinBreast(){
+      disciplin.setBreastChosen();
+   }
+   
+   public Member(int age, String name, boolean active, boolean competetive, boolean crawl, boolean back, boolean breast){
+      this.age = age;
+      this.name= name;
+      this.active = active;
+      this.competetive = competetive;
+      if(crawl){
+         disciplin.setCrawlChosen();
+      } 
+      if(back){
+         disciplin.setBackChosen();
+      }
+      if(breast){
+         disciplin.setBreastChosen();
+      }
+   }
 }
