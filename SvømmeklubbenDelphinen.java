@@ -14,6 +14,7 @@ public class SvømmeklubbenDelphinen{
    public static void Run() throws IOException{
       String username;
       String password; 
+      Member member = new Member();
    
       User loggedInUser = null;
        
@@ -26,7 +27,7 @@ public class SvømmeklubbenDelphinen{
    
       BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             
-      Scanner input = new Scanner(System.in);
+      Scanner input = new Scanner(br);
         
        
       System.out.println("*** Grp 5000 Delphinen - Admin.System ***\n");
@@ -46,7 +47,7 @@ public class SvømmeklubbenDelphinen{
                break;
          
             default:
-               System.out.println("Not an integer; try again.");
+               System.out.println("Please chose 1 or 2.");
                break;
          
          }
@@ -119,7 +120,7 @@ public class SvømmeklubbenDelphinen{
                break;
             
             case 2:
-               System.out.println("Add");
+               member.addMember();
                Menu.AdminMenu();
                break;
             
