@@ -51,7 +51,7 @@ public class SvømmeklubbenDelphinen{
                break;
          
             default:
-               System.out.println("Please chose 1 or 2.");
+               System.out.println("Please chose 1 or 2.");6
                break;
          
          }

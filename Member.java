@@ -172,6 +172,7 @@ public class Member{
                break;
             
             case 2:
+               tempPayed = false;
                choice = false;
                break;
             
@@ -183,8 +184,13 @@ public class Member{
       
    }
    
-   //toString
+   // work in progress
+
+   public static void viewMember(){
+      String text = "["+name+", "+age+", ";
+   }
    
+
    public Member(int age, String name, boolean active, boolean competetive, boolean crawl, boolean back, boolean breast, boolean payed){
       this.age = age;
       this.name= name;
