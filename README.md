@@ -30,20 +30,8 @@ https://docs.google.com/document/d/1D8b6tcwnfaV7480wxswZ7aXw98uPzHlgvE8Q7LF_cHs/
 - Swot analyse
 https://docs.google.com/document/d/1uDnpWkBTjWyvrSSt0qipUNmT3UpjmAV58r2VGEJ5fV8/edit?usp=sharing
 # Metode navne:
-# Trainer:
+# User:
 - Trainer(String username, String password);
-- setPassword(String password);
-- setUsername(String username);
-- getUsername();
-- getPassword();
-# Cashier:
-- Cashier(String username, String password);
-- setPassword(String password);
-- setUsername(String username);
-- getUsername();
-- getPassword();
-# Admin:
-- Admin(String username, String password);
 - setPassword(String password);
 - setUsername(String username);
 - getUsername();
