@@ -104,6 +104,7 @@ public class Menu{
             
             case 2:
                System.out.println("Create new Member");
+               Member.addMember();
                AdminMenu();
                break;
          
