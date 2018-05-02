@@ -31,6 +31,22 @@ public class Member{
       return name;
    }
    
+   public boolean getPayed(){
+      return payed;
+   }
+   
+   public boolean getJunior(){
+      return junior;
+   }
+   
+   public boolean getActive(){
+      return active;
+   }
+   
+   public boolean getComp(){
+      return competetive;
+   }
+   
    public void setActive(){
       active = true;
    }

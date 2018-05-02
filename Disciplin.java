@@ -12,6 +12,18 @@ public class Disciplin{
       return back;
    }
    
+   public boolean getBackChosen(){
+      return back.getChosen();
+   }
+   
+   public boolean getBreastChosen(){
+      return breast.getChosen();
+   }
+   
+   public boolean getCrawlChosen(){
+      return crawl.getChosen();
+   }
+   
    public Breast getBreast(){
       return breast;
    }

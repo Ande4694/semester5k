@@ -15,6 +15,10 @@ public class Back{
       return time;
    }
    
+   public boolean getChosen(){
+      return chosen;
+   }
+   
    public void setChosen(){
       this.chosen = true;
    }

@@ -15,6 +15,10 @@ public class Crawl{
       this.chosen = true;
    }
    
+   public boolean getChosen(){
+      return chosen;
+   }
+   
    public void setCrawlChosen(boolean chosen){
       this.chosen = chosen;
    }

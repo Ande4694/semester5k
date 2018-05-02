@@ -15,6 +15,10 @@ public class Breast{
       return time;
    }
    
+   public boolean getChosen(){
+      return chosen;
+   }
+   
    public void setChosen(){
       this.chosen = true;
    }
