@@ -15,6 +15,10 @@ public class SvømmeklubbenDelphinen{
       String username;
       String password; 
       Member member = new Member();
+      boolean trainer = false;
+      boolean admin = false;
+      boolean cashier = false;
+
    
       User loggedInUser = null;
        
@@ -71,16 +75,16 @@ public class SvømmeklubbenDelphinen{
                {
                     
                   loggedInUser = user;
-                  if (loggedInUser == listOfAdmins[1]){
-                     user.SetTrainer(true);
-                     if (loggedInUser == listOfAdmins[2]){
-                        user.SetAdmin(true);
-                        if (loggedInUser == listOfAdmins[3]){
-                           user.SetCashier(true);
-                        }
-                     }
+                  if (loggedInUser == listOfAdmins[0]){
+                     trainer = true;
                   }
-               
+                  else if (loggedInUser == listOfAdmins[1]){
+                     admin = true;
+                  }
+                  else if (loggedInUser == listOfAdmins[2]){
+                     cashier = true;
+                  }
+  
                   break;
                }
             }
@@ -92,12 +96,25 @@ public class SvømmeklubbenDelphinen{
       if (loggedInUser != null)
       {
          System.out.println("\nUser successfully logged in: "+loggedInUser.getUsername()+"\n");
+         
+         if (trainer == true){
+            Menu.TrainerCase();
+         }
+         else if (admin == true){
+            Menu.AdminCase();
+         }
+         else if (cashier == true){
+            Menu.CashierCase();
+         }else{
+            System.out.println("Not working");
+         }
+      
       }
         
       else
       {
          System.out.println("Invalid username or password");
-         SvømmeklubbenDelphinen.restart();
+         restart();
       }
    
    
@@ -176,5 +193,4 @@ public class SvømmeklubbenDelphinen{
    public static void restart()throws IOException{
       main(new String[0]);
    }
-
 }
