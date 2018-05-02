@@ -16,8 +16,12 @@ https://drive.google.com/file/d/1sk_Jc5Po04ytgcV0-dcdpC0GtFKnBuQx/view?usp=shari
 https://drive.google.com/file/d/1z6_Xqqnjh4qO68_sg6L0mStS81mJwc-l/view?usp=sharing
 - Class diagram
 https://drive.google.com/file/d/1N8zYo3anNIBvI3Sak3QscIVlwwU0Eyny/view?usp=sharing
-- SSD
+- SSD Login
 https://drive.google.com/file/d/14bCRw2Uz8SSSm3VoEdxTTaAcpf1_KQ1p/view?usp=sharing
+ - SSD Change password
+ https://drive.google.com/file/d/1nKxQme6-QXktejLlhKdXafpUnxy1LvjW/view?usp=sharing
+ - SSD Create new member
+ https://drive.google.com/file/d/1IwCltab7sxVQXNkBEzDBAbuMM1ILI8II/view?usp=sharing
 - Sequence diagram
 https://drive.google.com/file/d/1FIQJs85ruhx3f7-Kcvu6Iz901W9w67RO/view?usp=sharing
 # ITO
