@@ -78,9 +78,9 @@ public class Menu{
                break;
             
             case 0:
-               System.out.println("Closing System");
-               Member.saveMembers();
+               System.out.println("Closing System");               
                System.exit(0);
+               Member.saveMembers();
                break;
          }
       }
@@ -134,8 +134,8 @@ public class Menu{
             
             case 0:
                System.out.println("Closing System");
-               Member.saveMembers();
                System.exit(0);
+               Member.saveMembers();
                break;
          }
       }
@@ -175,8 +175,9 @@ public class Menu{
             
             case 0:
                System.out.println("Closing System");
-               Member.saveMembers();
+               
                System.exit(0);
+               Member.saveMembers();
                break;
          }
       }

@@ -23,6 +23,17 @@ public class Member{
    private static ArrayList<Member> activeMembers = new ArrayList<>();
    private static int anualFee = 1600;
    
+   public static void regTime(){
+      // vælg member via disc eller på nanv
+      // lav arraylist (double) i back, crawl og breast 
+      // double time = input.next
+      // timelist.add time
+      // gem lortet
+      // load lortet
+      // view lortet
+      // view (top) af lortet
+   }
+   
    public static void saveMembers()throws IOException{
       File f = new File("members.txt");
       FileWriter fw = new FileWriter(f,false);
@@ -45,7 +56,7 @@ public class Member{
       fw.close();
    }
    
-   public void fillMembers()throws IOException{
+   public static void fillMembers()throws IOException{
       File f = new File("members.txt");
       Scanner s = new Scanner(f);
       while(s.hasNext() && f.canRead()){

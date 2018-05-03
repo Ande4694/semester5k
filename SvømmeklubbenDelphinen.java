@@ -7,7 +7,7 @@ public class SvømmeklubbenDelphinen{
    private static File f = new File("Logins.txt"); 
    public static void main (String[] args)throws IOException{
    
-   
+      Member.fillMembers();
       Run();
       
    }
@@ -23,7 +23,7 @@ public class SvømmeklubbenDelphinen{
       boolean trainer = false;
       boolean admin = false;
       boolean cashier = false;
-      member.fillMembers();
+      
    
    
       User loggedInUser = null;
