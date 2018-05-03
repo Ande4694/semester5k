@@ -199,7 +199,9 @@ public class Member{
       
       
    }
-   
+   public static void viewAll(){
+      System.out.println(listOfMembers);
+   } 
    // work in progress
 
    public static String viewMember(){
