@@ -25,7 +25,7 @@ public class Member{
       this.age = age;
    }
    
-   public int getAge(){
+   public static int getAge(){
       return age;
    }
    
@@ -33,15 +33,15 @@ public class Member{
       this.name = name;
    }
    
-   public boolean getArrear(){
+   public static boolean getArrear(){
       return payed;
    }
    
-   public String getName(){
+   public static String getName(){
       return name;
    }
    
-   public boolean getPayed(){
+   public static boolean getPayed(){
       return payed;
    }
    
@@ -280,8 +280,10 @@ public class Member{
       return membersInArrear;
    }
 
+   
+
    public static String viewMember(){
-      String text = "["+name+", "+age+", ";
+      String text = "["+getName()+", "+getAge()+", ";
       if(active){
          text = text + "Active, ";
       } else {
