@@ -4,6 +4,7 @@ import java.util.*;
 public class SvømmeklubbenDelphinen{
 
    private static User[] listOfAdmins = new User[3];
+   private static File f = new File("Logins.txt"); 
    public static void main (String[] args)throws IOException{
    
    
@@ -15,6 +16,9 @@ public class SvømmeklubbenDelphinen{
    public static void Run() throws IOException{
       String username;
       String password; 
+      
+      BufferedReader bs = new BufferedReader(new FileReader(f));
+      
       Member member = new Member();
       boolean trainer = false;
       boolean admin = false;
@@ -23,9 +27,14 @@ public class SvømmeklubbenDelphinen{
    
       User loggedInUser = null;
        
-      //User[] listOfAdmins = new User[3]; 
-      File f = new File("Logins.txt");      
-      if (f.canRead()){
+   
+      if (bs.readLine() == null){
+         System.out.println("Hardcoded");
+         listOfAdmins[0] = new User("Trainer","1234");
+         listOfAdmins[1] = new User("Admin","7894");
+         listOfAdmins[2] = new User("Cashier","1337");  
+      }else{
+         System.out.println("File");
          int count = 0;
          Scanner go = new Scanner(f);
          while(go.hasNext() && count <3){
@@ -35,13 +44,7 @@ public class SvømmeklubbenDelphinen{
             pass = go.next();
             listOfAdmins[count] = new User (name,pass); 
             count++;    
-            System.out.println("ArrayList");   
          }
-         
-      }else{
-         listOfAdmins[0] = new User("Trainer","1234");
-         listOfAdmins[1] = new User("Admin","7894");
-         listOfAdmins[2] = new User("Cashier","1337");
       }
         
    
@@ -156,33 +159,69 @@ public class SvømmeklubbenDelphinen{
       main(new String[0]);
    }
    
+   
+   
+   
+   
+   
+   
+   
+   
+   
    public static void ChangedPassword()throws IOException{
+      int UserCount = 0;
+      if(User.getTrainer() == true){
+         UserCount = 0;
+      }else if (User.getAdmin() == true){
+         UserCount = 1;
+      }else if (User.getCashier() == true){
+         UserCount = 2;
+      }
       Scanner Ps = new Scanner(System.in);
       boolean go = true;
-      
-      String pass;
-      File f = new File("Logins.txt");
       FileWriter fw = new FileWriter(f);
       boolean Check = false;
       while(go){
          System.out.print("Please Enter your Password: ");
-         pass = Ps.next();
-         if( pass == listOfAdmins[0].getPassword()){
+         String pass = Ps.next();
+         if( pass.equals(listOfAdmins[UserCount].getPassword())){
             System.out.print("Type new Password: ");
-            listOfAdmins[0].setPassword(Ps.next());
-            go = false;
+            pass = Ps.next();
+            System.out.print("Please type Password again: ");
+            
+            if(pass.equals(Ps.next())){
+               if(User.getTrainer() == true){
+                  fw.write(listOfAdmins[0].getUsername()+"   "+pass);
+                  fw.write(System.lineSeparator());
+                  fw.write(listOfAdmins[1].getUsername()+"   "+listOfAdmins[1].getPassword());
+                  fw.write(System.lineSeparator());
+                  fw.write(listOfAdmins[2].getUsername()+"   "+listOfAdmins[2].getPassword());
+                  fw.close();
+               }else if(User.getAdmin() == true){
+                  fw.write(listOfAdmins[0].getUsername()+"   "+listOfAdmins[0].getPassword());
+                  fw.write(System.lineSeparator());
+                  fw.write(listOfAdmins[1].getUsername()+"   "+pass);
+                  fw.write(System.lineSeparator());
+                  fw.write(listOfAdmins[2].getUsername()+"   "+listOfAdmins[2].getPassword());
+                  fw.close();
+               }else if (User.getCashier() == true){
+                  fw.write(listOfAdmins[0].getUsername()+"   "+listOfAdmins[0].getPassword());
+                  fw.write(System.lineSeparator());
+                  fw.write(listOfAdmins[1].getUsername()+"   "+listOfAdmins[1].getPassword());
+                  fw.write(System.lineSeparator());
+                  fw.write(listOfAdmins[2].getUsername()+"   "+pass);
+                  fw.close();
+               }
+               System.out.println("Your new password is: "+pass+"\n");
+            
+               go = false;
+            }else{
+               System.out.println("Your password did not match");
+            }
          }else{
             System.out.println("Worng Password");
          }
-      }
-      System.out.print("Please type Password again: ");
-      pass = Ps.next();
-      if(pass == listOfAdmins[0].getPassword()){
-         System.out.println("Your new password is: "+listOfAdmins[0].getPassword());
-         go = true;
-      }else{
-         System.out.println("Worng Password");
-         go = true;
+      
       }
       
    
