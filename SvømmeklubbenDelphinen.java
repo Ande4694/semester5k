@@ -23,6 +23,7 @@ public class SvømmeklubbenDelphinen{
       boolean trainer = false;
       boolean admin = false;
       boolean cashier = false;
+      member.fillMembers();
    
    
       User loggedInUser = null;
