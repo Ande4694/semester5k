@@ -225,12 +225,13 @@ public class Member{
    public static ArrayList<Member> viewAll(){
       return listOfMembers;
    } 
-   // work in progress
-   public static void viewAge(){
+
+   public static String viewAge(){
       String text = "";
       for(int i = 0; i<listOfMembers.size();i++){
-         //text =
+         text = text + listOfMembers.get(i).getName() +" - age: "+ listOfMembers.get(i).getAge();
       }
+      return text;
    }
    
    public static ArrayList<Member> viewCompetetive(){
