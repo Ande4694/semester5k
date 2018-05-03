@@ -1,2 +1,0 @@
-Kong Gulerod
-61   false   true   false   true   true   false   false
