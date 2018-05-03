@@ -218,6 +218,7 @@ public class Member{
       }
       Member member = new Member(tempAge, tempName, tempAct, tempComp, tempCrawl, tempBack, tempBreast, tempPayed);
       listOfMembers.add(member);
+      System.out.println("Member created");
       
       
    }
