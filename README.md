@@ -33,7 +33,7 @@ https://drive.google.com/file/d/18wiF2wrOyOZ4fhWSnJCJ9AElFYrAXW6k/view?usp=shari
 - Intressent analyse
 https://docs.google.com/document/d/1D8b6tcwnfaV7480wxswZ7aXw98uPzHlgvE8Q7LF_cHs/edit?usp=sharing
 - Swot analyse
-https://docs.google.com/document/d/1uDnpWkBTjWyvrSSt0qipUNmT3UpjmAV58r2VGEJ5fV8/edit?usp=sharing
+https://drive.google.com/file/d/1hpGo2npJPPaDvuTuUniG1n8xz4zpFteu/view
 # Metode navne:
 # User:
 - Trainer(String username, String password);
