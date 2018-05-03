@@ -51,12 +51,10 @@ public class Menu{
          switch(option){
                        
             case 1:
-               if(User.getTrainer() == true){
-                  System.out.println("Change password");
-                  SvømmeklubbenDelphinen.ChangedPassword();
-                  MenuCase();
-               }else{System.out.println("HEJ");
-               }
+               System.out.println("Change password");
+               SvømmeklubbenDelphinen.ChangedPassword();
+               MenuCase();
+               System.out.println("HEJ");
                break;
          
             case 2:
