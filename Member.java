@@ -23,6 +23,12 @@ public class Member{
    private static ArrayList<Member> activeMembers = new ArrayList<>();
    private static int anualFee = 1600;
    
+   public void saveMembers()throws IOException{
+      File f = new File("members.txt");
+      FileWriter fw = new FileWriter(f);
+      
+   }
+   
    public void setAge(int age){
       this.age = age;
    }
@@ -289,33 +295,38 @@ public class Member{
    
 
    public static String viewMember(){
-      String text = "["+getName()+", "+getAge()+", ";
-      if(active){
+      for (int i = 0;i<listOfMembers.size();i++){
+      
+      
+      String text = "["+listOfMembers.get(i).getName()+", "+listOfMembers.get(i).getAge()+", ";
+      if(listOfMembers.get(i).active){
          text = text + "Active, ";
       } else {
          text = text + "Passive, ";
       }
-      if(competetive){
+      if(listOfMembers.get(i).competetive){
          text = text + "Competetive, ";
       } else {
          text = text + "Recreation, ";
       }
-      if (crawl.getChosen()){
+      if (listOfMembers.get(i).crawl.getChosen()){
          text = text + "Crawl - active, ";
       } else {
          text = text +"Crawl - inactive; ";
       }
-      if (back.getChosen()){
+      if (listOfMembers.get(i).back.getChosen()){
          text = text +"Back - active, ";
       } else {
          text = text +"Back - inactive, ";
       }
-      if (breast.getChosen()){
+      if (listOfMembers.get(i).breast.getChosen()){
          text = text +"Breast - active]";
       } else {
          text = text +"Breast - inactive]";
       }
       return text;
+      }
+      return "No members.";
    }
    
 

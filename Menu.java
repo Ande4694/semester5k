@@ -120,6 +120,7 @@ public class Menu{
                
             case 4:
                System.out.println("View member");
+               System.out.println(Member.viewMember());
                MenuCase();
                break;
          
