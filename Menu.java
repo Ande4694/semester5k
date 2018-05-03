@@ -83,6 +83,7 @@ public class Menu{
             
             case 0:
                System.out.println("Closing System");
+               Member.saveMembers();
                System.exit(0);
                break;
          }
@@ -138,6 +139,7 @@ public class Menu{
             
             case 0:
                System.out.println("Closing System");
+               Member.saveMembers();
                System.exit(0);
                break;
          }
@@ -178,6 +180,7 @@ public class Menu{
             
             case 0:
                System.out.println("Closing System");
+               Member.saveMembers();
                System.exit(0);
                break;
          }

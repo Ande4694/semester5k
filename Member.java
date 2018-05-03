@@ -23,7 +23,7 @@ public class Member{
    private static ArrayList<Member> activeMembers = new ArrayList<>();
    private static int anualFee = 1600;
    
-   public void saveMembers()throws IOException{
+   public static void saveMembers()throws IOException{
       File f = new File("members.txt");
       FileWriter fw = new FileWriter(f);
       for(int i = 0; i<listOfMembers.size(); i++){
