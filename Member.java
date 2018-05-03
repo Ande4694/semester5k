@@ -9,7 +9,6 @@ public class Member{
    private static boolean junior = age<18; 
    private static boolean competetive;
    private static boolean olding = age>60;
-   private static Disciplin disciplin;
    private static Back back;
    private static Breast breast;
    private static Crawl crawl;
@@ -23,6 +22,12 @@ public class Member{
    private static ArrayList<Member> competetiveMembers = new ArrayList<>();
    private static ArrayList<Member> activeMembers = new ArrayList<>();
    private static int anualFee = 1600;
+   
+   public void saveMembers()throws IOException{
+      File f = new File("members.txt");
+      FileWriter fw = new FileWriter(f);
+      
+   }
    
    public void setAge(int age){
       this.age = age;
@@ -74,30 +79,6 @@ public class Member{
    
    public void setRecreation(){
       competetive = false;
-   }
-   
-   public boolean getCrawl(){
-      return disciplin.getCrawlChosen();
-   }
-   
-   public boolean getBack(){
-      return disciplin.getBackChosen();
-   }
-   
-   public boolean getBreast(){
-      return disciplin.getBreastChosen();
-   }
-   
-   public void setDisciplinCrawl(){
-      disciplin.setCrawlChosen();
-   }
-   
-   public void setDisciplinBack(){
-      disciplin.setBackChosen();
-   }
-   
-   public void setDisciplinBreast(){
-      disciplin.setBreastChosen();
    }
    
    public static void addMember(){
@@ -277,7 +258,7 @@ public class Member{
    
    public static ArrayList<Member> viewBreast(){
       for (Member member : listOfMembers){
-         if(member.disciplin.getBreastChosen()){
+         if(member.breast.getChosen()){
             breastSwimmers.add(member);
          }
       }
@@ -286,7 +267,7 @@ public class Member{
    
    public static ArrayList<Member> viewBack(){
       for (Member member : listOfMembers){
-         if(member.getBack()){
+         if(member.back.getChosen()){
             backSwimmers.add(member);
          }
       }
@@ -295,7 +276,7 @@ public class Member{
    
    public static ArrayList<Member> viewCrawl(){
       for (Member member : listOfMembers){
-         if(member.getCrawl()){
+         if(member.crawl.getChosen()){
             crawlSwimmers.add(member);
          }
       }
@@ -314,33 +295,38 @@ public class Member{
    
 
    public static String viewMember(){
-      String text = "["+getName()+", "+getAge()+", ";
-      if(active){
+      for (int i = 0;i<listOfMembers.size();i++){
+      
+      
+      String text = "["+listOfMembers.get(i).getName()+", "+listOfMembers.get(i).getAge()+", ";
+      if(listOfMembers.get(i).active){
          text = text + "Active, ";
       } else {
          text = text + "Passive, ";
       }
-      if(competetive){
+      if(listOfMembers.get(i).competetive){
          text = text + "Competetive, ";
       } else {
          text = text + "Recreation, ";
       }
-      if (disciplin.getCrawlChosen()){
+      if (listOfMembers.get(i).crawl.getChosen()){
          text = text + "Crawl - active, ";
       } else {
          text = text +"Crawl - inactive; ";
       }
-      if (disciplin.getBackChosen()){
+      if (listOfMembers.get(i).back.getChosen()){
          text = text +"Back - active, ";
       } else {
          text = text +"Back - inactive, ";
       }
-      if (disciplin.getBreastChosen()){
+      if (listOfMembers.get(i).breast.getChosen()){
          text = text +"Breast - active]";
       } else {
          text = text +"Breast - inactive]";
       }
       return text;
+      }
+      return "No members.";
    }
    
 
