@@ -67,8 +67,7 @@ public class Menu{
                break;
                
             case 4:
-               System.out.println("View member");
-               Member.viewMember();
+               System.out.println(Member.viewMember());
                MenuCase();
                break;
          
@@ -79,8 +78,9 @@ public class Menu{
                break;
             
             case 0:
-               System.out.println("Closing System");
+               System.out.println("Closing System");               
                System.exit(0);
+               Member.saveMembers();
                break;
          }
       }
@@ -117,7 +117,10 @@ public class Menu{
                break;
                
             case 4:
+<<<<<<< HEAD
                System.out.println("View member");
+=======
+>>>>>>> 09e1870af4e635ac8081bec0e9fcee774ffc90dd
                System.out.println(Member.viewMember());
                MenuCase();
                break;
@@ -136,6 +139,7 @@ public class Menu{
             case 0:
                System.out.println("Closing System");
                System.exit(0);
+               Member.saveMembers();
                break;
          }
       }
@@ -175,7 +179,9 @@ public class Menu{
             
             case 0:
                System.out.println("Closing System");
+               
                System.exit(0);
+               Member.saveMembers();
                break;
          }
       }
