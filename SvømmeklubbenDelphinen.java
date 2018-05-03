@@ -221,21 +221,6 @@ public class SvømmeklubbenDelphinen{
          }else{
             System.out.println("Worng Password");
          }
-      
       }
-      
-   
-   
-   
-    
-      
-      /*
-      ps.nextLine();
-   
-      System.out.print("Enter new movie: ");
-      String newMovie = scan.nextLine();
-      movieList.modifyMovieItem(movieNo-1, newMovie);
-   */
-   
    }
 }
