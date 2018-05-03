@@ -53,6 +53,7 @@ public class Menu{
             case 1:
                if(User.getTrainer() == true){
                   System.out.println("Change password");
+                  SvømmeklubbenDelphinen.ChangedPassword();
                   MenuCase();
                }else{System.out.println("HEJ");
                }
@@ -102,6 +103,7 @@ public class Menu{
                        
             case 1:
                System.out.println("Change password");
+               SvømmeklubbenDelphinen.ChangedPassword();
                MenuCase();
                break;
          
@@ -156,6 +158,7 @@ public class Menu{
                        
             case 1:
                System.out.println("Change password");
+               SvømmeklubbenDelphinen.ChangedPassword();
                MenuCase();
                break;
             

@@ -3,6 +3,7 @@ import java.util.*;
 
 public class SvømmeklubbenDelphinen{
 
+   private static User[] listOfAdmins = new User[3];
    public static void main (String[] args)throws IOException{
    
    
@@ -22,7 +23,7 @@ public class SvømmeklubbenDelphinen{
    
       User loggedInUser = null;
        
-      User[] listOfAdmins = new User[3]; 
+      //User[] listOfAdmins = new User[3]; 
       File f = new File("Logins.txt");      
       if (f.canRead()){
          int count = 0;
@@ -33,9 +34,10 @@ public class SvømmeklubbenDelphinen{
             name = go.next();
             pass = go.next();
             listOfAdmins[count] = new User (name,pass); 
-            count++;       
+            count++;    
+            System.out.println("ArrayList");   
          }
-      ////////
+         
       }else{
          listOfAdmins[0] = new User("Trainer","1234");
          listOfAdmins[1] = new User("Admin","7894");
@@ -152,5 +154,49 @@ public class SvømmeklubbenDelphinen{
    }
    public static void restart()throws IOException{
       main(new String[0]);
+   }
+   
+   public static void ChangedPassword()throws IOException{
+      Scanner Ps = new Scanner(System.in);
+      boolean go = true;
+      
+      String pass;
+      File f = new File("Logins.txt");
+      FileWriter fw = new FileWriter(f);
+      boolean Check = false;
+      while(go){
+         System.out.print("Please Enter your Password: ");
+         pass = Ps.next();
+         if( pass == listOfAdmins[0].getPassword()){
+            System.out.print("Type new Password: ");
+            listOfAdmins[0].setPassword(Ps.next());
+            go = false;
+         }else{
+            System.out.println("Worng Password");
+         }
+      }
+      System.out.print("Please type Password again: ");
+      pass = Ps.next();
+      if(pass == listOfAdmins[0].getPassword()){
+         System.out.println("Your new password is: "+listOfAdmins[0].getPassword());
+         go = true;
+      }else{
+         System.out.println("Worng Password");
+         go = true;
+      }
+      
+   
+   
+   
+    
+      
+      /*
+      ps.nextLine();
+   
+      System.out.print("Enter new movie: ");
+      String newMovie = scan.nextLine();
+      movieList.modifyMovieItem(movieNo-1, newMovie);
+   */
+   
    }
 }
