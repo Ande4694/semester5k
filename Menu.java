@@ -37,6 +37,7 @@ public class Menu{
       }
    }
    
+   //Trainer
    public static void TrainerCase()throws IOException{
       boolean choice = true;
       int option;
@@ -86,7 +87,7 @@ public class Menu{
       }
    
    } 
-   
+   //Admin
    public static void AdminCase()throws IOException{
       boolean choice = true;
       int option;
@@ -140,6 +141,7 @@ public class Menu{
    
    } 
    
+   //Cashier
    public static void CashierCase()throws IOException{
       boolean choice = true;
       int option;

@@ -22,7 +22,7 @@ public class SvømmeklubbenDelphinen{
    
       User loggedInUser = null;
        
-      User[] listOfAdmins = new User[4];       
+      User[] listOfAdmins = new User[3];       
         
       listOfAdmins[0] = new User("Trainer","1234");
       listOfAdmins[1] = new User("Admin","7894");
