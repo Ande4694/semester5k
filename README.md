@@ -31,7 +31,7 @@ https://drive.google.com/file/d/18wiF2wrOyOZ4fhWSnJCJ9AElFYrAXW6k/view?usp=shari
 
 # ITO
 - Intressent analyse
-https://docs.google.com/document/d/1D8b6tcwnfaV7480wxswZ7aXw98uPzHlgvE8Q7LF_cHs/edit?usp=sharing
+https://drive.google.com/file/d/1m_1JDk-rF0qPjRROO-6csmHPYNT2hqri/view
 - Swot analyse
 https://drive.google.com/file/d/1hpGo2npJPPaDvuTuUniG1n8xz4zpFteu/view
 # Metode navne:
