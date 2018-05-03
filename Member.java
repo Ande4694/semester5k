@@ -25,7 +25,7 @@ public class Member{
    
    public static void saveMembers()throws IOException{
       File f = new File("members.txt");
-      FileWriter fw = new FileWriter(f);
+      FileWriter fw = new FileWriter(f,false);
       for(int i = 0; i<listOfMembers.size(); i++){
          int tempAge = listOfMembers.get(i).age;
          String tempName = listOfMembers.get(i).name;
@@ -398,7 +398,7 @@ public class Member{
       if (listOfMembers.get(i).breast.getChosen()){
          text = text +"Breast - active]";
       } else {
-         text = text +"Breast - inactive]";
+         text = text +"Breast - inactive]\n";
       }
       return text;
       }

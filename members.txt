@@ -1,2 +1,4 @@
-Kong Gulerod
-61   false   true   false   true   true   false   false
+Lille forpulede Bertram
+1   true   true   true   false   false   true   true
+Lille forpulede Bertram
+1   true   true   true   false   false   true   true
