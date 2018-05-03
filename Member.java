@@ -63,6 +63,18 @@ public class Member{
       competetive = false;
    }
    
+   public boolean getCrawl(){
+      return disciplin.getCrawlChosen();
+   }
+   
+   public boolean getBack(){
+      return disciplin.getBackChosen();
+   }
+   
+   public boolean getBreast(){
+      return disciplin.getBreastChosen();
+   }
+   
    public void setDisciplinCrawl(){
       disciplin.setCrawlChosen();
    }
