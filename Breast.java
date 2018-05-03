@@ -3,6 +3,10 @@ public class Breast{
    private double time;
    private boolean chosen = false;
    
+   public Breast(){
+      chosen = false;
+   }
+   
    public void setTime(double time){
       this.time = time;
    }

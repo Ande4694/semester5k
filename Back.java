@@ -3,6 +3,10 @@ public class Back{
    private double time;
    private boolean chosen = false;
    
+   public Back(){
+      chosen = false;
+   }
+   
    public void setTime(double time){
       this.time = time;
    }

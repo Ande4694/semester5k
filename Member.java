@@ -328,7 +328,7 @@ public class Member{
       this.active = active;
       this.competetive = competetive;
       if(crawl){
-         disciplin.setCrawlChosen();
+         setDisciplinCrawl();
       } 
       if(back){
          disciplin.setBackChosen();

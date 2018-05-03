@@ -3,6 +3,10 @@ public class Crawl{
    private double time;
    private boolean chosen = false;
    
+   public Crawl(){
+      chosen = false;
+   }
+   
    public void setTime(double time){
       this.time = time;
    }
