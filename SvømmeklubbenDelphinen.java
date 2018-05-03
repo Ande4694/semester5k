@@ -22,11 +22,26 @@ public class SvømmeklubbenDelphinen{
    
       User loggedInUser = null;
        
-      User[] listOfAdmins = new User[3];       
-        
-      listOfAdmins[0] = new User("Trainer","1234");
-      listOfAdmins[1] = new User("Admin","7894");
-      listOfAdmins[2] = new User("Cashier","1337");
+      User[] listOfAdmins = new User[3]; 
+      File f = new File("Logins.txt");      
+      if (f.canRead()){
+      
+         Scanner go = new Scanner(f);
+         while(go.hasNext()){
+            String name;
+            String pass;
+            for(int i=0; i<2; i++){
+               name = go.next();
+               pass = go.next();
+               listOfAdmins[i] = new User (name,pass);
+            }
+         }
+      
+      }else{
+         listOfAdmins[0] = new User("Trainer","1234");
+         listOfAdmins[1] = new User("Admin","7894");
+         listOfAdmins[2] = new User("Cashier","1337");
+      }
         
    
       BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
