@@ -11,7 +11,7 @@ public class Member{
    private static boolean olding = age>60;
    private static Disciplin disciplin;
    private static boolean payed;
-   private ArrayList<Double> swimTimes = new ArrayList<Double>();
+   private static ArrayList<Double> swimTimes = new ArrayList<Double>();
    private static ArrayList<Member> listOfMembers = new ArrayList<Member>();
    private static int anualFee = 1600;
    
@@ -199,10 +199,19 @@ public class Member{
       
       
    }
+   
    public static void viewAll(){
       System.out.println(listOfMembers);
    } 
+   
    // work in progress
+   public static void viewBreast(){
+      for (Member member : listOfMembers){
+         if(member.disciplin.getBreastChosen()){
+            //member add to breast list
+         }
+      }
+   }
 
    public static String viewMember(){
       String text = "["+name+", "+age+", ";
