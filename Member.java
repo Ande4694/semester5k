@@ -35,9 +35,73 @@ public class Member{
          boolean tempBack = listOfMembers.get(i).back.getChosen();
          boolean tempBreast = listOfMembers.get(i).breast.getChosen();
          boolean tempCrawl = listOfMembers.get(i).crawl.getChosen();
-         String text = tempAge+"   "+tempName+"   "+tempAct+"   "+tempJunior+"   "+tempComp+"   "+tempBack+"   "+tempBreast+"   "+tempCrawl;
+         boolean tempPayed = listOfMembers.get(i).payed;
+         String text = tempAge+"   "+tempAct+"   "+tempJunior+"   "+tempComp+"   "+tempBack+"   "+tempBreast+"   "+tempCrawl+"   "+tempPayed;
+         fw.write(tempName);
+         fw.write(System.lineSeparator());
          fw.write(text);
          fw.write(System.lineSeparator());
+      }
+      fw.close();
+   }
+   
+   public void fillMembers()throws IOException{
+      File f = new File("members.txt");
+      Scanner s = new Scanner(f);
+      while(s.hasNext() && f.canRead()){
+         boolean tempAct;
+         boolean tempJunior;
+         boolean tempComp;
+         boolean tempBack;
+         boolean tempBreast;
+         boolean tempCrawl;
+         boolean tempPayed;
+         String tempName = s.nextLine();
+         int tempAge = s.nextInt();
+         String tempActS = s.next();
+         if(tempActS.toLowerCase().equals("true")){
+            tempAct = true;
+         } else {
+            tempAct = false;
+         }      
+         String tempJuniorS = s.next();
+         if(tempJuniorS.toLowerCase().equals("true")){
+            tempJunior = true;
+         } else {
+            tempJunior = false;
+         }
+         String tempCompS = s.next();
+         if(tempCompS.toLowerCase().equals("true")){
+            tempComp = true;
+         } else {
+            tempComp = false;
+         }
+         String tempBackS = s.next();
+         if(tempBackS.toLowerCase().equals("true")){
+            tempBack = true;
+         } else {
+            tempBack = false;
+         }
+         String tempBreastS = s.next();
+         if(tempBreastS.toLowerCase().equals("true")){
+            tempBreast = true;
+         } else {
+            tempBreast = false;
+         }
+         String tempCrawlS = s.next();
+         if(tempCrawlS.toLowerCase().equals("true")){
+            tempCrawl = true;
+         } else {
+            tempCrawl = false;
+         }
+         String tempPayedS = s.next();
+         if(tempPayedS.toLowerCase().equals("true")){
+            tempPayed = true;
+         } else {
+            tempPayed = false;
+         }
+         Member member = new Member(tempAge, tempName, tempAct, tempComp, tempCrawl, tempBack, tempBreast, tempPayed);
+         listOfMembers.add(member);
       }
    }
    
