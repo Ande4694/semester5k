@@ -17,6 +17,8 @@ public class Member{
    private static ArrayList<Member> backSwimmers = new ArrayList<>();
    private static ArrayList<Member> crawlSwimmers = new ArrayList<>();
    private static ArrayList<Member> membersInArrear = new ArrayList<>();
+   private static ArrayList<Member> competetiveMembers = new ArrayList<>();
+   private static ArrayList<Member> activeMembers = new ArrayList<>();
    private static int anualFee = 1600;
    
    public void setAge(int age){
@@ -223,6 +225,24 @@ public class Member{
    public static ArrayList<Member> viewAll(){
       return listOfMembers;
    } 
+   
+   public static ArrayList<Member> viewCompetetive(){
+      for (Member member : listOfMembers){
+         if(member.getComp()){
+            competetiveMembers.add(member);
+         }
+      }
+      return competetiveMembers;
+   }
+   
+   public static ArrayList<Member> viewActive(){
+      for (Member member : listOfMembers){
+         if(member.getActive()){
+            activeMembers.add(member);
+         }
+      }
+      return activeMembers;
+   }
    
    public static ArrayList<Member> viewBreast(){
       for (Member member : listOfMembers){
