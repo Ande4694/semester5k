@@ -16,6 +16,7 @@ public class Member{
    private static ArrayList<Member> breastSwimmers = new ArrayList<>();
    private static ArrayList<Member> backSwimmers = new ArrayList<>();
    private static ArrayList<Member> crawlSwimmers = new ArrayList<>();
+   private static ArrayList<Member> membersInArrear = new ArrayList<>();
    private static int anualFee = 1600;
    
    public void setAge(int age){
@@ -28,6 +29,10 @@ public class Member{
    
    public void setName(String name){
       this.name = name;
+   }
+   
+   public boolean getArrear(){
+      return payed;
    }
    
    public String getName(){
@@ -215,8 +220,8 @@ public class Member{
       
    }
    
-   public static void viewAll(){
-      System.out.println(listOfMembers);
+   public static ArrayList<Member> viewAll(){
+      return listOfMembers;
    } 
    
    public static ArrayList<Member> viewBreast(){
@@ -244,6 +249,15 @@ public class Member{
          }
       }
       return crawlSwimmers;
+   }
+   
+   public static ArrayList<Member> viewArrears(){
+      for (Member member : listOfMembers){
+         if(member.getArrear()){
+            membersInArrear.add(member);
+         }
+      }
+      return membersInArrear;
    }
 
    public static String viewMember(){
