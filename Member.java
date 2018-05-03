@@ -26,7 +26,19 @@ public class Member{
    public void saveMembers()throws IOException{
       File f = new File("members.txt");
       FileWriter fw = new FileWriter(f);
-      
+      for(int i = 0; i<listOfMembers.size(); i++){
+         int tempAge = listOfMembers.get(i).age;
+         String tempName = listOfMembers.get(i).name;
+         boolean tempAct = listOfMembers.get(i).active;
+         boolean tempJunior = listOfMembers.get(i).junior;
+         boolean tempComp = listOfMembers.get(i).competetive;
+         boolean tempBack = listOfMembers.get(i).back.getChosen();
+         boolean tempBreast = listOfMembers.get(i).breast.getChosen();
+         boolean tempCrawl = listOfMembers.get(i).crawl.getChosen();
+         String text = tempAge+"   "+tempName+"   "+tempAct+"   "+tempJunior+"   "+tempComp+"   "+tempBack+"   "+tempBreast+"   "+tempCrawl;
+         fw.write(text);
+         fw.write(System.lineSeparator());
+      }
    }
    
    public void setAge(int age){
