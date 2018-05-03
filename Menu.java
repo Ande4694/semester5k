@@ -71,6 +71,7 @@ public class Menu{
                
             case 4:
                System.out.println("View member");
+               Member.viewMember();
                MenuCase();
                break;
          
@@ -120,7 +121,7 @@ public class Menu{
                
             case 4:
                System.out.println("View member");
-               System.out.println(Member.viewMember());
+               Member.viewMember();
                MenuCase();
                break;
          
@@ -165,6 +166,7 @@ public class Menu{
             
             case 2:
                System.out.println("View member");
+               Member.viewMember();
                MenuCase();
                break;
          
