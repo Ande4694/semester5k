@@ -3,8 +3,8 @@ public class Back{
    private double time;
    private boolean chosen = false;
    
-   public Back(){
-      chosen = false;
+   public Back(boolean lol){
+      chosen = lol;
    }
    
    public void setTime(double time){
@@ -24,7 +24,7 @@ public class Back{
    }
    
    public void setChosen(){
-      this.chosen = true;
+      chosen = true;
    }
    
    public void setUnChosen(){

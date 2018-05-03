@@ -3,8 +3,8 @@ public class Breast{
    private double time;
    private boolean chosen = false;
    
-   public Breast(){
-      chosen = false;
+   public Breast(boolean lol){
+      chosen = lol;
    }
    
    public void setTime(double time){
@@ -24,7 +24,7 @@ public class Breast{
    }
    
    public void setChosen(){
-      this.chosen = true;
+      chosen = true;
    }
    
    public void setUnChosen(){

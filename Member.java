@@ -10,6 +10,9 @@ public class Member{
    private static boolean competetive;
    private static boolean olding = age>60;
    private static Disciplin disciplin;
+   private static Back back;
+   private static Breast breast;
+   private static Crawl crawl;
    private static boolean payed;
    private static ArrayList<Double> swimTimes = new ArrayList<Double>();
    private static ArrayList<Member> listOfMembers = new ArrayList<Member>();
@@ -127,6 +130,9 @@ public class Member{
                tempComp = false;
                choice = false;
                break;
+               
+            default : 
+               System.out.println("please choice either 1 or 2.");
          }
       }
       choice = true;
@@ -143,6 +149,9 @@ public class Member{
                tempAct = false;
                choice = false;
                break;
+               
+            default : 
+               System.out.println("please choice either 1 or 2.");
          }
       }
       choice = true;
@@ -154,10 +163,14 @@ public class Member{
                tempCrawl = true;
                choice = false;
                break;
+               
             case 2:
                tempCrawl = false;
                choice = false;
                break;
+            
+            default : 
+               System.out.println("please choice either 1 or 2.");
          }
       }
       choice = true;
@@ -169,10 +182,14 @@ public class Member{
                tempBreast = true;
                choice = false;
                break;
+               
             case 2:
                tempBreast = false;
                choice = false;
                break;
+            
+            default : 
+               System.out.println("please choice either 1 or 2.");
          }
       }
       choice = true;
@@ -188,6 +205,9 @@ public class Member{
                tempBack = false;
                choice = false;
                break;
+            
+            default : 
+               System.out.println("please choice either 1 or 2.");
          }
       }
       if (!tempAct){
@@ -214,6 +234,8 @@ public class Member{
                choice = false;
                break;
             
+            default : 
+               System.out.println("please choice either 1 or 2.");
          }
       }
       Member member = new Member(tempAge, tempName, tempAct, tempComp, tempCrawl, tempBack, tempBreast, tempPayed);
@@ -327,14 +349,20 @@ public class Member{
       this.name= name;
       this.active = active;
       this.competetive = competetive;
-      if(crawl){
-         setDisciplinCrawl();
-      } 
       if(back){
-         disciplin.setBackChosen();
+         this.back = new Back(true);
+      } else {
+         this.back = new Back(false);
+      }
+      if(crawl){
+         this.crawl = new Crawl(true);
+      } else {
+         this.crawl = new Crawl(false);
       }
       if(breast){
-         disciplin.setBreastChosen();
+         this.breast = new Breast(true);
+      } else {
+         this.breast = new Breast(false);
       }
       this.payed = payed;
    }

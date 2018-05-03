@@ -3,8 +3,8 @@ public class Crawl{
    private double time;
    private boolean chosen = false;
    
-   public Crawl(){
-      chosen = false;
+   public Crawl(boolean lol){
+      chosen = lol;
    }
    
    public void setTime(double time){
@@ -16,7 +16,7 @@ public class Crawl{
    }
    
    public void setChosen(){
-      this.chosen = true;
+      chosen = true;
    }
    
    public boolean getChosen(){
