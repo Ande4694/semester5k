@@ -181,7 +181,6 @@ public class SvømmeklubbenDelphinen{
       Scanner Ps = new Scanner(System.in);
       boolean go = true;
       FileWriter fw = new FileWriter(f);
-      boolean Check = false;
       while(go){
          System.out.print("Please Enter your Password: ");
          String pass = Ps.next();

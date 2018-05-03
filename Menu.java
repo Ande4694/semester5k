@@ -51,12 +51,9 @@ public class Menu{
          switch(option){
                        
             case 1:
-               if(User.getTrainer() == true){
-                  System.out.println("Change password");
-                  SvømmeklubbenDelphinen.ChangedPassword();
-                  MenuCase();
-               }else{System.out.println("HEJ");
-               }
+               System.out.println("Change password");
+               SvømmeklubbenDelphinen.ChangedPassword();
+               MenuCase();
                break;
          
             case 2:
@@ -83,7 +80,6 @@ public class Menu{
             
             case 0:
                System.out.println("Closing System");
-               Member.saveMembers();
                System.exit(0);
                break;
          }
@@ -122,7 +118,7 @@ public class Menu{
                
             case 4:
                System.out.println("View member");
-               System.out.println(Member.viewMember());
+               Member.viewMember();
                MenuCase();
                break;
          
@@ -139,7 +135,6 @@ public class Menu{
             
             case 0:
                System.out.println("Closing System");
-               Member.saveMembers();
                System.exit(0);
                break;
          }
@@ -180,7 +175,6 @@ public class Menu{
             
             case 0:
                System.out.println("Closing System");
-               Member.saveMembers();
                System.exit(0);
                break;
          }

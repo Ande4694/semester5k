@@ -374,6 +374,7 @@ public class Member{
       for (int i = 0;i<listOfMembers.size();i++){
       
       
+<<<<<<< HEAD
       String text = "["+listOfMembers.get(i).getName()+", "+listOfMembers.get(i).getAge()+", ";
       if(listOfMembers.get(i).active){
          text = text + "Active, ";
@@ -401,6 +402,35 @@ public class Member{
          text = text +"Breast - inactive]\n";
       }
       return text;
+=======
+         String text = "["+listOfMembers.get(i).getName()+", "+listOfMembers.get(i).getAge()+", ";
+         if(listOfMembers.get(i).active){
+            text = text + "Active, ";
+         } else {
+            text = text + "Passive, ";
+         }
+         if(listOfMembers.get(i).competetive){
+            text = text + "Competetive, ";
+         } else {
+            text = text + "Recreation, ";
+         }
+         if (listOfMembers.get(i).crawl.getChosen()){
+            text = text + "Crawl - active, ";
+         } else {
+            text = text +"Crawl - inactive; ";
+         }
+         if (listOfMembers.get(i).back.getChosen()){
+            text = text +"Back - active, ";
+         } else {
+            text = text +"Back - inactive, ";
+         }
+         if (listOfMembers.get(i).breast.getChosen()){
+            text = text +"Breast - active]";
+         } else {
+            text = text +"Breast - inactive]";
+         }
+         return text;
+>>>>>>> fc8eb3963c2cb209f2cf0086393d4b81fc375c0b
       }
       return "No members.";
    }
