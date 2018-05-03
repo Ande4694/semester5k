@@ -9,7 +9,7 @@ public class Member{
    private static boolean junior = age<18; 
    private static boolean competetive;
    private static boolean olding = age>60;
-   private Disciplin disciplin;
+   private static Disciplin disciplin;
    private static boolean payed;
    private ArrayList<Double> swimTimes = new ArrayList<Double>();
    private static ArrayList<Member> listOfMembers = new ArrayList<Member>();
@@ -202,8 +202,34 @@ public class Member{
    
    // work in progress
 
-   public static void viewMember(){
+   public static String viewMember(){
       String text = "["+name+", "+age+", ";
+      if(active){
+         text = text + "Active, ";
+      } else {
+         text = text + "Passive, ";
+      }
+      if(competetive){
+         text = text + "Competetive, ";
+      } else {
+         text = text + "Recreation, ";
+      }
+      if (disciplin.getCrawlChosen()){
+         text = text + "Crawl - active, ";
+      } else {
+         text = text +"Crawl - inactive; ";
+      }
+      if (disciplin.getBackChosen()){
+         text = text +"Back - active, ";
+      } else {
+         text = text +"Back - inactive, ";
+      }
+      if (disciplin.getBreastChosen()){
+         text = text +"Breast - active]";
+      } else {
+         text = text +"Breast - inactive]";
+      }
+      return text;
    }
    
 
