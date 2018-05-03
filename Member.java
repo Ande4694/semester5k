@@ -13,6 +13,9 @@ public class Member{
    private static boolean payed;
    private static ArrayList<Double> swimTimes = new ArrayList<Double>();
    private static ArrayList<Member> listOfMembers = new ArrayList<Member>();
+   private static ArrayList<Member> breastSwimmers = new ArrayList<>();
+   private static ArrayList<Member> backSwimmers = new ArrayList<>();
+   private static ArrayList<Member> crawlSwimmers = new ArrayList<>();
    private static int anualFee = 1600;
    
    public void setAge(int age){
@@ -216,13 +219,31 @@ public class Member{
       System.out.println(listOfMembers);
    } 
    
-   // work in progress
-   public static void viewBreast(){
+   public static ArrayList<Member> viewBreast(){
       for (Member member : listOfMembers){
          if(member.disciplin.getBreastChosen()){
-            //member add to breast list
+            breastSwimmers.add(member);
          }
       }
+      return breastSwimmers;
+   }
+   
+   public static ArrayList<Member> viewBack(){
+      for (Member member : listOfMembers){
+         if(member.getBack()){
+            backSwimmers.add(member);
+         }
+      }
+      return backSwimmers;
+   }
+   
+   public static ArrayList<Member> viewCrawl(){
+      for (Member member : listOfMembers){
+         if(member.getCrawl()){
+            crawlSwimmers.add(member);
+         }
+      }
+      return crawlSwimmers;
    }
 
    public static String viewMember(){
