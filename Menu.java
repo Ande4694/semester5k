@@ -13,7 +13,7 @@ public class Menu{
          System.out.println("1: Change password");
          System.out.println("2: Register Time");
          System.out.println("3: View Times");
-         System.out.println("4: View member");
+         System.out.println("4: Members");
          System.out.println();
          System.out.println("5: log off");
          System.out.println("0: Close System");
@@ -22,7 +22,7 @@ public class Menu{
          System.out.println("1: Change password");
          System.out.println("2: Create new Member");
          System.out.println("3: View restance");
-         System.out.println("4: View member");
+         System.out.println("4: Members");
          System.out.println("5: Administrate member");
          System.out.println();
          System.out.println("6: log off");
@@ -30,7 +30,7 @@ public class Menu{
       }
       else if (User.getCashier() == true){
          System.out.println("1: Change password");
-         System.out.println("2: View member");
+         System.out.println("2: Members");
          System.out.println();
          System.out.println("3: log off");
          System.out.println("0: Close System");
@@ -67,8 +67,8 @@ public class Menu{
                break;
                
             case 4:
-               System.out.println(Member.viewMember());
-               MenuCase();
+               System.out.println("Members\n");
+               MemberCase();
                break;
          
             case 5:
@@ -117,11 +117,9 @@ public class Menu{
                break;
                
             case 4:
-
-               System.out.println("View member");
-
-               System.out.println(Member.viewMember());
-               MenuCase();
+            
+               System.out.println("Members\n");
+               MemberCase();
                break;
          
             case 5:
@@ -165,9 +163,8 @@ public class Menu{
                break;
             
             case 2:
-               System.out.println("View member");
-               Member.viewMember();
-               MenuCase();
+               System.out.println("Members\n");
+               MemberCase();
                break;
          
             case 3:
@@ -186,6 +183,70 @@ public class Menu{
       }
    
    } 
+      
+   public static void MemberCase()throws IOException{
+     
+      boolean choice = true;
+      int option;
+      Scanner scan = new Scanner(System.in);
+      MemberListMenu();
+      while (choice){
+      
+         option = SvømmeklubbenDelphinen.antiJarl();
+             
+         switch(option){
+                       
+            case 1:
+               System.out.println("View all member");
+               System.out.println(Member.viewMember());
+               MemberListMenu();
+               break;
+            
+            case 2:
+               System.out.println("View competetiv");
+               MemberListMenu();
+               break;
+         
+            case 3:
+               System.out.println("View active");
+               MemberListMenu();
+               break;
+            
+            case 4:
+               System.out.println("View back");
+               MemberListMenu();
+               break;
+               
+            case 5:
+               System.out.println("View crawl");
+               MemberListMenu();
+               break;
+               
+            case 6:
+               System.out.println("View breast");
+               MemberListMenu();
+               break;
+               
+            case 0:
+               System.out.println("Going back");
+               choice = false;
+               MenuCase();
+               break;
+         }
+      }
+   
+   }
+   public static void MemberListMenu(){
+      System.out.println("1: View all member");
+      System.out.println("2: View competetiv");
+      System.out.println("3: View active");
+      System.out.println("4: View back");
+      System.out.println("5: View crawl");
+      System.out.println("6: View breast");
+      System.out.println();
+      System.out.println("0: Back");
+   }
+   
  
 
 }
