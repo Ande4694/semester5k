@@ -25,18 +25,17 @@ public class SvømmeklubbenDelphinen{
       User[] listOfAdmins = new User[3]; 
       File f = new File("Logins.txt");      
       if (f.canRead()){
-      
+         int count = 0;
          Scanner go = new Scanner(f);
-         while(go.hasNext()){
+         while(go.hasNext() && count <3){
             String name;
             String pass;
-            for(int i=0; i<2; i++){
-               name = go.next();
-               pass = go.next();
-               listOfAdmins[i] = new User (name,pass);
-            }
+            name = go.next();
+            pass = go.next();
+            listOfAdmins[count] = new User (name,pass); 
+            count++;       
          }
-      
+      ////////
       }else{
          listOfAdmins[0] = new User("Trainer","1234");
          listOfAdmins[1] = new User("Admin","7894");

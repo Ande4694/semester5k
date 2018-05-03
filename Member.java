@@ -225,6 +225,13 @@ public class Member{
    public static ArrayList<Member> viewAll(){
       return listOfMembers;
    } 
+   // work in progress
+   public static void viewAge(){
+      String text = "";
+      for(int i = 0; i<listOfMembers.size();i++){
+         //text =
+      }
+   }
    
    public static ArrayList<Member> viewCompetetive(){
       for (Member member : listOfMembers){
