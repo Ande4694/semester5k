@@ -28,12 +28,7 @@ public class SvømmeklubbenDelphinen{
       User loggedInUser = null;
        
    
-      if (bs.readLine() == null){
-         System.out.println("Hardcoded");
-         listOfAdmins[0] = new User("Trainer","1234");
-         listOfAdmins[1] = new User("Admin","7894");
-         listOfAdmins[2] = new User("Cashier","1337");  
-      }else{
+      if (bs.readLine() != null){
          System.out.println("File");
          int count = 0;
          Scanner go = new Scanner(f);
@@ -45,6 +40,11 @@ public class SvømmeklubbenDelphinen{
             listOfAdmins[count] = new User (name,pass); 
             count++;    
          }
+      }else{
+         System.out.println("Hardcoded");
+         listOfAdmins[0] = new User("Trainer","1234");
+         listOfAdmins[1] = new User("Admin","7894");
+         listOfAdmins[2] = new User("Cashier","1337");  
       }
         
    

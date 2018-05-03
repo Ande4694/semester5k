@@ -1,3 +1,0 @@
-Trainer   1234
-Admin   7894
-Cashier   1337
