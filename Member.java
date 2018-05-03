@@ -23,9 +23,20 @@ public class Member{
    private static ArrayList<Member> activeMembers = new ArrayList<>();
    private static int anualFee = 1600;
    
+   public static void regTime(){
+      // vælg member via disc eller på nanv
+      // lav arraylist (double) i back, crawl og breast 
+      // double time = input.next
+      // timelist.add time
+      // gem lortet
+      // load lortet
+      // view lortet
+      // view (top) af lortet
+   }
+   
    public static void saveMembers()throws IOException{
       File f = new File("members.txt");
-      FileWriter fw = new FileWriter(f);
+      FileWriter fw = new FileWriter(f,false);
       for(int i = 0; i<listOfMembers.size(); i++){
          int tempAge = listOfMembers.get(i).age;
          String tempName = listOfMembers.get(i).name;
@@ -45,7 +56,7 @@ public class Member{
       fw.close();
    }
    
-   public void fillMembers()throws IOException{
+   public static void fillMembers()throws IOException{
       File f = new File("members.txt");
       Scanner s = new Scanner(f);
       while(s.hasNext() && f.canRead()){
@@ -374,33 +385,33 @@ public class Member{
       for (int i = 0;i<listOfMembers.size();i++){
       
       
-         String text = "["+listOfMembers.get(i).getName()+", "+listOfMembers.get(i).getAge()+", ";
-         if(listOfMembers.get(i).active){
-            text = text + "Active, ";
-         } else {
-            text = text + "Passive, ";
-         }
-         if(listOfMembers.get(i).competetive){
-            text = text + "Competetive, ";
-         } else {
-            text = text + "Recreation, ";
-         }
-         if (listOfMembers.get(i).crawl.getChosen()){
-            text = text + "Crawl - active, ";
-         } else {
-            text = text +"Crawl - inactive; ";
-         }
-         if (listOfMembers.get(i).back.getChosen()){
-            text = text +"Back - active, ";
-         } else {
-            text = text +"Back - inactive, ";
-         }
-         if (listOfMembers.get(i).breast.getChosen()){
-            text = text +"Breast - active]";
-         } else {
-            text = text +"Breast - inactive]";
-         }
-         return text;
+      String text = "["+listOfMembers.get(i).getName()+", "+listOfMembers.get(i).getAge()+", ";
+      if(listOfMembers.get(i).active){
+         text = text + "Active, ";
+      } else {
+         text = text + "Passive, ";
+      }
+      if(listOfMembers.get(i).competetive){
+         text = text + "Competetive, ";
+      } else {
+         text = text + "Recreation, ";
+      }
+      if (listOfMembers.get(i).crawl.getChosen()){
+         text = text + "Crawl - active, ";
+      } else {
+         text = text +"Crawl - inactive; ";
+      }
+      if (listOfMembers.get(i).back.getChosen()){
+         text = text +"Back - active, ";
+      } else {
+         text = text +"Back - inactive, ";
+      }
+      if (listOfMembers.get(i).breast.getChosen()){
+         text = text +"Breast - active]";
+      } else {
+         text = text +"Breast - inactive]\n";
+      }
+      return text;
       }
       return "No members.";
    }
