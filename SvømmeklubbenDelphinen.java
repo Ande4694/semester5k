@@ -7,7 +7,7 @@ public class SvømmeklubbenDelphinen{
    private static File f = new File("Logins.txt"); 
    public static void main (String[] args)throws IOException{
    
-      Member.fillMembers();
+      
       Run();
       
    }
@@ -16,7 +16,7 @@ public class SvømmeklubbenDelphinen{
    public static void Run() throws IOException{
       String username;
       String password; 
-      
+      Member.fillMembers();
       BufferedReader bs = new BufferedReader(new FileReader(f));
       
       Member member = new Member();
