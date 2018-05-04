@@ -5,11 +5,9 @@ public class SvømmeklubbenDelphinen{
 
    private static User[] listOfAdmins = new User[3];
    private static File f = new File("Logins.txt"); 
-   public static void main (String[] args)throws IOException{
    
-      
-      Run();
-      
+   public static void main (String[] args)throws IOException{
+      Run();  
    }
    
  
@@ -159,15 +157,6 @@ public class SvømmeklubbenDelphinen{
    public static void restart()throws IOException{
       main(new String[0]);
    }
-   
-   
-   
-   
-   
-   
-   
-   
-   
    
    public static void ChangedPassword()throws IOException{
       int UserCount = 0;
