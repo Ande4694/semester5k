@@ -301,12 +301,12 @@ public class Menu{
             case 0:
                System.out.println("Going back");
                choice = false;
-               TimeMenu();
+               MenuCase();
                break;
                
             default:
                System.out.println("Wrong input, try again");
-               MemberCase();
+               TimeMenu();
                break;
          }
       }
@@ -330,6 +330,8 @@ public class Menu{
       System.out.println("4: Set back time");
       System.out.println("5: Set crawl time");
       System.out.println("6: Set breast time");
+      System.out.println();
+      System.out.println("0: Back");
    }
    
  
