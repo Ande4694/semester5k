@@ -212,33 +212,32 @@ public class Menu implements Serializable{
          switch(option){
                        
             case 1:
-               System.out.println("View all members");
-               System.out.println(Member.viewMember());
+               Member.viewMember();
                MemberListMenu();
                break;
             
             case 2:
-               System.out.println("View competetiv");
+               Member.viewCompetetive();
                MemberListMenu();
                break;
          
             case 3:
-               System.out.println("View active");
+               Member.viewActive();
                MemberListMenu();
                break;
             
             case 4:
-               System.out.println("View back");
+               Member.viewBack();
                MemberListMenu();
                break;
                
             case 5:
-               System.out.println("View crawl");
+               Member.viewCrawl();
                MemberListMenu();
                break;
                
             case 6:
-               System.out.println("View breast");
+               Member.viewBreast();
                MemberListMenu();
                break;
                
@@ -269,7 +268,6 @@ public class Menu implements Serializable{
                        
             case 1:
                System.out.println("View back time");
-               System.out.println(Member.viewMember());
                TimeMenu();
                break;
             

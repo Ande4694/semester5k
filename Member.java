@@ -395,68 +395,63 @@ public class Member{
                System.out.println("please choice either 1 or 2.");
          }
       }
-      Member member = new Member(tempAge, tempName, tempAct, tempComp, tempCrawl, tempBack, tempBreast, tempPayed);
-      listOfMembers.add(member);
+      listOfMembers.add(new Member(tempAge, tempName, tempAct, tempComp, tempCrawl, tempBack, tempBreast, tempPayed));
       System.out.println("Member created");
       
       
    }
    
-   public static ArrayList<Member> viewAll(){
-      return listOfMembers;
-   } 
-
-   public static String viewAge(){
+   public static void viewAge(){
       String text = "";
       for(int i = 0; i<listOfMembers.size();i++){
          text = text + listOfMembers.get(i).getName() +" - age: "+ listOfMembers.get(i).getAge();
+         System.out.println(text);
       }
-      return text;
    }
    
-   public static ArrayList<Member> viewCompetetive(){
-      for (Member member : listOfMembers){
-         if(member.getComp()){
-            competetiveMembers.add(member);
+   public static void viewCompetetive(){
+      for(int i = 0; i<listOfMembers.size();i++){
+         if(listOfMembers.get(i).getComp() == true){
+            competetiveMembers.add(listOfMembers.get(i));
          }
       }
-      return competetiveMembers;
+      System.out.println(competetiveMembers);
    }
    
-   public static ArrayList<Member> viewActive(){
-      for (Member member : listOfMembers){
-         if(member.getActive()){
-            activeMembers.add(member);
+   public static void viewActive(){
+      for(int i = 0; i<listOfMembers.size();i++){
+         if(listOfMembers.get(i).getActive() == true){
+            activeMembers.add(listOfMembers.get(i));
          }
       }
-      return activeMembers;
+      System.out.println(competetiveMembers);
    }
    
-   public static ArrayList<Member> viewBreast(){
-      for (Member member : listOfMembers){
-         if(member.breast.getChosen()){
-            breastSwimmers.add(member);
+   public static void viewBreast(){
+      for(int i = 0; i<listOfMembers.size();i++){
+         if(listOfMembers.get(i).breast.getChosen() == true){
+            breastSwimmers.add(listOfMembers.get(i));
          }
       }
-      return breastSwimmers;
+      System.out.println(breastSwimmers);
    }
    
-   public static ArrayList<Member> viewBack(){
-      for (Member member : listOfMembers){
-         if(member.back.getChosen()){
-            backSwimmers.add(member);
+   public static void viewBack(){
+      for(int i = 0; i<listOfMembers.size();i++){
+         if(listOfMembers.get(i).back.getChosen() == true){
+            backSwimmers.add(listOfMembers.get(i));
          }
       }
-      return backSwimmers;
+      System.out.println(backSwimmers);
    }
    
-   public static ArrayList<Member> viewCrawl(){
-      for (Member member : listOfMembers){
-         if(member.crawl.getChosen()){
-            crawlSwimmers.add(member);
+   public static void viewCrawl(){
+      for(int i = 0; i<listOfMembers.size();i++){
+         if(listOfMembers.get(i).crawl.getChosen() == true){
+            crawlSwimmers.add(listOfMembers.get(i));
          }
       }
-      return crawlSwimmers;
+      System.out.println(crawlSwimmers);
    }
    
    public static ArrayList<Member> viewArrears(){
@@ -470,7 +465,7 @@ public class Member{
 
    
 
-   public static String viewMember(){
+   public static void viewMember(){
       for (int i = 0;i<listOfMembers.size();i++){
       
       
@@ -500,9 +495,8 @@ public class Member{
       } else {
          text = text +"Breast - inactive]\n";
       }
-      return text;
+      System.out.println(text);
       }
-      return "No members.";
    }
    
 
