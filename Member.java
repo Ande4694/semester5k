@@ -23,17 +23,22 @@ public class Member{
    private static ArrayList<Member> activeMembers = new ArrayList<>();
    private static int anualFee = 1600;
    
+   public static void addCrawlTime(double time){
+      crawl.setCrawlTime(time);
+   }
+   
    public static void regTime()throws IOException{
-      File f = new File("");
-      Scanner sc = new Scanner(f);
+      //File f = new File("");
+      //Scanner sc = new Scanner(f);
       Scanner input = new Scanner(System.in);
       boolean choice;
       int option;
+      int whichMember;
       System.out.println("To register a swim time please select a member.");
       for(int i = 0; i<listOfMembers.size();i++){
-         listOfMembers.get(i).getName();
-         System.out.println();
+         System.out.println("Member :"+i+" - "+listOfMembers.get(i).getName());
       }
+      whichMember = antiJarl();
       // vælg member via disc eller på nanv
       
       // double time = input.next
@@ -451,6 +456,16 @@ public class Member{
    }
    
    public Member(){
+   }
+   
+   public static int antiJarl(){
+      Scanner input = new Scanner(System.in);      
+      while (!input.hasNextInt()) {
+         input.next();
+         System.out.println("Not an integer, try again Jarl..");
+      }
+      return input.nextInt();
+      
    }
    
 

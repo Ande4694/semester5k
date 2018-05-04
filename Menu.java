@@ -58,6 +58,7 @@ public class Menu{
          
             case 2:
                System.out.println("Register Time");
+               Member.regTime();
                MenuCase();
                break;
          
@@ -211,7 +212,7 @@ public class Menu{
          switch(option){
                        
             case 1:
-               System.out.println("View all member");
+               System.out.println("View all members");
                System.out.println(Member.viewMember());
                MemberListMenu();
                break;
