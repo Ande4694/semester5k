@@ -9,7 +9,7 @@ public class Menu{
    }
 
    public static void MenuCase(){
-      if(User.getTrainer() == true){
+      if(User.getTrainer()){
          System.out.println("1: Change password");
          System.out.println("2: Register Time");
          System.out.println("3: Times");
@@ -18,7 +18,7 @@ public class Menu{
          System.out.println("5: log off");
          System.out.println("0: Close System");
       }
-      else if (User.getAdmin() == true){
+      else if (User.getAdmin()){
          System.out.println("1: Change password");
          System.out.println("2: Create new Member");
          System.out.println("3: View restance");
@@ -28,7 +28,7 @@ public class Menu{
          System.out.println("6: log off");
          System.out.println("0: Close System");
       }
-      else if (User.getCashier() == true){
+      else if (User.getCashier()){
          System.out.println("1: Change password");
          System.out.println("2: Members");
          System.out.println();
