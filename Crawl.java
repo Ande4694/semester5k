@@ -1,7 +1,15 @@
+import java.util.*;
+
 public class Crawl{
 
    private double time;
    private boolean chosen = false;
+   
+   private ArrayList<Double> crawlTimes = new ArrayList<>();
+   
+   public ArrayList<Double> getCrawlTimes(){
+      return crawlTimes;
+   }
    
    public Crawl(boolean lol){
       chosen = lol;

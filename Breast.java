@@ -1,7 +1,15 @@
+import java.util.*;
+
 public class Breast{
 
    private double time;
    private boolean chosen = false;
+   
+   private ArrayList<Double> breastTimes = new ArrayList<>();
+   
+   public ArrayList<Double> getBreastTimes(){
+      return breastTimes;
+   }
    
    public Breast(boolean lol){
       chosen = lol;

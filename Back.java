@@ -1,10 +1,18 @@
+import java.util.*;
+
 public class Back{
 
    private double time;
    private boolean chosen = false;
    
+   private ArrayList<Double> backTimes = new ArrayList<>();
+   
+   public ArrayList<Double> getBackTimes(){
+      return backTimes;
+   }
+   
    public Back(boolean lol){
-      chosen = lol;
+      chosen = lol;      
    }
    
    public void setTime(double time){

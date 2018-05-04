@@ -23,9 +23,19 @@ public class Member{
    private static ArrayList<Member> activeMembers = new ArrayList<>();
    private static int anualFee = 1600;
    
-   public static void regTime(){
+   public static void regTime()throws IOException{
+      File f = new File("");
+      Scanner sc = new Scanner(f);
+      Scanner input = new Scanner(System.in);
+      boolean choice;
+      int option;
+      System.out.println("To register a swim time please select a member.");
+      for(int i = 0; i<listOfMembers.size();i++){
+         listOfMembers.get(i).getName();
+         System.out.println();
+      }
       // vælg member via disc eller på nanv
-      // lav arraylist (double) i back, crawl og breast 
+      
       // double time = input.next
       // timelist.add time
       // gem lortet
