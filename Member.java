@@ -28,6 +28,7 @@ public class Member{
          System.out.print("Enter time: ");
          double time = antiJarlDouble();
          crawl.setCrawlTime(time);
+         System.out.println("Time registered");
       } else {
          System.out.println("this member is not active in Crawl");
       }
@@ -38,6 +39,7 @@ public class Member{
          System.out.print("Enter time: ");
          double time = antiJarlDouble();
          back.setBackTime(time);
+         System.out.println("Time registered");
       } else {
          System.out.println("this member is not active in Back");
       }
@@ -48,6 +50,7 @@ public class Member{
          System.out.print("Enter time: ");
          double time = antiJarlDouble();
          breast.setBreastTime(time);
+         System.out.println("Time registered");
       } else {
          System.out.println("this member is not active in Breast");
       }
@@ -57,12 +60,44 @@ public class Member{
       System.out.println("1: Crawl");
       System.out.println("2: Back");
       System.out.println("3: Breast");
+      System.out.println("0: Go back");
    }
    
-   public static void addTime(){
+   public static void addTime()throws IOException{
       // loops til at vælge hvilken disc man vil reg tid i
       System.out.println("Now you need to select which disciplin you wish to register a swim time to.");
       addTimeMenu();
+      boolean choice = true;
+      int option;
+      while (choice){
+         option = antiJarl();
+         switch(option){
+            
+               case 1:
+                  addCrawlTime();
+                  choice = false;   
+                  break;
+                  
+               case 2:
+                  addBackTime();
+                  choice = false;
+                  break;
+                  
+               case 3:
+                  addBreastTime();
+                  choice = false;
+                  break;
+                  
+               case 0 :
+                  regTime();
+                  choice = false;
+                  break;
+                  
+               default:
+                  System.out.println("It was pretty clear that you only had 3 options...");
+                  break;
+         }
+      }
    }
    
    public static void regTime()throws IOException{
@@ -80,15 +115,8 @@ public class Member{
       if(whichMember<0 || whichMember>listOfMembers.size()){
          System.out.println("Are you trying to provoke an Index.OutOfBounds.Exception?... naughty naughty");
       } else {
-         listOfMembers.get(whichMember);
+         listOfMembers.get(whichMember).addTime();
       }
-      
-      //whichMember = antiJarl();
-      //listOfMembers(whichMember).addCrawlTime(time);
-      // vælg member via disc eller på nanv
-      
-      // double time = input.next
-      // timelist.add time
       // gem lortet
       // load lortet
       // view lortet
