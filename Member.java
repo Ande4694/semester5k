@@ -53,6 +53,18 @@ public class Member{
       }
    }
    
+   public static void addTimeMenu(){
+      System.out.println("1: Crawl");
+      System.out.println("2: Back");
+      System.out.println("3: Breast");
+   }
+   
+   public static void addTime(){
+      // loops til at vælge hvilken disc man vil reg tid i
+      System.out.println("Now you need to select which disciplin you wish to register a swim time to.");
+      addTimeMenu();
+   }
+   
    public static void regTime()throws IOException{
       //File f = new File("");
       //Scanner sc = new Scanner(f);
@@ -64,6 +76,13 @@ public class Member{
       for(int i = 0; i<listOfMembers.size();i++){
          System.out.println("Member :"+i+" - "+listOfMembers.get(i).getName());
       }
+      whichMember = antiJarl();
+      if(whichMember<0 || whichMember>listOfMembers.size()){
+         System.out.println("Are you trying to provoke an Index.OutOfBounds.Exception?... naughty naughty");
+      } else {
+         listOfMembers.get(whichMember);
+      }
+      
       //whichMember = antiJarl();
       //listOfMembers(whichMember).addCrawlTime(time);
       // vælg member via disc eller på nanv
