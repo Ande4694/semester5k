@@ -12,7 +12,7 @@ public class Menu{
       if(User.getTrainer() == true){
          System.out.println("1: Change password");
          System.out.println("2: Register Time");
-         System.out.println("3: View Times");
+         System.out.println("3: Times");
          System.out.println("4: Members");
          System.out.println();
          System.out.println("5: log off");
@@ -63,8 +63,8 @@ public class Menu{
                break;
          
             case 3:
-               System.out.println("View Times");
-               MenuCase();
+               System.out.println("Times");
+               TimeCase();
                break;
                
             case 4:
@@ -82,6 +82,11 @@ public class Menu{
                System.out.println("Closing System");               
                System.exit(0);
                Member.saveMembers();
+               break;
+               
+            default:
+               System.out.println("Wrong input, try again");
+               MemberCase();
                break;
          }
       }
@@ -139,6 +144,11 @@ public class Menu{
                System.exit(0);
                Member.saveMembers();
                break;
+               
+            default:
+               System.out.println("Wrong input, try again");
+               MemberCase();
+               break;
          }
       }
    
@@ -176,9 +186,13 @@ public class Menu{
             
             case 0:
                System.out.println("Closing System");
-               
                System.exit(0);
                Member.saveMembers();
+               break;
+               
+            default:
+               System.out.println("Wrong input, try again");
+               MemberCase();
                break;
          }
       }
@@ -233,6 +247,67 @@ public class Menu{
                choice = false;
                MenuCase();
                break;
+               
+            default:
+               System.out.println("Wrong input, try again");
+               MemberCase();
+               break;
+         }
+      }
+   }
+   public static void TimeCase()throws IOException{
+     
+      boolean choice = true;
+      int option;
+      Scanner scan = new Scanner(System.in);
+      TimeMenu();
+      while (choice){
+      
+         option = SvømmeklubbenDelphinen.antiJarl();
+             
+         switch(option){
+                       
+            case 1:
+               System.out.println("View back time");
+               System.out.println(Member.viewMember());
+               TimeMenu();
+               break;
+            
+            case 2:
+               System.out.println("View crawl");
+               TimeMenu();
+               break;
+         
+            case 3:
+               System.out.println("View breast time");
+               TimeMenu();
+               break;
+            
+            case 4:
+               System.out.println("Set back time");
+               TimeMenu();
+               break;
+               
+            case 5:
+               System.out.println("Set crawl time");
+               TimeMenu();
+               break;
+               
+            case 6:
+               System.out.println("Set breast time");
+               TimeMenu();
+               break;
+               
+            case 0:
+               System.out.println("Going back");
+               choice = false;
+               TimeMenu();
+               break;
+               
+            default:
+               System.out.println("Wrong input, try again");
+               MemberCase();
+               break;
          }
       }
    
@@ -246,6 +321,15 @@ public class Menu{
       System.out.println("6: View breast");
       System.out.println();
       System.out.println("0: Back");
+   }
+   
+   public static void TimeMenu(){
+      System.out.println("1: View back time");
+      System.out.println("2: View crawl time");
+      System.out.println("3: View breast time");
+      System.out.println("4: Set back time");
+      System.out.println("5: Set crawl time");
+      System.out.println("6: Set breast time");
    }
    
  
