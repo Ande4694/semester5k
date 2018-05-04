@@ -1,17 +1,17 @@
 import java.io.*;
 import java.util.*;
 
-public class SvømmeklubbenDelphinen{
+public class SvømmeklubbenDelphinen implements Serializable{
 
    private static User[] listOfAdmins = new User[3];
    private static File f = new File("Logins.txt"); 
    
-   public static void main (String[] args)throws IOException{
+   public static void main (String[] args)throws IOException, ClassNotFoundException{
       Run();  
    }
    
  
-   public static void Run() throws IOException{
+   public static void Run() throws IOException, ClassNotFoundException{
       String username;
       String password; 
       Member.fillMembers();
@@ -154,7 +154,7 @@ public class SvømmeklubbenDelphinen{
       }
       
    }
-   public static void restart()throws IOException{
+   public static void restart()throws IOException, ClassNotFoundException{
       main(new String[0]);
    }
    

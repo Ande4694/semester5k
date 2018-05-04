@@ -1,6 +1,8 @@
 import java.util.*;
 
-public class Crawl{
+import java.io.*;
+
+public class Crawl implements Serializable{
 
    private double time;
    private boolean chosen = false;

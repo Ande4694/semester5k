@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class User{
+public class User implements Serializable{
 
    private String username;
    private String password;

@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Menu{
+public class Menu implements Serializable{
 
    public static void menuPromptStart(){
       System.out.println("1: Login");
@@ -38,7 +38,7 @@ public class Menu{
    }
    
    //Trainer
-   public static void TrainerCase()throws IOException{
+   public static void TrainerCase()throws IOException, ClassNotFoundException{
       boolean choice = true;
       int option;
       Scanner scan = new Scanner(System.in);
@@ -80,8 +80,8 @@ public class Menu{
             
             case 0:
                System.out.println("Closing System");               
-               System.exit(0);
                Member.saveMembers();
+               System.exit(0);
                break;
                
             default:
@@ -93,7 +93,7 @@ public class Menu{
    
    } 
    //Admin
-   public static void AdminCase()throws IOException{
+   public static void AdminCase()throws IOException, ClassNotFoundException{
       boolean choice = true;
       int option;
       Scanner scan = new Scanner(System.in);
@@ -141,8 +141,8 @@ public class Menu{
             
             case 0:
                System.out.println("Closing System");
-               System.exit(0);
                Member.saveMembers();
+               System.exit(0);
                break;
                
             default:
@@ -155,7 +155,7 @@ public class Menu{
    } 
    
    //Cashier
-   public static void CashierCase()throws IOException{
+   public static void CashierCase()throws IOException, ClassNotFoundException{
       boolean choice = true;
       int option;
       Scanner scan = new Scanner(System.in);
@@ -186,8 +186,8 @@ public class Menu{
             
             case 0:
                System.out.println("Closing System");
-               System.exit(0);
                Member.saveMembers();
+               System.exit(0);
                break;
                
             default:

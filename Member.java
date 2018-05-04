@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Member{
+public class Member implements Serializable{
  
    private static int age;
    private static String name;
@@ -123,86 +123,22 @@ public class Member{
       // view (top) af lortet
    }
    
-   public static void saveMembers()throws IOException{
-      File f = new File("members.txt");
-      FileWriter fw = new FileWriter(f,false);
-      for(int i = 0; i<listOfMembers.size(); i++){
-         int tempAge = listOfMembers.get(i).age;
-         String tempName = listOfMembers.get(i).name;
-         boolean tempAct = listOfMembers.get(i).active;
-         boolean tempJunior = listOfMembers.get(i).junior;
-         boolean tempComp = listOfMembers.get(i).competetive;
-         boolean tempBack = listOfMembers.get(i).back.getChosen();
-         boolean tempBreast = listOfMembers.get(i).breast.getChosen();
-         boolean tempCrawl = listOfMembers.get(i).crawl.getChosen();
-         boolean tempPayed = listOfMembers.get(i).payed;
-         String text = tempAge+"   "+tempAct+"   "+tempJunior+"   "+tempComp+"   "+tempBack+"   "+tempBreast+"   "+tempCrawl+"   "+tempPayed;
-         fw.write(tempName);
-         fw.write(System.lineSeparator());
-         fw.write(text);
-         fw.write(System.lineSeparator());
-      }
-      fw.close();
+   public static void saveMembers()throws IOException, ClassNotFoundException, NotSerializableException{
+      FileOutputStream fos = new FileOutputStream("members.ser");
+      ObjectOutputStream oos = new ObjectOutputStream(fos);
+      oos.writeObject(listOfMembers);
+      oos.close();
+      fos.close();
+      
    }
    
-   public static void fillMembers()throws IOException{
-      File f = new File("members.txt");
-      Scanner s = new Scanner(f);
-      while(s.hasNext() && f.canRead()){
-         boolean tempAct;
-         boolean tempJunior;
-         boolean tempComp;
-         boolean tempBack;
-         boolean tempBreast;
-         boolean tempCrawl;
-         boolean tempPayed;
-         String tempName = s.nextLine();
-         int tempAge = s.nextInt();
-         String tempActS = s.next();
-         if(tempActS.toLowerCase().equals("true")){
-            tempAct = true;
-         } else {
-            tempAct = false;
-         }      
-         String tempJuniorS = s.next();
-         if(tempJuniorS.toLowerCase().equals("true")){
-            tempJunior = true;
-         } else {
-            tempJunior = false;
-         }
-         String tempCompS = s.next();
-         if(tempCompS.toLowerCase().equals("true")){
-            tempComp = true;
-         } else {
-            tempComp = false;
-         }
-         String tempBackS = s.next();
-         if(tempBackS.toLowerCase().equals("true")){
-            tempBack = true;
-         } else {
-            tempBack = false;
-         }
-         String tempBreastS = s.next();
-         if(tempBreastS.toLowerCase().equals("true")){
-            tempBreast = true;
-         } else {
-            tempBreast = false;
-         }
-         String tempCrawlS = s.next();
-         if(tempCrawlS.toLowerCase().equals("true")){
-            tempCrawl = true;
-         } else {
-            tempCrawl = false;
-         }
-         String tempPayedS = s.next();
-         if(tempPayedS.toLowerCase().equals("true")){
-            tempPayed = true;
-         } else {
-            tempPayed = false;
-         }
-         Member member = new Member(tempAge, tempName, tempAct, tempComp, tempCrawl, tempBack, tempBreast, tempPayed);
-         listOfMembers.add(member);
-      }
+   public static void fillMembers()throws IOException, ClassNotFoundException{
+      FileInputStream fis = new FileInputStream("members.ser");
+      ObjectInputStream ois = new ObjectInputStream(fis);
+      listOfMembers = (ArrayList<Member>)ois.readObject();////////////////////////////////////////
+      ois.close();
+      fis.close();
+      
    }
    
    public void setAge(int age){

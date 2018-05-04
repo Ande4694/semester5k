@@ -1,6 +1,7 @@
 import java.util.*;
+import java.io.*;
 
-public class Back{
+public class Back implements Serializable{
 
    private double time;
    private boolean chosen = false;
