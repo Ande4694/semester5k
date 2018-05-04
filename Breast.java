@@ -11,6 +11,10 @@ public class Breast{
       return breastTimes;
    }
    
+   public void setBreastTime(double time){
+      breastTimes.add(time);
+   }
+   
    public Breast(boolean lol){
       chosen = lol;
    }

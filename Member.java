@@ -23,8 +23,34 @@ public class Member{
    private static ArrayList<Member> activeMembers = new ArrayList<>();
    private static int anualFee = 1600;
    
-   public static void addCrawlTime(double time){
-      crawl.setCrawlTime(time);
+   public static void addCrawlTime(){
+      if(crawl.getChosen() == true){
+         System.out.print("Enter time: ");
+         double time = antiJarlDouble();
+         crawl.setCrawlTime(time);
+      } else {
+         System.out.println("this member is not active in Crawl");
+      }
+   }
+   
+   public static void addBackTime(){
+      if(back.getChosen() == true){
+         System.out.print("Enter time: ");
+         double time = antiJarlDouble();
+         back.setBackTime(time);
+      } else {
+         System.out.println("this member is not active in Back");
+      }
+   }
+   
+   public static void addBreastTime(){
+      if(breast.getChosen() == true){
+         System.out.print("Enter time: ");
+         double time = antiJarlDouble();
+         breast.setBreastTime(time);
+      } else {
+         System.out.println("this member is not active in Breast");
+      }
    }
    
    public static void regTime()throws IOException{
@@ -38,7 +64,8 @@ public class Member{
       for(int i = 0; i<listOfMembers.size();i++){
          System.out.println("Member :"+i+" - "+listOfMembers.get(i).getName());
       }
-      whichMember = antiJarl();
+      //whichMember = antiJarl();
+      //listOfMembers(whichMember).addCrawlTime(time);
       // vælg member via disc eller på nanv
       
       // double time = input.next
@@ -461,6 +488,16 @@ public class Member{
    public static int antiJarl(){
       Scanner input = new Scanner(System.in);      
       while (!input.hasNextInt()) {
+         input.next();
+         System.out.println("Not an integer, try again Jarl..");
+      }
+      return input.nextInt();
+      
+   }
+   
+   public static int antiJarlDouble(){
+      Scanner input = new Scanner(System.in);      
+      while (!input.hasNextDouble()) {
          input.next();
          System.out.println("Not an integer, try again Jarl..");
       }

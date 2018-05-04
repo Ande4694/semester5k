@@ -7,6 +7,10 @@ public class Back{
    
    private ArrayList<Double> backTimes = new ArrayList<>();
    
+   public void setBackTime(double time){
+      backTimes.add(time);
+   }
+   
    public ArrayList<Double> getBackTimes(){
       return backTimes;
    }

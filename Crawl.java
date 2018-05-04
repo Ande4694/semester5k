@@ -10,7 +10,7 @@ public class Crawl{
    public ArrayList<Double> getCrawlTimes(){
       return crawlTimes;
    }
-   // copy til de andre
+   
    public void setCrawlTime(double time){
       crawlTimes.add(time);
    }
