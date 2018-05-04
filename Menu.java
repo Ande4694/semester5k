@@ -82,6 +82,11 @@ public class Menu{
                System.exit(0);
                Member.saveMembers();
                break;
+               
+            default:
+               System.out.println("Wrong input, try again");
+               MemberCase();
+               break;
          }
       }
    
@@ -138,6 +143,11 @@ public class Menu{
                System.exit(0);
                Member.saveMembers();
                break;
+               
+            default:
+               System.out.println("Wrong input, try again");
+               MemberCase();
+               break;
          }
       }
    
@@ -175,9 +185,13 @@ public class Menu{
             
             case 0:
                System.out.println("Closing System");
-               
                System.exit(0);
                Member.saveMembers();
+               break;
+               
+            default:
+               System.out.println("Wrong input, try again");
+               MemberCase();
                break;
          }
       }
@@ -231,6 +245,11 @@ public class Menu{
                System.out.println("Going back");
                choice = false;
                MenuCase();
+               break;
+               
+            default:
+               System.out.println("Wrong input, try again");
+               MemberCase();
                break;
          }
       }
