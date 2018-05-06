@@ -1,52 +1,36 @@
+import java.io.*;
 import java.util.*;
 
-import java.io.*;
+public class Crawl implements Disciplin, Serializable{
 
-public class Crawl implements Serializable{
-
-   private double time;
-   private boolean chosen = false;
+   private ArrayList<Double> time = new ArrayList<>();
+   private boolean chosen;
    
-   private ArrayList<Double> crawlTimes = new ArrayList<>();
-   
-   public ArrayList<Double> getCrawlTimes(){
-      return crawlTimes;
-   }
-   
-   public void setCrawlTime(double time){
-      crawlTimes.add(time);
-   }
-   
-   public Crawl(boolean lol){
-      chosen = lol;
-   }
-   
-   public void setTime(double time){
-      this.time = time;
-   }
-   
-   public double getTime(){
-      return time;
+   public void addTime(double tid){
+      time.add(tid);
    }
    
    public void setChosen(){
       chosen = true;
+   }  
+   
+   public void setUnChosen(){
+      chosen = false;
+   }
+   
+   public ArrayList<Double> getTime(){
+      return time;
    }
    
    public boolean getChosen(){
       return chosen;
    }
    
-   public void setCrawlChosen(boolean chosen){
+   public Crawl(boolean chosen){
       this.chosen = chosen;
    }
    
-   public void setUnChosen(){
-      this.chosen = false;
-   }
-   
-   public Crawl(double time){
-      this.time = time;
+   public Crawl(){
    }
 
 }
