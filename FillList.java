@@ -6,6 +6,7 @@ public class FillList{
    public static ArrayList<String> LoginList = new ArrayList<String>();
 
    public static void fillList(){
+   System.out.println();
       File f = new File("Logins.txt");
       try{
          Scanner sc = new Scanner(f);  
