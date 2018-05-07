@@ -4,7 +4,6 @@ import java.util.*;
 public class Menu implements Serializable{
 
 private static User[] listOfAdmins = new User[3];
-private static Members members;
 private static ArrayList<Members> listOfMembers = new ArrayList<>();
 private static ArrayList<Members> competetiveMembers = new ArrayList<>();
 private static ArrayList<Members> activeMembers = new ArrayList<>();
@@ -34,7 +33,7 @@ private static int whichMember2;
    public static void fillMembers()throws IOException, ClassNotFoundException{
       FileInputStream fis = new FileInputStream("members.ser");
       ObjectInputStream ois = new ObjectInputStream(fis);
-      listOfMembers = (ArrayList<Members>) ois.readObject();
+     // listOfMembers = (ArrayList<Members>) ois.readObject();
       ois.close();
       fis.close();      
    }
