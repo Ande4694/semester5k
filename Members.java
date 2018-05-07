@@ -7,10 +7,9 @@ public class Members implements Serializable{
    private int age;
    private String name;
    private boolean active;
-   private boolean junior = age<18;
    private boolean competetive;
-   private boolean olding = age>60;
    private boolean payed;
+  
    
    // disciplins
    private Back back = new Back();
@@ -24,6 +23,18 @@ public class Members implements Serializable{
 
    
    // getters
+   public ArrayList<Double> getBackTime(){
+      return back.getTime();
+   }
+   
+   public ArrayList<Double> getBreastTime(){
+      return breast.getTime();
+   }
+   
+   public ArrayList<Double> getCrawlTime(){
+      return crawl.getTime();
+   }
+   
    public int getAge(){
       return age;
    }

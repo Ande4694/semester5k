@@ -1,4 +1,4 @@
-public class Times{
+public class Tider{
 
    private static double time;
    private static String name;
@@ -13,7 +13,8 @@ public class Times{
    }
    
    /// constructor
-   public Times(double tid, String navn){
+   //// TID SKAL HELST VÆRE DOUBLE!!!!!
+   public Tider(double tid, String navn){
       name = navn;
       time = tid;
    }

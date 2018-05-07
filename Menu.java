@@ -4,7 +4,9 @@ import java.util.*;
 public class Menu implements Serializable{
 
 private static User[] listOfAdmins = new User[3];
-private static Members members;
+private static ArrayList<Tider> crawlTider = new ArrayList<>();
+private static ArrayList<Tider> backTider = new ArrayList<>();
+private static ArrayList<Tider> breastTider = new ArrayList<>();
 private static ArrayList<Members> listOfMembers = new ArrayList<>();
 private static ArrayList<Members> competetiveMembers = new ArrayList<>();
 private static ArrayList<Members> activeMembers = new ArrayList<>();
@@ -21,22 +23,6 @@ private static int whichMember2;
       fillMembers();
       fillDivList();
       login();
-   }
-   
-   public static void saveMembers()throws IOException, ClassNotFoundException{
-      FileOutputStream fos = new FileOutputStream("members.ser");
-      ObjectOutputStream oos = new ObjectOutputStream(fos);
-      oos.writeObject(listOfMembers);
-      oos.close();
-      fos.close();
-   }
-   
-   public static void fillMembers()throws IOException, ClassNotFoundException{
-      FileInputStream fis = new FileInputStream("members.ser");
-      ObjectInputStream ois = new ObjectInputStream(fis);
-      listOfMembers = (ArrayList<Members>) ois.readObject();
-      ois.close();
-      fis.close();      
    }
    
    public static void addMember(){
@@ -638,6 +624,48 @@ private static int whichMember2;
       // view (top) af lortet
    }
    
+   public static void saveMembers()throws IOException, ClassNotFoundException{
+      FileOutputStream fos = new FileOutputStream("members.ser");
+      ObjectOutputStream oos = new ObjectOutputStream(fos);
+      oos.writeObject(listOfMembers);
+      oos.close();
+      fos.close();
+   }
+   
+   public static void fillMembers()throws IOException, ClassNotFoundException{
+      FileInputStream fis = new FileInputStream("members.ser");
+      ObjectInputStream ois = new ObjectInputStream(fis);
+      listOfMembers = (ArrayList<Members>) ois.readObject();
+      ois.close();
+      fis.close();      
+   }
+   
+   public static void fillTimes(){
+      for(int i = 0; i<listOfMembers.size();i++){
+         /// tilføj alle der har registreret en tid i "back" til "backTider" med tid og navn
+         if(listOfMembers.get(i).getBackTime().get(0)==null){
+         } else {
+            for(int j = 0; j<listOfMembers.get(i).getBackTime().size(); j++){
+               backTider.add(new Tider(listOfMembers.get(i).getBackTime().get(j), (listOfMembers.get(i).getName())));
+            }
+         }
+         /// tilføj alle der har registreret en tid i "breast" til "breastTider" med tid og navn
+         if(listOfMembers.get(i).getBreastTime().get(0)==null){
+         } else {
+            for(int j = 0; j<listOfMembers.get(i).getBreastTime().size(); j++){
+               breastTider.add(new Tider(listOfMembers.get(i).getBreastTime().get(j), (listOfMembers.get(i).getName())));
+            }
+         }
+         /// tilføj alle der har registreret en tid i "crawl" til "crawlTider" med tid og navn
+         if(listOfMembers.get(i).getCrawlTime().get(0)==null){
+         } else {
+            for(int j = 0; j<listOfMembers.get(i).getCrawlTime().size(); j++){
+               crawlTider.add(new Tider(listOfMembers.get(i).getCrawlTime().get(j), (listOfMembers.get(i).getName())));
+            }
+         }
+      }
+   }
+   
    public static void fillDivList(){
       for(int i = 0;i<listOfMembers.size();i++){
          if(listOfMembers.get(i).getBackChosen()==true){
@@ -669,6 +697,7 @@ private static int whichMember2;
             competetiveMembers.add(listOfMembers.get(i));
          }
       }
+      fillTimes();
    }
    
    public static void viewCompetetive(){
