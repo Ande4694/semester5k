@@ -1,4 +1,6 @@
-public class Tider{
+import java.io.*;
+
+public class Tider implements Serializable{
 
    private static double time;
    private static String name;
@@ -13,11 +15,15 @@ public class Tider{
    }
    
    /// constructor
-   //// TID SKAL HELST VÆRE DOUBLE!!!!!
    public Tider(double tid, String navn){
       name = navn;
       time = tid;
    }
    
-   /// potentielt sort metode?
+   // print metode
+   public static void print(){
+      System.out.println("Time: "+time+"  -  "+name);
+   }
+   
+   
 }

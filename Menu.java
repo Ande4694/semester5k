@@ -442,19 +442,19 @@ private static int whichMember2;
                        
             case 1:
                System.out.println("View back times");
-               //////////////
+               viewBackTimes();
                TimeMenu();
                break;
             
             case 2:
                System.out.println("View crawl times");
-               /////////////
+               viewCrawlTimes();
                TimeMenu();
                break;
          
             case 3:
                System.out.println("View breast times");
-               //////////////////
+               viewBreastTimes();
                TimeMenu();
                break;
                
@@ -534,6 +534,7 @@ private static int whichMember2;
          System.out.print("Enter time: ");
          double time = antiJarlDouble();
          listOfMembers.get(whichMember).addCrawlTime(time);
+         crawlTider.add(new Tider(time,listOfMembers.get(whichMember).getName()));
          System.out.println("Time registered");
       } else {
          System.out.println("this member is not active in Crawl");
@@ -545,6 +546,7 @@ private static int whichMember2;
          System.out.print("Enter time: ");
          double time = antiJarlDouble();
          listOfMembers.get(whichMember).addBackTime(time);
+         backTider.add(new Tider(time,listOfMembers.get(whichMember).getName()));
          System.out.println("Time registered");
       } else {
          System.out.println("this member is not active in Back");
@@ -556,6 +558,7 @@ private static int whichMember2;
          System.out.print("Enter time: ");
          double time = antiJarlDouble();
          listOfMembers.get(whichMember).addBreastTime(time);
+         breastTider.add(new Tider(time,listOfMembers.get(whichMember).getName()));
          System.out.println("Time registered");
       } else {
          System.out.println("this member is not active in Breast");
@@ -630,6 +633,57 @@ private static int whichMember2;
       oos.writeObject(listOfMembers);
       oos.close();
       fos.close();
+      saveBreast();
+      saveBack();
+      saveCrawl();
+   }
+   
+   public static void saveBreast()throws IOException, ClassNotFoundException{
+      FileOutputStream fos = new FileOutputStream("breast.ser");
+      ObjectOutputStream oos = new ObjectOutputStream(fos);
+      oos.writeObject(breastTider);
+      oos.close();
+      fos.close();
+   }
+   
+   public static void saveCrawl()throws IOException, ClassNotFoundException{
+      FileOutputStream fos = new FileOutputStream("crawl.ser");
+      ObjectOutputStream oos = new ObjectOutputStream(fos);
+      oos.writeObject(crawlTider);
+      oos.close();
+      fos.close();
+   }
+   
+   public static void saveBack()throws IOException, ClassNotFoundException{
+      FileOutputStream fos = new FileOutputStream("back.ser");
+      ObjectOutputStream oos = new ObjectOutputStream(fos);
+      oos.writeObject(backTider);
+      oos.close();
+      fos.close();
+   }
+   
+   public static void fillBack()throws IOException, ClassNotFoundException{
+      FileInputStream fis = new FileInputStream("back.ser");
+      ObjectInputStream ois = new ObjectInputStream(fis);
+      backTider = (ArrayList<Tider>) ois.readObject();
+      ois.close();
+      fis.close();      
+   }
+   
+   public static void fillBreast()throws IOException, ClassNotFoundException{
+      FileInputStream fis = new FileInputStream("breast.ser");
+      ObjectInputStream ois = new ObjectInputStream(fis);
+      breastTider = (ArrayList<Tider>) ois.readObject();
+      ois.close();
+      fis.close();      
+   }
+   
+   public static void fillCrawl()throws IOException, ClassNotFoundException{
+      FileInputStream fis = new FileInputStream("crawl.ser");
+      ObjectInputStream ois = new ObjectInputStream(fis);
+      crawlTider = (ArrayList<Tider>) ois.readObject();
+      ois.close();
+      fis.close();      
    }
    
    public static void fillMembers()throws IOException, ClassNotFoundException{
@@ -637,33 +691,10 @@ private static int whichMember2;
       ObjectInputStream ois = new ObjectInputStream(fis);
       listOfMembers = (ArrayList<Members>) ois.readObject();
       ois.close();
-      fis.close();      
-   }
-   
-   public static void fillTimes(){
-      for(int i = 0; i<listOfMembers.size();i++){
-         /// tilføj alle der har registreret en tid i "back" til "backTider" med tid og navn
-         if(listOfMembers.get(i).getBackTime().get(0)==null){
-         } else {
-            for(int j = 0; j<listOfMembers.get(i).getBackTime().size(); j++){
-               backTider.add(new Tider(listOfMembers.get(i).getBackTime().get(j), (listOfMembers.get(i).getName())));
-            }
-         }
-         /// tilføj alle der har registreret en tid i "breast" til "breastTider" med tid og navn
-         if(listOfMembers.get(i).getBreastTime().get(0)==null){
-         } else {
-            for(int j = 0; j<listOfMembers.get(i).getBreastTime().size(); j++){
-               breastTider.add(new Tider(listOfMembers.get(i).getBreastTime().get(j), (listOfMembers.get(i).getName())));
-            }
-         }
-         /// tilføj alle der har registreret en tid i "crawl" til "crawlTider" med tid og navn
-         if(listOfMembers.get(i).getCrawlTime().get(0)==null){
-         } else {
-            for(int j = 0; j<listOfMembers.get(i).getCrawlTime().size(); j++){
-               crawlTider.add(new Tider(listOfMembers.get(i).getCrawlTime().get(j), (listOfMembers.get(i).getName())));
-            }
-         }
-      }
+      fis.close(); 
+      fillCrawl();
+      fillBack();
+      fillBreast();     
    }
    
    public static void fillDivList(){
@@ -697,7 +728,43 @@ private static int whichMember2;
             competetiveMembers.add(listOfMembers.get(i));
          }
       }
-      fillTimes();
+   }
+   
+   public static void viewBreastTimes(){
+      int option;
+      System.out.println("There are "+breastTider.size()+" registered times.\nHow many do you want to see?");
+      option = antiJarl();
+      if(option<0 || option>breastTider.size()){
+         System.out.println("Are you trying to provoke an IndexOutOfBoundsException??");
+      }
+      for(int i = 0; i<breastTider.size();i++){
+         breastTider.get(i).print();
+      }
+   }
+   
+   public static void viewBackTimes(){
+      int option;
+      System.out.println("There are "+backTider.size()+" registered times.\nHow many do you want to see?");
+      option = antiJarl();
+      if(option<0 || option>backTider.size()){
+         System.out.println("Are you trying to provoke an IndexOutOfBoundsException??");
+      }
+      for(int i = 0; i<backTider.size();i++){
+         backTider.get(i).print();
+      }
+   }
+   
+   public static void viewCrawlTimes(){
+      int option;
+      System.out.println("There are "+crawlTider.size()+" registered times.\nHow many do you want to see?");
+      option = antiJarl();
+      if(option<0 || option>crawlTider.size()){
+         System.out.println("Are you trying to provoke an IndexOutOfBoundsException??");
+      }
+      for(int i = 0; i<option;i++){
+         String text = crawlTider.get(i).getTime()+"  -  "+crawlTider.get(i).getName();
+         System.out.println(text);
+      }
    }
    
    public static void viewCompetetive(){
