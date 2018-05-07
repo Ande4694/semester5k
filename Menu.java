@@ -14,6 +14,7 @@ private static ArrayList<Members> backSwimmers = new ArrayList<>();
 private static ArrayList<Members> crawlSwimmers = new ArrayList<>();
 private static int anualFee = 1600;
 private static int whichMember;
+private static int whichMember2;
 
    public static void main (String[] args)throws IOException, ClassNotFoundException{
 
@@ -211,10 +212,18 @@ private static int whichMember;
          membersInArrear.add(member);
       }
       System.out.println("Member created");
-      
-      
    }
    
+   public static void adminMemberMenu(){
+      System.out.println("1: Delete member");
+      System.out.println("2: register member payment");
+      System.out.println("3: set member to active");
+      System.out.println("4: set member to competetive");
+      System.out.println("5: Set breast active");
+      System.out.println("6: set crawl active");
+      System.out.println("7: set back active");
+      System.out.println("0: ");
+   }
 
    public static void menuPromptStart(){
       System.out.println("1: Login");
@@ -350,7 +359,7 @@ private static int whichMember;
                break;
          
             case 3:
-               System.out.println("View restance");
+               System.out.println("View restance:");
                viewArrears();
                MenuCase();
                break;
@@ -363,7 +372,7 @@ private static int whichMember;
          
             case 5:
                System.out.println(" Administrate member");
-               //////////////////////
+               adminMember();
                MenuCase();
                break;
                
@@ -625,9 +634,6 @@ private static int whichMember;
          addTime();
       }
       
-      
-      // gem lortet - burde det gøre
-      // load lortet - burde det gøre
       // view lortet
       // view (top) af lortet
    }
@@ -678,9 +684,11 @@ private static int whichMember;
    }
    
    public static void viewArrears(){
-      for (int i = 0;i<membersInArrear.size();i++){
-         System.out.println(membersInArrear.get(i).getName());
-      } 
+      for (int i = 0;i<listOfMembers.size();i++){
+         if(listOfMembers.get(i).getPayed()==true){
+            System.out.println(listOfMembers.get(i).getName());
+         }
+      }
    }
    
    public static void viewAllMembers(){
@@ -744,23 +752,114 @@ private static int whichMember;
    // view breast times(parameter?)
    
    //////////////////administrate member////////////////////
-   
-   // delete
-   //indexof
-   //los.remove(i)
-   
-   //pay
-   
-   //set active/inactive
-   
-   // set competetiv / recreation
-   
-   // set breast active/unactiv
-   
-   // set crawl active/unactive
-   
-   // set back active/unactive
-   
+   public static void adminMember()throws IOException{
+      Scanner input = new Scanner(System.in);
+      boolean choice;
+      int option;
+      System.out.println("To register a swim time please select a member.");
+      for(int i = 0; i<listOfMembers.size();i++){
+         System.out.println("Member :"+i+" - "+listOfMembers.get(i).getName());
+      }
+      whichMember2 = antiJarl();
+      if(whichMember2<0 || whichMember2>listOfMembers.size()){
+         System.out.println("Are you trying to provoke an Index.OutOfBounds.Exception?... naughty naughty");
+      } else {
+         adminMemberMenu();
+         choice = true;
+         while (choice){
+            option = antiJarl();
+            switch(option){
+            
+               case 1:
+                  System.out.println(listOfMembers.get(whichMember2).getName()+" removed");
+                  listOfMembers.remove(whichMember2);
+                  choice = false;   
+                  break;
+                  
+               case 2:
+                  /// PAY
+                  if(listOfMembers.get(whichMember2).getPayed()==true){
+                     System.out.println(listOfMembers.get(whichMember2).getName()+" has already payed.");
+                  } else {
+                     listOfMembers.get(whichMember2).setPayed(true);
+                     System.out.println(listOfMembers.get(whichMember2).getName()+" has now payed.");
+                  }
+                  choice = false;
+                  break;
+                  
+               case 3:
+                  /// ACTIVE / INACTIVE
+                  if(listOfMembers.get(whichMember2).getActive()==true){
+                     System.out.println(listOfMembers.get(whichMember2).getName()+" is already active.");
+                  } else {
+                     listOfMembers.get(whichMember2).setActive(true);
+                     System.out.println(listOfMembers.get(whichMember2).getName()+" is now active.");
+                  }
+                  choice = false;
+                  break;
+                
+               case 4:
+                  // set competetiv / recreation
+                  if(listOfMembers.get(whichMember2).getCompetetive()==true){
+                     System.out.println(listOfMembers.get(whichMember2).getName()+" is already competetive.");
+                  } else {
+                     listOfMembers.get(whichMember2).setCompetetive(true);
+                     System.out.println(listOfMembers.get(whichMember2).getName()+" is now competetiv.");
+                  }
+                  choice = false;
+                  break;
+                  
+               case 5:
+                  // set breast active/unactiv
+                  if(listOfMembers.get(whichMember2).getBreastChosen()==true){
+                     System.out.println(listOfMembers.get(whichMember2).getName()+" is already active in breast.");
+                  } else {
+                     listOfMembers.get(whichMember2).setBreastChosen();
+                     System.out.println(listOfMembers.get(whichMember2).getName()+" is now active in breast.");
+                  }
+                  choice = false;
+                  break;
+               
+               case 6:
+                  // set crawl active/unactive
+                  if(listOfMembers.get(whichMember2).getCrawlChosen()==true){
+                     System.out.println(listOfMembers.get(whichMember2).getName()+" is already active in crawl.");
+                  } else {
+                     listOfMembers.get(whichMember2).setCrawlChosen();
+                     System.out.println(listOfMembers.get(whichMember2).getName()+" is now active in crawl.");
+                  }
+                  choice = false;
+                  break;
+               
+               case 7:
+                  // set back active/unactive
+                  if(listOfMembers.get(whichMember2).getBackChosen()==true){
+                     System.out.println(listOfMembers.get(whichMember2).getName()+" is already active in back.");
+                  } else {
+                     listOfMembers.get(whichMember2).setBackChosen();
+                     System.out.println(listOfMembers.get(whichMember2).getName()+" is now active in back.");
+                  }
+                  choice = false;
+                  break;    
+                  
+               case 0 :
+                  choice = false;
+                  break;
+                  
+               default:
+                  System.out.println("It was pretty clear that you only had 3 options...");
+                  break;
+            }
+         }
+      }
+      
+      
+      // gem lortet - burde det gøre
+      // load lortet - burde det gøre
+      // view lortet
+      // view (top) af lortet
+   }
+
    public static void login() throws IOException, ClassNotFoundException{
       String username;
       String password; 
