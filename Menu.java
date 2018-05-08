@@ -15,8 +15,6 @@ private static ArrayList<Members> breastSwimmers = new ArrayList<>();
 private static ArrayList<Members> backSwimmers = new ArrayList<>();
 private static ArrayList<Members> crawlSwimmers = new ArrayList<>();
 private static int anualFee = 1600;
-private static int whichMember;
-private static int whichMember2;
 
    public static void main (String[] args)throws IOException, ClassNotFoundException{
 
@@ -529,88 +527,17 @@ private static int whichMember2;
       }
    }
    
-   public static void addCrawlTime(){
-      if(listOfMembers.get(whichMember).getCrawlChosen() == true){
-         System.out.print("Enter time: ");
-         double time = antiJarlDouble();
-         listOfMembers.get(whichMember).addCrawlTime(time);
-         crawlTider.add(new Tider(time,listOfMembers.get(whichMember).getName()));
-         System.out.println("Time registered");
-      } else {
-         System.out.println("this member is not active in Crawl");
-      }
-   }
-   
-   public static void addBackTime(){
-      if(listOfMembers.get(whichMember).getBackChosen() == true){
-         System.out.print("Enter time: ");
-         double time = antiJarlDouble();
-         listOfMembers.get(whichMember).addBackTime(time);
-         backTider.add(new Tider(time,listOfMembers.get(whichMember).getName()));
-         System.out.println("Time registered");
-      } else {
-         System.out.println("this member is not active in Back");
-      }
-   }
-   
-   public static void addBreastTime(){
-      if(listOfMembers.get(whichMember).getBreastChosen() == true){
-         System.out.print("Enter time: ");
-         double time = antiJarlDouble();
-         listOfMembers.get(whichMember).addBreastTime(time);
-         breastTider.add(new Tider(time,listOfMembers.get(whichMember).getName()));
-         System.out.println("Time registered");
-      } else {
-         System.out.println("this member is not active in Breast");
-      }
-   }
-   
    public static void addTimeMenu(){
       System.out.println("1: Crawl");
       System.out.println("2: Back");
       System.out.println("3: Breast");
-      System.out.println("0: Go back");
    }
    
-   public static void addTime()throws IOException{
-      System.out.println("Now you need to select which disciplin you wish to register a swim time to.");
-      addTimeMenu();
-      boolean choice = true;
-      int option;
-      while (choice){
-         option = antiJarl();
-         switch(option){
-            
-               case 1:
-                  addCrawlTime();
-                  choice = false;   
-                  break;
-                  
-               case 2:
-                  addBackTime();
-                  choice = false;
-                  break;
-                  
-               case 3:
-                  addBreastTime();
-                  choice = false;
-                  break;
-                  
-               case 0 :
-                  regTime();
-                  choice = false;
-                  break;
-                  
-               default:
-                  System.out.println("It was pretty clear that you only had 3 options...");
-                  break;
-         }
-      }
-   }
-   
+     
    public static void regTime()throws IOException{
       Scanner input = new Scanner(System.in);
       boolean choice;
+      int whichMember;
       int option;
       System.out.println("To register a swim time please select a member.");
       for(int i = 0; i<listOfMembers.size();i++){
@@ -620,11 +547,62 @@ private static int whichMember2;
       if(whichMember<0 || whichMember>listOfMembers.size()){
          System.out.println("Are you trying to provoke an Index.OutOfBounds.Exception?... naughty naughty");
       } else {
-         addTime();
+         System.out.println("Now you need to select which disciplin you wish to register a swim time to.");
+         addTimeMenu();
+         choice = true;
+         while (choice){
+            option = antiJarl();
+            switch(option){
+            
+            case 1:
+            
+                  if(listOfMembers.get(whichMember).getCrawlChosen() == true){
+                  System.out.print("Enter time: ");
+                  double time = antiJarlDouble();
+                  listOfMembers.get(whichMember).addCrawlTime(time);
+                  crawlTider.add(new Tider(time,listOfMembers.get(whichMember).getName()));
+                  System.out.println("Time registered");
+                  } else {
+                     System.out.println("this member is not active in Crawl");
+                  }
+                  choice = false;   
+                  break;
+                  
+            case 2:
+            
+                  if(listOfMembers.get(whichMember).getBackChosen() == true){
+                  System.out.print("Enter time: ");
+                  double time = antiJarlDouble();
+                  listOfMembers.get(whichMember).addBackTime(time);
+                  backTider.add(new Tider(time,listOfMembers.get(whichMember).getName()));
+                  System.out.println("Time registered");
+                  } else {
+                     System.out.println("this member is not active in Back");
+                  }
+                  choice = false;
+                  break;
+                  
+               case 3:
+               
+                  if(listOfMembers.get(whichMember).getBreastChosen() == true){
+                  System.out.print("Enter time: ");
+                  double time = antiJarlDouble();
+                  listOfMembers.get(whichMember).addBreastTime(time);
+                  breastTider.add(new Tider(time,listOfMembers.get(whichMember).getName()));
+                  System.out.println("Time registered");
+                  } else {
+                     System.out.println("this member is not active in Breast");
+                  }
+                  choice = false;
+                  break;
+                  
+               default:
+               
+                  System.out.println("It was pretty clear that you only had 3 options...");
+                  break;
+               }
+         }
       }
-      
-      // view lortet
-      // view (top) af lortet
    }
    
    public static void saveMembers()throws IOException, ClassNotFoundException{
@@ -762,8 +740,7 @@ private static int whichMember2;
          System.out.println("Are you trying to provoke an IndexOutOfBoundsException??");
       }
       for(int i = 0; i<option;i++){
-         String text = crawlTider.get(i).getTime()+"  -  "+crawlTider.get(i).getName();
-         System.out.println(text);
+         crawlTider.get(i).print();
       }
    }
    
@@ -856,7 +833,7 @@ private static int whichMember2;
       for(int i = 0; i<listOfMembers.size();i++){
          System.out.println("Member :"+i+" - "+listOfMembers.get(i).getName());
       }
-      whichMember2 = antiJarl();
+      int whichMember2 = antiJarl();
       if(whichMember2<0 || whichMember2>listOfMembers.size()){
          System.out.println("Are you trying to provoke an Index.OutOfBounds.Exception?... naughty naughty");
       } else {
