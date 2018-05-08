@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class Tider implements Serializable{
+public class Tider implements Serializable, Comparable<Tider>{
 
    private double time;
    private String name;
@@ -24,6 +24,14 @@ public class Tider implements Serializable{
    public void print(){
       System.out.println("Time: "+time+"  -  "+name);
    }
+
+      public int compareTo(Tider another){
+         if(this.getTime()<another.getTime()){
+            return -1;
+         } else {
+            return 1;
+         }
+      }
    
    
 }

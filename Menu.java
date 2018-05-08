@@ -3,21 +3,21 @@ import java.util.*;
 
 public class Menu implements Serializable{
 
-      private static ArrayList<Members> listOfMembers = new ArrayList<>();
-      private static ArrayList<Members> competetiveMembers = new ArrayList<>();
-      private static ArrayList<Members> activeMembers = new ArrayList<>();
-      private static ArrayList<Members> membersInArrear = new ArrayList<>();
-      private static ArrayList<Members> breastSwimmers = new ArrayList<>();
-      private static ArrayList<Members> backSwimmers = new ArrayList<>();
-      private static ArrayList<Members> crawlSwimmers = new ArrayList<>();
-      private static User[] listOfAdmins = new User[3];
-      private static ArrayList<Tider> crawlTider = new ArrayList<>();
-      private static ArrayList<Tider> backTider = new ArrayList<>();
-      private static ArrayList<Tider> breastTider = new ArrayList<>();
+   private static ArrayList<Members> listOfMembers = new ArrayList<>();
+   private static ArrayList<Members> competetiveMembers = new ArrayList<>();
+   private static ArrayList<Members> activeMembers = new ArrayList<>();
+   private static ArrayList<Members> membersInArrear = new ArrayList<>();
+   private static ArrayList<Members> breastSwimmers = new ArrayList<>();
+   private static ArrayList<Members> backSwimmers = new ArrayList<>();
+   private static ArrayList<Members> crawlSwimmers = new ArrayList<>();
+   private static User[] listOfAdmins = new User[3];
+   private static ArrayList<Tider> crawlTider = new ArrayList<>();
+   private static ArrayList<Tider> backTider = new ArrayList<>();
+   private static ArrayList<Tider> breastTider = new ArrayList<>();
       
    public static void main (String[] args)throws IOException, ClassNotFoundException{
    
-      fillMembers();
+      //fillMembers();
       fillDivList();
       login();
    }
@@ -554,31 +554,32 @@ public class Menu implements Serializable{
             option = antiJarl();
             switch(option){
             
-            case 1:
-            
+               case 1:
+               
                   if(listOfMembers.get(whichMember).getCrawlChosen() == true){
-                  System.out.print("Enter time: ");
-                  double time = antiJarlDouble();
-                  //listOfMembers.get(whichMember).addCrawlTime(time);
-                  Members mem = listOfMembers.get(whichMember);
-                  String temp = mem.getName();
-                  Tider tid = new Tider(time,temp);
-                  crawlTider.add(tid);
-                  System.out.println("Time registered");
+                     System.out.print("Enter time: ");
+                     double time = antiJarlDouble();
+                     Members mem = listOfMembers.get(whichMember);
+                     String temp = mem.getName();
+                     Tider tid = new Tider(time,temp);
+                     crawlTider.add(tid);
+                     Collections.sort(crawlTider);
+                     System.out.println("Time registered");
                   } else {
                      System.out.println("this member is not active in Crawl");
                   }
                   choice = false;   
                   break;
                   
-            case 2:
-            
+               case 2:
+               
                   if(listOfMembers.get(whichMember).getBackChosen() == true){
-                  System.out.print("Enter time: ");
-                  double time = antiJarlDouble();
-                  listOfMembers.get(whichMember).addBackTime(time);
-                  backTider.add(new Tider(time,listOfMembers.get(whichMember).getName()));
-                  System.out.println("Time registered");
+                     System.out.print("Enter time: ");
+                     double time = antiJarlDouble();
+                     listOfMembers.get(whichMember).addBackTime(time);
+                     backTider.add(new Tider(time,listOfMembers.get(whichMember).getName()));
+                     Collections.sort(backTider);
+                     System.out.println("Time registered");
                   } else {
                      System.out.println("this member is not active in Back");
                   }
@@ -588,11 +589,12 @@ public class Menu implements Serializable{
                case 3:
                
                   if(listOfMembers.get(whichMember).getBreastChosen() == true){
-                  System.out.print("Enter time: ");
-                  double time = antiJarlDouble();
-                  listOfMembers.get(whichMember).addBreastTime(time);
-                  breastTider.add(new Tider(time,listOfMembers.get(whichMember).getName()));
-                  System.out.println("Time registered");
+                     System.out.print("Enter time: ");
+                     double time = antiJarlDouble();
+                     listOfMembers.get(whichMember).addBreastTime(time);
+                     breastTider.add(new Tider(time,listOfMembers.get(whichMember).getName()));
+                     Collections.sort(breastTider);
+                     System.out.println("Time registered");
                   } else {
                      System.out.println("this member is not active in Breast");
                   }
@@ -603,7 +605,7 @@ public class Menu implements Serializable{
                
                   System.out.println("It was pretty clear that you only had 3 options...");
                   break;
-               }
+            }
          }
       }
    }
@@ -771,32 +773,32 @@ public class Menu implements Serializable{
    public static void viewAllMembers(){
       for(int i = 0;i<listOfMembers.size();i++){
          String text = "["+listOfMembers.get(i).getName()+", "+listOfMembers.get(i).getAge()+", ";
-      if(listOfMembers.get(i).getActive()==true){
-         text = text + "Active, ";
-      } else {
-         text = text + "Passive, ";
-      }
-      if(listOfMembers.get(i).getCompetetive()==true){
-         text = text + "Competetive, ";
-      } else {
-         text = text + "Recreation, ";
-      }
-      if (listOfMembers.get(i).getCrawlChosen()==true){
-         text = text + "Crawl - active, ";
-      } else {
-         text = text +"Crawl - inactive; ";
-      }
-      if (listOfMembers.get(i).getBackChosen()==true){
-         text = text +"Back - active, ";
-      } else {
-         text = text +"Back - inactive, ";
-      }
-      if (listOfMembers.get(i).getBreastChosen()==true){
-         text = text +"Breast - active]";
-      } else {
-         text = text +"Breast - inactive]\n";
-      }
-      System.out.println(text);
+         if(listOfMembers.get(i).getActive()==true){
+            text = text + "Active, ";
+         } else {
+            text = text + "Passive, ";
+         }
+         if(listOfMembers.get(i).getCompetetive()==true){
+            text = text + "Competetive, ";
+         } else {
+            text = text + "Recreation, ";
+         }
+         if (listOfMembers.get(i).getCrawlChosen()==true){
+            text = text + "Crawl - active, ";
+         } else {
+            text = text +"Crawl - inactive; ";
+         }
+         if (listOfMembers.get(i).getBackChosen()==true){
+            text = text +"Back - active, ";
+         } else {
+            text = text +"Back - inactive, ";
+         }
+         if (listOfMembers.get(i).getBreastChosen()==true){
+            text = text +"Breast - active]";
+         } else {
+            text = text +"Breast - inactive]\n";
+         }
+         System.out.println(text);
       }
    }
    
@@ -946,8 +948,8 @@ public class Menu implements Serializable{
          fillMembers();
       }
       BufferedReader bs = new BufferedReader(new FileReader(f));
- 
-
+   
+   
       boolean trainer = false;
       boolean admin = false;
       boolean cashier = false;
