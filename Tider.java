@@ -2,15 +2,15 @@ import java.io.*;
 
 public class Tider implements Serializable{
 
-   private static double time;
-   private static String name;
+   private double time;
+   private String name;
    
    /// getters
-   public static String getName(){
+   public String getName(){
       return name;
    }
    
-   public static double getTime(){
+   public double getTime(){
       return time;
    }
    
@@ -21,7 +21,7 @@ public class Tider implements Serializable{
    }
    
    // print metode
-   public static void print(){
+   public void print(){
       System.out.println("Time: "+time+"  -  "+name);
    }
    

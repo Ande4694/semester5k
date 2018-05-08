@@ -3,21 +3,20 @@ import java.util.*;
 
 public class Menu implements Serializable{
 
-private static User[] listOfAdmins = new User[3];
-private static ArrayList<Tider> crawlTider = new ArrayList<>();
-private static ArrayList<Tider> backTider = new ArrayList<>();
-private static ArrayList<Tider> breastTider = new ArrayList<>();
-private static ArrayList<Members> listOfMembers = new ArrayList<>();
-private static ArrayList<Members> competetiveMembers = new ArrayList<>();
-private static ArrayList<Members> activeMembers = new ArrayList<>();
-private static ArrayList<Members> membersInArrear = new ArrayList<>();
-private static ArrayList<Members> breastSwimmers = new ArrayList<>();
-private static ArrayList<Members> backSwimmers = new ArrayList<>();
-private static ArrayList<Members> crawlSwimmers = new ArrayList<>();
-private static int anualFee = 1600;
-
+      private static ArrayList<Members> listOfMembers = new ArrayList<>();
+      private static ArrayList<Members> competetiveMembers = new ArrayList<>();
+      private static ArrayList<Members> activeMembers = new ArrayList<>();
+      private static ArrayList<Members> membersInArrear = new ArrayList<>();
+      private static ArrayList<Members> breastSwimmers = new ArrayList<>();
+      private static ArrayList<Members> backSwimmers = new ArrayList<>();
+      private static ArrayList<Members> crawlSwimmers = new ArrayList<>();
+      private static User[] listOfAdmins = new User[3];
+      private static ArrayList<Tider> crawlTider = new ArrayList<>();
+      private static ArrayList<Tider> backTider = new ArrayList<>();
+      private static ArrayList<Tider> breastTider = new ArrayList<>();
+      
    public static void main (String[] args)throws IOException, ClassNotFoundException{
-
+   
       fillMembers();
       fillDivList();
       login();
@@ -33,6 +32,7 @@ private static int anualFee = 1600;
       boolean tempBack = false;
       boolean tempBreast = false;
       boolean tempPayed = false;
+      int anualFee = 1600;
       System.out.print("Please enter the age of new member: ");
       int tempAge = antiJarl();
       System.out.println();
@@ -559,8 +559,11 @@ private static int anualFee = 1600;
                   if(listOfMembers.get(whichMember).getCrawlChosen() == true){
                   System.out.print("Enter time: ");
                   double time = antiJarlDouble();
-                  listOfMembers.get(whichMember).addCrawlTime(time);
-                  crawlTider.add(new Tider(time,listOfMembers.get(whichMember).getName()));
+                  //listOfMembers.get(whichMember).addCrawlTime(time);
+                  Members mem = listOfMembers.get(whichMember);
+                  String temp = mem.getName();
+                  Tider tid = new Tider(time,temp);
+                  crawlTider.add(tid);
                   System.out.println("Time registered");
                   } else {
                      System.out.println("this member is not active in Crawl");
@@ -661,7 +664,8 @@ private static int anualFee = 1600;
       ObjectInputStream ois = new ObjectInputStream(fis);
       crawlTider = (ArrayList<Tider>) ois.readObject();
       ois.close();
-      fis.close();      
+      fis.close();  
+      System.out.println("crawl added");    
    }
    
    public static void fillMembers()throws IOException, ClassNotFoundException{
