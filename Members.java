@@ -119,6 +119,7 @@ public class Members implements Serializable{
    public void addBackTime(double tid){
       back.addTime(tid);
    }
+   
    public void addBreastTime(double tid){
       breast.addTime(tid);
    }

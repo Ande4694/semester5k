@@ -17,7 +17,7 @@ public class Menu implements Serializable{
       
    public static void main (String[] args)throws IOException, ClassNotFoundException{
    
-      //fillMembers();
+      fillMembers();
       fillDivList();
       login();
    }
