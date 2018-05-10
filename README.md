@@ -36,16 +36,24 @@ https://drive.google.com/file/d/1m_1JDk-rF0qPjRROO-6csmHPYNT2hqri/view
 https://drive.google.com/file/d/1hpGo2npJPPaDvuTuUniG1n8xz4zpFteu/view
 # Metode navne:
 # User:
+- <<constructor>>
 - Trainer(String username, String password);
 - setPassword(String password);
 - setUsername(String username);
 - getUsername();
 - getPassword();
-# Member:
-- setPayFeeTrue();
-- setPayFeeFalse();
-- setName(String name);
-- setAge(int age);
+- getTrainer();
+- getCashier();
+- getAdmin();
+- setTrainer();
+- setCashier();
+- setAdmin(); 
+# Members:
+- <<constructor>>
+- Members();
+- getBackTime();
+- getCrawlTime();
+- getBreastTime();
 - getAge();
 - getName();
-- getPayStatus();
+ 
