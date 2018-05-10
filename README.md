@@ -50,10 +50,76 @@ https://drive.google.com/file/d/1hpGo2npJPPaDvuTuUniG1n8xz4zpFteu/view
 - setAdmin(); 
 # Members:
 - <<constructor>>
-- Members();
+- Members(int, String, boolean, boolean, boolean);
 - getBackTime();
 - getCrawlTime();
 - getBreastTime();
 - getAge();
 - getName();
+- getActive();
+- getCompetetive
+- getPayed(); 
+- getBackChosen();
+- getCrawlChosen(); 
+- getBreastChosen();
+- setAge(int);
+- setName(String);
+- setActive(boolean); 
+- setCompetetive(boolean);
+- setPayed(boolean);
+- setBackChosen();
+- setBackUnChosen();
+- setBreastChosen();
+- setBreastUnChosen();
+- setCrawlChosen();
+- setCrawlUnCHosen();
+- addCrawlTime(double);
+- addBackTime(double);
+- addBreastTime(double);
+ # interface Disciplin:
+- public void addTime(double);
+- public void setChosen();
+- public void setUnChosen();
+- public ArrayList<Double> getTime();
+- public boolean getChosen();
+# Back, Crawl, Breast implements disciplin 
+# Menu:
+- addMember();
+- adminMemberMenu();
+- menuPromptStart();
+- MemberListMenu();
+- TimeMenu();
+- MenuCase();
+- TrainerCase();
+- AdminCase();
+- CashierCase();
+- TimeCase();
+- MemberCase();
+- addTimeMenu();
+- regTime();
+- saveMembers();
+- saveBreast();
+- saveCrawl();
+- saveBack();
+- fillBack();
+- fillBreast();
+- fillCrawl();
+- fillMembers();
+- fillDivList();
+- viewBreastTimes();
+- viewCrawlTimes();
+- viewBackTimes();
+- viewCompetetive();
+- viewActive();
+- viewArrears();
+- viewAllMembers();
+- viewBackSwimmers();
+- viewCrawlSwimmers();
+- viewBreastSwimmers();
+- adminMember();
+- login();
+- antiJarl();
+- antiJarlDouble();
+- ChangedPassword();
+- restart(); 
  
