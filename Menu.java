@@ -214,7 +214,7 @@ public class Menu implements Serializable{
       System.out.println("0: Exit");
    }
    
-   public static void MemberListMenu(){
+   public static void memberListMenu(){
       System.out.println("1: View all member");
       System.out.println("2: View competetiv");
       System.out.println("3: View active");
@@ -225,7 +225,7 @@ public class Menu implements Serializable{
       System.out.println("0: Back");
    }
    
-   public static void TimeMenu(){
+   public static void timeMenu(){
       System.out.println("1: View back time");
       System.out.println("2: View crawl time");
       System.out.println("3: View breast time");
@@ -233,7 +233,7 @@ public class Menu implements Serializable{
       System.out.println("0: Back");
    }
    
-   public static void MenuCase(){
+   public static void menuCase(){
       if(User.getTrainer()){
          System.out.println("1: Change password");
          System.out.println("2: Register Time");
@@ -262,12 +262,12 @@ public class Menu implements Serializable{
       }
    }
 
-   public static void TrainerCase()throws IOException, ClassNotFoundException{
+   public static void trainerCase()throws IOException, ClassNotFoundException{
       boolean choice = true;
       int option;
       Scanner scan = new Scanner(System.in);
       
-      MenuCase();
+      menuCase();
       while (choice){
       
          option = antiJarl();
@@ -276,29 +276,29 @@ public class Menu implements Serializable{
                        
             case 1:
                System.out.println("Change password");
-               ChangedPassword();
-               MenuCase();
+               changedPassword();
+               menuCase();
                break;
          
             case 2:
                System.out.println("Register Time");
                regTime();
-               MenuCase();
+               menuCase();
                break;
          
             case 3:
                System.out.println("Times");
-               TimeCase();
+               timeCase();
                break;
                
             case 4:
                System.out.println("Members\n");
-               MemberCase();
+               memberCase();
                break;
          
             case 5:
                System.out.println("Trainer is now logged off");
-               User.SetTrainer(false);
+               User.setTrainer(false);
                restart();
                break;
             
@@ -310,7 +310,7 @@ public class Menu implements Serializable{
                
             default:
                System.out.println("Wrong input, try again");
-               MemberCase();
+               memberCase();
                break;
          }
       }
@@ -318,12 +318,12 @@ public class Menu implements Serializable{
    }
    
    //Admin
-   public static void AdminCase()throws IOException, ClassNotFoundException{
+   public static void adminCase()throws IOException, ClassNotFoundException{
       boolean choice = true;
       int option;
       Scanner scan = new Scanner(System.in);
       
-      MenuCase();
+      menuCase();
       while (choice){
       
          option = antiJarl();
@@ -332,37 +332,37 @@ public class Menu implements Serializable{
                        
             case 1:
                System.out.println("Change password");
-               ChangedPassword();
-               MenuCase();
+               changedPassword();
+               menuCase();
                break;
          
             case 2:
                System.out.println("Create new Member");
                addMember();
-               MenuCase();
+               menuCase();
                break;
          
             case 3:
                System.out.println("View restance:");
                viewArrears();
-               MenuCase();
+               menuCase();
                break;
                
             case 4:
             
                System.out.println("Members\n");
-               MemberCase();
+               memberCase();
                break;
          
             case 5:
                System.out.println(" Administrate member");
                adminMember();
-               MenuCase();
+               menuCase();
                break;
                
             case 6:
                System.out.println("Admin is now logged off");
-               User.SetAdmin(false);
+               User.setAdmin(false);
                restart();
                break;
             
@@ -374,7 +374,7 @@ public class Menu implements Serializable{
                
             default:
                System.out.println("Wrong input, try again");
-               MemberCase();
+               memberCase();
                break;
          }
       }
@@ -382,12 +382,12 @@ public class Menu implements Serializable{
    } 
    
    //Cashier
-   public static void CashierCase()throws IOException, ClassNotFoundException{
+   public static void cashierCase()throws IOException, ClassNotFoundException{
       boolean choice = true;
       int option;
       Scanner scan = new Scanner(System.in);
       
-      MenuCase();
+      menuCase();
       while (choice){
       
          option = antiJarl();
@@ -396,18 +396,18 @@ public class Menu implements Serializable{
                        
             case 1:
                System.out.println("Change password");
-               ChangedPassword();
-               MenuCase();
+               changedPassword();
+               menuCase();
                break;
             
             case 2:
                System.out.println("Members\n");
-               MemberCase();
+               memberCase();
                break;
          
             case 3:
                System.out.println("Cashier is now logged off");
-               User.SetCashier(false);
+               User.setCashier(false);
                restart();
                break;
             
@@ -419,19 +419,19 @@ public class Menu implements Serializable{
                
             default:
                System.out.println("Wrong input, try again");
-               MemberCase();
+               memberCase();
                break;
          }
       }
    
    }
    
-   public static void TimeCase()throws IOException{
+   public static void timeCase()throws IOException{
      
       boolean choice = true;
       int option;
       Scanner scan = new Scanner(System.in);
-      TimeMenu();
+      timeMenu();
       while (choice){
       
          option = antiJarl();
@@ -441,42 +441,42 @@ public class Menu implements Serializable{
             case 1:
                System.out.println("View back times");
                viewBackTimes();
-               TimeMenu();
+               timeMenu();
                break;
             
             case 2:
                System.out.println("View crawl times");
                viewCrawlTimes();
-               TimeMenu();
+               timeMenu();
                break;
          
             case 3:
                System.out.println("View breast times");
                viewBreastTimes();
-               TimeMenu();
+               timeMenu();
                break;
                
             case 0:
                System.out.println("Going back");
                choice = false;
-               MenuCase();
+               menuCase();
                break;
                
             default:
                System.out.println("Wrong input, try again");
-               TimeMenu();
+               timeMenu();
                break;
          }
       }
    
    }
    
-   public static void MemberCase()throws IOException{
+   public static void memberCase()throws IOException{
      
       boolean choice = true;
       int option;
       Scanner scan = new Scanner(System.in);
-      MemberListMenu();
+      memberListMenu();
       while (choice){
       
          option = antiJarl();
@@ -485,43 +485,43 @@ public class Menu implements Serializable{
                        
             case 1:
                viewAllMembers();
-               MemberListMenu();
+               memberListMenu();
                break;
             
             case 2:
                viewCompetetive();
-               MemberListMenu();
+               memberListMenu();
                break;
          
             case 3:
                viewActive();
-               MemberListMenu();
+               memberListMenu();
                break;
             
             case 4:
                viewBackSwimmers();
-               MemberListMenu();
+               memberListMenu();
                break;
                
             case 5:
                viewCrawlSwimmers();
-               MemberListMenu();
+               memberListMenu();
                break;
                
             case 6:
                viewBreastSwimmers();
-               MemberListMenu();
+               memberListMenu();
                break;
                
             case 0:
                System.out.println("Going back");
                choice = false;
-               MenuCase();
+               menuCase();
                break;
                
             default:
                System.out.println("Wrong input, try again");
-               MemberCase();
+               memberCase();
                break;
          }
       }
@@ -823,13 +823,7 @@ public class Menu implements Serializable{
          System.out.println(breastSwimmers.get(i).getName());
       } 
    }
-   
-   // view back times(parameter?)
-   
-   // view crawl times(parameter?)
-   
-   // view breast times(parameter?)
-   
+
    //////////////////administrate member////////////////////
    public static void adminMember()throws IOException{
       Scanner input = new Scanner(System.in);
@@ -931,12 +925,6 @@ public class Menu implements Serializable{
             }
          }
       }
-      
-      
-      // gem lortet - burde det gøre
-      // load lortet - burde det gøre
-      // view lortet
-      // view (top) af lortet
    }
 
    public static void login() throws IOException, ClassNotFoundException{
@@ -1027,13 +1015,13 @@ public class Menu implements Serializable{
                   loggedInUser = user;
                   if (loggedInUser == listOfAdmins[0]){
                      trainer = true;
-                     User.SetTrainer(true);
+                     User.setTrainer(true);
                   }
                   else if (loggedInUser == listOfAdmins[1]){
-                     User.SetAdmin(true);
+                     User.setAdmin(true);
                   }
                   else if (loggedInUser == listOfAdmins[2]){
-                     User.SetCashier(true);
+                     User.setCashier(true);
                   }
                
                   break;
@@ -1049,13 +1037,13 @@ public class Menu implements Serializable{
          System.out.println("\nUser successfully logged in: "+loggedInUser.getUsername()+"\n");
          
          if (User.getTrainer() == true){
-            TrainerCase();
+            trainerCase();
          }
          else if (User.getAdmin() == true){
-            AdminCase();
+            adminCase();
          }
          else if (User.getCashier() == true){
-            CashierCase();
+            cashierCase();
          }else{
             System.out.println("Not working");
          }
@@ -1086,7 +1074,7 @@ public class Menu implements Serializable{
       return input.nextDouble();     
    }
    
-   public static void ChangedPassword()throws IOException{
+   public static void changedPassword()throws IOException{
       File f = new File("Logins.txt");
       int UserCount = 0;
       if(User.getTrainer() == true){

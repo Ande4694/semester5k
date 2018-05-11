@@ -25,13 +25,13 @@ public class Tider implements Serializable, Comparable<Tider>{
       System.out.println("Time: "+time+"  -  "+name);
    }
 
-      public int compareTo(Tider another){
-         if(this.getTime()<another.getTime()){
-            return -1;
-         } else {
-            return 1;
-         }
+   public int compareTo(Tider another){
+      if(this.getTime()<another.getTime()){
+         return -1;
+      } else {
+         return 1;
       }
+   }
    
    
 }
