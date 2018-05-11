@@ -36,16 +36,90 @@ https://drive.google.com/file/d/1m_1JDk-rF0qPjRROO-6csmHPYNT2hqri/view
 https://drive.google.com/file/d/1hpGo2npJPPaDvuTuUniG1n8xz4zpFteu/view
 # Metode navne:
 # User:
+- <<constructor>>
 - Trainer(String username, String password);
 - setPassword(String password);
 - setUsername(String username);
 - getUsername();
 - getPassword();
-# Member:
-- setPayFeeTrue();
-- setPayFeeFalse();
-- setName(String name);
-- setAge(int age);
+- getTrainer();
+- getCashier();
+- getAdmin();
+- setTrainer();
+- setCashier();
+- setAdmin(); 
+# Members:
+- <<constructor>>
+- Members(int, String, boolean, boolean, boolean);
+- getBackTime();
+- getCrawlTime();
+- getBreastTime();
 - getAge();
 - getName();
-- getPayStatus();
+- getActive();
+- getCompetetive
+- getPayed(); 
+- getBackChosen();
+- getCrawlChosen(); 
+- getBreastChosen();
+- setAge(int);
+- setName(String);
+- setActive(boolean); 
+- setCompetetive(boolean);
+- setPayed(boolean);
+- setBackChosen();
+- setBackUnChosen();
+- setBreastChosen();
+- setBreastUnChosen();
+- setCrawlChosen();
+- setCrawlUnCHosen();
+- addCrawlTime(double);
+- addBackTime(double);
+- addBreastTime(double);
+ # interface Disciplin:
+- public void addTime(double);
+- public void setChosen();
+- public void setUnChosen();
+- public ArrayList<Double> getTime();
+- public boolean getChosen();
+# Back, Crawl, Breast implements disciplin 
+# Menu:
+- addMember();
+- adminMemberMenu();
+- menuPromptStart();
+- MemberListMenu();
+- TimeMenu();
+- MenuCase();
+- TrainerCase();
+- AdminCase();
+- CashierCase();
+- TimeCase();
+- MemberCase();
+- addTimeMenu();
+- regTime();
+- saveMembers();
+- saveBreast();
+- saveCrawl();
+- saveBack();
+- fillBack();
+- fillBreast();
+- fillCrawl();
+- fillMembers();
+- fillDivList();
+- viewBreastTimes();
+- viewCrawlTimes();
+- viewBackTimes();
+- viewCompetetive();
+- viewActive();
+- viewArrears();
+- viewAllMembers();
+- viewBackSwimmers();
+- viewCrawlSwimmers();
+- viewBreastSwimmers();
+- adminMember();
+- login();
+- antiJarl();
+- antiJarlDouble();
+- ChangedPassword();
+- restart(); 
+ 

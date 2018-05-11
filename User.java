@@ -42,15 +42,15 @@ public class User implements Serializable{
       return cashier;
    }
    
-   public static void SetTrainer(boolean trainer1){
+   public static void setTrainer(boolean trainer1){
       trainer = trainer1;
    }
    
-   public static void SetAdmin(boolean admin1){
+   public static void setAdmin(boolean admin1){
       admin = admin1;
    }
    
-   public static void SetCashier(boolean cashier1){
+   public static void setCashier(boolean cashier1){
       cashier = cashier1;
    }
 
