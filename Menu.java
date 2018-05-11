@@ -666,8 +666,7 @@ public class Menu implements Serializable{
       ObjectInputStream ois = new ObjectInputStream(fis);
       crawlTider = (ArrayList<Tider>) ois.readObject();
       ois.close();
-      fis.close();  
-      System.out.println("crawl added");    
+      fis.close();      
    }
    
    public static void fillMembers()throws IOException, ClassNotFoundException{

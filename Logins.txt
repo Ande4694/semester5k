@@ -1,7 +1,0 @@
-<<<<<<< HEAD
-Trainer   12345
-=======
-Trainer   1234
->>>>>>> Anders
-Admin   7894
-Cashier   1337
