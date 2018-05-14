@@ -1,21 +1,21 @@
 import java.io.*;
 import java.util.*;
 
-public class Breast implements Disciplin, Serializable{
+public class Breast extends Back{
 
    private ArrayList<Double> time = new ArrayList<>();
    private boolean chosen;
    
    public void addTime(double tid){
-      time.add(tid);
+      super.addTime(tid);
    }
    
    public void setChosen(){
-      chosen = true;
+      super.setChosen();
    }  
    
    public void setUnChosen(){
-      chosen = false;
+      super.setUnChosen();
    }
    
    public ArrayList<Double> getTime(){
