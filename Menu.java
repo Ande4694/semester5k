@@ -763,7 +763,7 @@ public class Menu implements Serializable{
    
    public static void viewArrears(){
       for (int i = 0;i<listOfMembers.size();i++){
-         if(listOfMembers.get(i).getPayed()==true){
+         if(listOfMembers.get(i).getPayed()==false){
             System.out.println(listOfMembers.get(i).getName());
          }
       }
