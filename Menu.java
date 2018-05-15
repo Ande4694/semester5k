@@ -206,7 +206,7 @@ public class Menu implements Serializable{
       System.out.println("5: Set breast active");
       System.out.println("6: set crawl active");
       System.out.println("7: set back active");
-      System.out.println("0: ");
+      System.out.println("0: Back");
    }
 
    public static void menuPromptStart(){
@@ -828,7 +828,7 @@ public class Menu implements Serializable{
       Scanner input = new Scanner(System.in);
       boolean choice;
       int option;
-      System.out.println("To register a swim time please select a member.");
+      System.out.println("Please select a member.");
       for(int i = 0; i<listOfMembers.size();i++){
          System.out.println("Member :"+i+" - "+listOfMembers.get(i).getName());
       }
