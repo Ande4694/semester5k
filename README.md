@@ -16,17 +16,19 @@ https://drive.google.com/file/d/1sk_Jc5Po04ytgcV0-dcdpC0GtFKnBuQx/view?usp=shari
 https://drive.google.com/file/d/1z6_Xqqnjh4qO68_sg6L0mStS81mJwc-l/view?usp=sharing
 - Class diagram
 https://drive.google.com/file/d/1N8zYo3anNIBvI3Sak3QscIVlwwU0Eyny/view?usp=sharing
+# SSD
 - SSD Login
 https://drive.google.com/file/d/14bCRw2Uz8SSSm3VoEdxTTaAcpf1_KQ1p/view?usp=sharing
- - SSD Change password
- https://drive.google.com/file/d/1nKxQme6-QXktejLlhKdXafpUnxy1LvjW/view?usp=sharing
- - SSD Create new member
- https://drive.google.com/file/d/1IwCltab7sxVQXNkBEzDBAbuMM1ILI8II/view?usp=sharing
-
+- SSD Change password
+https://drive.google.com/file/d/1nKxQme6-QXktejLlhKdXafpUnxy1LvjW/view?usp=sharing
+- SSD Create new member
+https://drive.google.com/file/d/1IwCltab7sxVQXNkBEzDBAbuMM1ILI8II/view?usp=sharing
+ 
+# SD
 - Sequence diagram regTime()
 https://drive.google.com/file/d/1i-WxN2_y4Vc0piCDfyN_18QW4QwyduAt/view?usp=sharing
 - Sequence diagram regTime() & code
-https://drive.google.com/file/d/1D1tK86_KLvao12T6u7Uwv-1WiLg2JSkB/view?usp=sharing
+https://drive.google.com/file/d/1TLX97wNexkZoW8kz3SfyvBHK9k8NSDMl/view?usp=sharing
 - Sequence SAMLET
 https://drive.google.com/file/d/18wiF2wrOyOZ4fhWSnJCJ9AElFYrAXW6k/view?usp=sharing
 
