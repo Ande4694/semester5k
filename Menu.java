@@ -559,8 +559,9 @@ public class Menu implements Serializable{
                   if(listOfMembers.get(whichMember).getCrawlChosen() == true){
                      System.out.print("Enter time: ");
                      double time = antiJarlDouble();
-                     Members mem = listOfMembers.get(whichMember);
-                     String temp = mem.getName();
+                     String temp = listOfMembers.get(whichMember).getName();
+                     //Members mem = listOfMembers.get(whichMember);
+                     //String temp = mem.getName();
                      Tider tid = new Tider(time,temp);
                      crawlTider.add(tid);
                      Collections.sort(crawlTider);
