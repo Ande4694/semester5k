@@ -39,7 +39,7 @@ public class Menu implements Serializable{
       System.out.print("Please enter the name of the new member: ");
       String tempName = scan.nextLine();
       System.out.println("Is the member status competetiv or recreation?");
-      System.out.println("1: competetiv\n2: recreation");
+      System.out.println("1: Competetiv\n2: Recreation");
       while(choice){
          option = antiJarl();
          switch(option){
@@ -54,11 +54,11 @@ public class Menu implements Serializable{
                break;
                
             default : 
-               System.out.println("please chose either 1 or 2.");
+               System.out.println("Please choose either 1 or 2.");
          }
       }
       choice = true;
-      System.out.println("Does the member wish to be active or passive\n1: Active\n2: passive");
+      System.out.println("Does the member wish to be active or passive\n1: Active\n2: Passive");
       while (choice){
          option = antiJarl();
          switch(option){
@@ -73,11 +73,11 @@ public class Menu implements Serializable{
                break;
                
             default : 
-               System.out.println("please chose either 1 or 2.");
+               System.out.println("Please choose either 1 or 2.");
          }
       }
       choice = true;
-      System.out.println("Does the member wish to join the crawl team?\n1: yes\n2: no");
+      System.out.println("Does the member wish to join the crawl team?\n1: Yes\n2: No");
       while (choice){
          option = antiJarl();
          switch(option){
@@ -92,11 +92,11 @@ public class Menu implements Serializable{
                break;
             
             default : 
-               System.out.println("please chose either 1 or 2.");
+               System.out.println("Please choose either 1 or 2.");
          }
       }
       choice = true;
-      System.out.println("Does the member wish to join the breast team?\n1: yes\n2: no");
+      System.out.println("Does the member wish to join the breast team?\n1: Yes\n2: No");
       while (choice){
          option = antiJarl();
          switch(option){
@@ -111,11 +111,11 @@ public class Menu implements Serializable{
                break;
             
             default : 
-               System.out.println("please chose either 1 or 2.");
+               System.out.println("Please choose either 1 or 2.");
          }
       }
       choice = true;
-      System.out.println("Does the member wish to join the back team?\n1: yes\n2: no");
+      System.out.println("Does the member wish to join the back team?\n1: Yes\n2: No");
       while (choice){
          option = antiJarl();
          switch(option){
@@ -129,7 +129,7 @@ public class Menu implements Serializable{
                break;
             
             default : 
-               System.out.println("please chose either 1 or 2.");
+               System.out.println("Please choose either 1 or 2.");
          }
       }
       if (!tempAct){
@@ -141,7 +141,7 @@ public class Menu implements Serializable{
       if (tempAge>60){
          anualFee -= (anualFee*0.75);
       }
-      System.out.println("The anual fee for the new member is "+anualFee+"\nDoes "+tempName+" wish to pay now?\n1: pay now\n2: pay later");
+      System.out.println("The anual fee for the new member is "+anualFee+"\nDoes "+tempName+" wish to pay now?\n1: Pay now\n2: Pay later");
       choice = true;
       while (choice){
          option = antiJarl();
@@ -157,9 +157,10 @@ public class Menu implements Serializable{
                break;
             
             default : 
-               System.out.println("please chose either 1 or 2.");
+               System.out.println("Please choose either 1 or 2.");
          }
       }
+      
       Members member = new Members(tempAge, tempName, tempAct, tempComp, tempPayed);
       if(tempBack==true){
          member.setBackChosen();
