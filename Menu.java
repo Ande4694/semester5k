@@ -162,38 +162,38 @@ public class Menu implements Serializable{
       }
       
       Members member = new Members(tempAge, tempName, tempAct, tempComp, tempPayed);
-      if(tempBack==true){
+      if(tempBack){
          member.setBackChosen();
       } else {
          member.setBackUnChosen();
       }
-      if(tempCrawl==true){
+      if(tempCrawl){
          member.setCrawlChosen();
       } else {
          member.setCrawlUnChosen();
       }
-      if(tempBreast==true){
+      if(tempBreast){
          member.setBreastChosen();
       } else {
          member.setBreastUnChosen();
       }
       listOfMembers.add(member);
-      if(tempAct==true){
+      if(tempAct){
          activeMembers.add(member);
       }
-      if(tempComp==true){
+      if(tempComp){
          competetiveMembers.add(member);
       }
-      if(tempCrawl==true){
+      if(tempCrawl){
          crawlSwimmers.add(member);
       }
-      if(tempBack==true){
+      if(tempBack){
          backSwimmers.add(member);
       }
-      if(tempBreast==true){
+      if(tempBreast){
          breastSwimmers.add(member);
       }
-      if(tempPayed==true){
+      if(!tempPayed){
          membersInArrear.add(member);
       }
       System.out.println("Member created");
@@ -322,8 +322,7 @@ public class Menu implements Serializable{
    public static void adminCase()throws IOException, ClassNotFoundException{
       boolean choice = true;
       int option;
-      Scanner scan = new Scanner(System.in);
-      
+
       menuCase();
       while (choice){
       
@@ -386,7 +385,6 @@ public class Menu implements Serializable{
    public static void cashierCase()throws IOException, ClassNotFoundException{
       boolean choice = true;
       int option;
-      Scanner scan = new Scanner(System.in);
       
       menuCase();
       while (choice){
@@ -431,7 +429,6 @@ public class Menu implements Serializable{
      
       boolean choice = true;
       int option;
-      Scanner scan = new Scanner(System.in);
       timeMenu();
       while (choice){
       
@@ -476,7 +473,6 @@ public class Menu implements Serializable{
      
       boolean choice = true;
       int option;
-      Scanner scan = new Scanner(System.in);
       memberListMenu();
       while (choice){
       
@@ -545,7 +541,7 @@ public class Menu implements Serializable{
          System.out.println("Member :"+i+" - "+listOfMembers.get(i).getName());
       }
       whichMember = antiJarl();
-      if(whichMember<0 || whichMember>listOfMembers.size()){
+      if(whichMember<=0 || whichMember>=listOfMembers.size()){
          System.out.println("Are you trying to provoke an Index.OutOfBounds.Exception?... naughty naughty");
       } else {
          System.out.println("Now you need to select which disciplin you wish to register a swim time to.");
@@ -682,32 +678,32 @@ public class Menu implements Serializable{
    
    public static void fillDivList(){
       for(int i = 0;i<listOfMembers.size();i++){
-         if(listOfMembers.get(i).getBackChosen()==true){
+         if(listOfMembers.get(i).getBackChosen()){
             backSwimmers.add(listOfMembers.get(i));
          }
       }
       for(int i = 0;i<listOfMembers.size();i++){
-         if(listOfMembers.get(i).getCrawlChosen()==true){
+         if(listOfMembers.get(i).getCrawlChosen()){
             crawlSwimmers.add(listOfMembers.get(i));
          }
       }
       for(int i = 0;i<listOfMembers.size();i++){
-         if(listOfMembers.get(i).getBreastChosen()==true){
+         if(listOfMembers.get(i).getBreastChosen()){
             breastSwimmers.add(listOfMembers.get(i));
          }
       }
       for(int i = 0;i<listOfMembers.size();i++){
-         if(listOfMembers.get(i).getPayed()==false){
+         if(listOfMembers.get(i).getPayed()){
             membersInArrear.add(listOfMembers.get(i));
          }
       }
       for(int i = 0;i<listOfMembers.size();i++){
-         if(listOfMembers.get(i).getActive()==true){
+         if(listOfMembers.get(i).getActive()){
             activeMembers.add(listOfMembers.get(i));
          }
       }
       for(int i = 0;i<listOfMembers.size();i++){
-         if(listOfMembers.get(i).getCompetetive()==true){
+         if(listOfMembers.get(i).getCompetetive()){
             competetiveMembers.add(listOfMembers.get(i));
          }
       }
@@ -772,27 +768,27 @@ public class Menu implements Serializable{
    public static void viewAllMembers(){
       for(int i = 0;i<listOfMembers.size();i++){
          String text = "["+listOfMembers.get(i).getName()+", "+listOfMembers.get(i).getAge()+", ";
-         if(listOfMembers.get(i).getActive()==true){
+         if(listOfMembers.get(i).getActive()){
             text = text + "Active, ";
          } else {
             text = text + "Passive, ";
          }
-         if(listOfMembers.get(i).getCompetetive()==true){
+         if(listOfMembers.get(i).getCompetetive()){
             text = text + "Competetive, ";
          } else {
             text = text + "Recreation, ";
          }
-         if (listOfMembers.get(i).getCrawlChosen()==true){
+         if (listOfMembers.get(i).getCrawlChosen()){
             text = text + "Crawl - active, ";
          } else {
             text = text +"Crawl - inactive; ";
          }
-         if (listOfMembers.get(i).getBackChosen()==true){
+         if (listOfMembers.get(i).getBackChosen()){
             text = text +"Back - active, ";
          } else {
             text = text +"Back - inactive, ";
          }
-         if (listOfMembers.get(i).getBreastChosen()==true){
+         if (listOfMembers.get(i).getBreastChosen()){
             text = text +"Breast - active]";
          } else {
             text = text +"Breast - inactive]\n";
@@ -825,7 +821,10 @@ public class Menu implements Serializable{
 
    //////////////////administrate member////////////////////
    public static void adminMember()throws IOException{
+<<<<<<< HEAD
      // Scanner input = new Scanner(System.in);
+=======
+>>>>>>> 4bf89c50dbb2b49b2755e994b153dfb6130fa163
       boolean choice;
       int option;
       System.out.println("Please select a member.");
@@ -833,7 +832,7 @@ public class Menu implements Serializable{
          System.out.println("Member :"+i+" - "+listOfMembers.get(i).getName());
       }
       int whichMember2 = antiJarl();
-      if(whichMember2<0 || whichMember2>listOfMembers.size()){
+      if(whichMember2<=0 || whichMember2>=listOfMembers.size()){
          System.out.println("Are you trying to provoke an Index.OutOfBounds.Exception?... naughty naughty");
       } else {
          adminMemberMenu();
@@ -850,7 +849,7 @@ public class Menu implements Serializable{
                   
                case 2:
                   /// PAY
-                  if(listOfMembers.get(whichMember2).getPayed()==true){
+                  if(listOfMembers.get(whichMember2).getPayed()){
                      System.out.println(listOfMembers.get(whichMember2).getName()+" has already payed.");
                   } else {
                      listOfMembers.get(whichMember2).setPayed(true);
@@ -861,7 +860,7 @@ public class Menu implements Serializable{
                   
                case 3:
                   /// ACTIVE / INACTIVE
-                  if(listOfMembers.get(whichMember2).getActive()==true){
+                  if(listOfMembers.get(whichMember2).getActive()){
                      System.out.println(listOfMembers.get(whichMember2).getName()+" is already active.");
                   } else {
                      listOfMembers.get(whichMember2).setActive(true);
@@ -872,7 +871,7 @@ public class Menu implements Serializable{
                 
                case 4:
                   // set competetiv / recreation
-                  if(listOfMembers.get(whichMember2).getCompetetive()==true){
+                  if(listOfMembers.get(whichMember2).getCompetetive()){
                      System.out.println(listOfMembers.get(whichMember2).getName()+" is already competetive.");
                   } else {
                      listOfMembers.get(whichMember2).setCompetetive(true);
@@ -883,7 +882,7 @@ public class Menu implements Serializable{
                   
                case 5:
                   // set breast active/unactiv
-                  if(listOfMembers.get(whichMember2).getBreastChosen()==true){
+                  if(listOfMembers.get(whichMember2).getBreastChosen()){
                      System.out.println(listOfMembers.get(whichMember2).getName()+" is already active in breast.");
                   } else {
                      listOfMembers.get(whichMember2).setBreastChosen();
@@ -894,7 +893,7 @@ public class Menu implements Serializable{
                
                case 6:
                   // set crawl active/unactive
-                  if(listOfMembers.get(whichMember2).getCrawlChosen()==true){
+                  if(listOfMembers.get(whichMember2).getCrawlChosen()){
                      System.out.println(listOfMembers.get(whichMember2).getName()+" is already active in crawl.");
                   } else {
                      listOfMembers.get(whichMember2).setCrawlChosen();
@@ -905,7 +904,7 @@ public class Menu implements Serializable{
                
                case 7:
                   // set back active/unactive
-                  if(listOfMembers.get(whichMember2).getBackChosen()==true){
+                  if(listOfMembers.get(whichMember2).getBackChosen()){
                      System.out.println(listOfMembers.get(whichMember2).getName()+" is already active in back.");
                   } else {
                      listOfMembers.get(whichMember2).setBackChosen();
