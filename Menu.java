@@ -201,12 +201,12 @@ public class Menu implements Serializable{
    
    public static void adminMemberMenu(){
       System.out.println("1: Delete member");
-      System.out.println("2: register member payment");
-      System.out.println("3: set member to active");
-      System.out.println("4: set member to competetive");
+      System.out.println("2: Register member payment");
+      System.out.println("3: Set member to active");
+      System.out.println("4: Set member to competetive");
       System.out.println("5: Set breast active");
-      System.out.println("6: set crawl active");
-      System.out.println("7: set back active");
+      System.out.println("6: Set crawl active");
+      System.out.println("7: Set back active");
       System.out.println("0: Back");
    }
 
@@ -241,7 +241,7 @@ public class Menu implements Serializable{
          System.out.println("3: Times");
          System.out.println("4: Members");
          System.out.println();
-         System.out.println("5: log off");
+         System.out.println("5: Log off");
          System.out.println("0: Close System");
       }
       else if (User.getAdmin()){
@@ -251,14 +251,14 @@ public class Menu implements Serializable{
          System.out.println("4: Members");
          System.out.println("5: Administrate member");
          System.out.println();
-         System.out.println("6: log off");
+         System.out.println("6: Log off");
          System.out.println("0: Close System");
       }
       else if (User.getCashier()){
          System.out.println("1: Change password");
          System.out.println("2: Members");
          System.out.println();
-         System.out.println("3: log off");
+         System.out.println("3: Log off");
          System.out.println("0: Close System");
       }
    }
@@ -566,7 +566,7 @@ public class Menu implements Serializable{
                      Collections.sort(crawlTider);
                      System.out.println("Time registered");
                   } else {
-                     System.out.println("this member is not active in Crawl");
+                     System.out.println("This member is not active in Crawl");
                   }
                   choice = false;   
                   break;
@@ -596,7 +596,7 @@ public class Menu implements Serializable{
                      Collections.sort(breastTider);
                      System.out.println("Time registered");
                   } else {
-                     System.out.println("this member is not active in Breast");
+                     System.out.println("This member is not active in Breast");
                   }
                   choice = false;
                   break;
@@ -825,7 +825,7 @@ public class Menu implements Serializable{
 
    //////////////////administrate member////////////////////
    public static void adminMember()throws IOException{
-      Scanner input = new Scanner(System.in);
+     // Scanner input = new Scanner(System.in);
       boolean choice;
       int option;
       System.out.println("Please select a member.");
@@ -1124,7 +1124,7 @@ public class Menu implements Serializable{
                System.out.println("Your password did not match");
             }
          }else{
-            System.out.println("Worng Password");
+            System.out.println("Wrong Password");
          }
       }
    }
