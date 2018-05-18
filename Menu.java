@@ -177,6 +177,7 @@ public class Menu implements Serializable{
       } else {
          member.setBreastUnChosen();
       }
+      
       listOfMembers.add(member);
       if(tempAct){
          activeMembers.add(member);
@@ -553,7 +554,7 @@ public class Menu implements Serializable{
             
                case 1:
                
-                  if(listOfMembers.get(whichMember).getCrawlChosen() == true){
+                  if(listOfMembers.get(whichMember).getCrawlChosen()){
                      System.out.print("Enter time: ");
                      double time = antiJarlDouble();
                      String temp = listOfMembers.get(whichMember).getName();
@@ -569,11 +570,12 @@ public class Menu implements Serializable{
                   
                case 2:
                
-                  if(listOfMembers.get(whichMember).getBackChosen() == true){
+                  if(listOfMembers.get(whichMember).getBackChosen()){
                      System.out.print("Enter time: ");
                      double time = antiJarlDouble();
-                     listOfMembers.get(whichMember).addBackTime(time);
-                     backTider.add(new Tider(time,listOfMembers.get(whichMember).getName()));
+                    String temp2 = listOfMembers.get(whichMember).getName();
+                     Tider tid2 = new Tider(time, temp2);
+                     backTider.add(tid2);
                      Collections.sort(backTider);
                      System.out.println("Time registered");
                   } else {
@@ -587,8 +589,9 @@ public class Menu implements Serializable{
                   if(listOfMembers.get(whichMember).getBreastChosen() == true){
                      System.out.print("Enter time: ");
                      double time = antiJarlDouble();
-                     listOfMembers.get(whichMember).addBreastTime(time);
-                     breastTider.add(new Tider(time,listOfMembers.get(whichMember).getName()));
+                     String temp3 = listOfMembers.get(whichMember).getName();
+                     Tider tid3 = new Tider(time, temp3);
+                     breastTider.add(tid3);
                      Collections.sort(breastTider);
                      System.out.println("Time registered");
                   } else {
@@ -821,10 +824,9 @@ public class Menu implements Serializable{
 
    //////////////////administrate member////////////////////
    public static void adminMember()throws IOException{
-<<<<<<< HEAD
+
      // Scanner input = new Scanner(System.in);
-=======
->>>>>>> 4bf89c50dbb2b49b2755e994b153dfb6130fa163
+
       boolean choice;
       int option;
       System.out.println("Please select a member.");
@@ -949,7 +951,7 @@ public class Menu implements Serializable{
          System.out.println("File");
          int count = 0;
          Scanner go = new Scanner(f);
-         while(go.hasNext() && count <3){
+         while(go.hasNext() && count < 3){
             String name;
             String pass;
             name = go.next();
