@@ -23,7 +23,7 @@ public class Back implements Disciplin, Serializable{
    }
    
    public boolean getChosen(){
-      return chosen;
+      return this.chosen;
    }
    
    public Back(boolean chosen){

@@ -29,8 +29,12 @@ https://drive.google.com/file/d/1IwCltab7sxVQXNkBEzDBAbuMM1ILI8II/view?usp=shari
 https://drive.google.com/file/d/1i-WxN2_y4Vc0piCDfyN_18QW4QwyduAt/view?usp=sharing
 - Sequence diagram regTime() & code
 https://drive.google.com/file/d/1TLX97wNexkZoW8kz3SfyvBHK9k8NSDMl/view?usp=sharing
-- Sequence SAMLET
-https://drive.google.com/file/d/18wiF2wrOyOZ4fhWSnJCJ9AElFYrAXW6k/view?usp=sharing
+
+- Sequence diagram adminMember() & code
+https://drive.google.com/file/d/1J3cxIGt6nhmqDS5V_HOkF6q4h0M1_QqU/view?usp=sharing
+
+- Sequence diagram addMember() & code
+https://drive.google.com/file/d/1OA_v4CgRFe2rlkvrWCMxqHkwzGGYlIU6/view?usp=sharing
 
 # ITO
 - Intressent analyse

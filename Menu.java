@@ -542,7 +542,7 @@ public class Menu implements Serializable{
          System.out.println("Member :"+i+" - "+listOfMembers.get(i).getName());
       }
       whichMember = antiJarl();
-      if(whichMember<=0 || whichMember>=listOfMembers.size()){
+      if(whichMember<0 || whichMember>listOfMembers.size()){
          System.out.println("Are you trying to provoke an Index.OutOfBounds.Exception?... naughty naughty");
       } else {
          System.out.println("Now you need to select which disciplin you wish to register a swim time to.");
@@ -561,7 +561,7 @@ public class Menu implements Serializable{
                      Tider tid = new Tider(time,temp);
                      crawlTider.add(tid);
                      Collections.sort(crawlTider);
-                     System.out.println("Time registered");
+                     System.out.println("Time registered\n");
                   } else {
                      System.out.println("This member is not active in Crawl");
                   }
@@ -577,7 +577,7 @@ public class Menu implements Serializable{
                      Tider tid2 = new Tider(time, temp2);
                      backTider.add(tid2);
                      Collections.sort(backTider);
-                     System.out.println("Time registered");
+                     System.out.println("Time registered\n");
                   } else {
                      System.out.println("this member is not active in Back");
                   }
@@ -586,14 +586,14 @@ public class Menu implements Serializable{
                   
                case 3:
                
-                  if(listOfMembers.get(whichMember).getBreastChosen() == true){
+                  if(listOfMembers.get(whichMember).getBreastChosen()){
                      System.out.print("Enter time: ");
                      double time = antiJarlDouble();
                      String temp3 = listOfMembers.get(whichMember).getName();
                      Tider tid3 = new Tider(time, temp3);
                      breastTider.add(tid3);
                      Collections.sort(breastTider);
-                     System.out.println("Time registered");
+                     System.out.println("Time registered\n");
                   } else {
                      System.out.println("This member is not active in Breast");
                   }
@@ -669,14 +669,20 @@ public class Menu implements Serializable{
    }
    
    public static void fillMembers()throws IOException, ClassNotFoundException{
-      FileInputStream fis = new FileInputStream("members.ser");
-      ObjectInputStream ois = new ObjectInputStream(fis);
-      listOfMembers = (ArrayList<Members>) ois.readObject();
-      ois.close();
-      fis.close(); 
-      fillCrawl();
-      fillBack();
-      fillBreast();     
+      File f = new File("members.ser");
+      if(f.canRead()){
+         FileInputStream fis = new FileInputStream("members.ser");
+         ObjectInputStream ois = new ObjectInputStream(fis);
+         listOfMembers = (ArrayList<Members>) ois.readObject();
+         ois.close();
+         fis.close(); 
+         fillCrawl();
+         fillBack();
+         fillBreast(); 
+         System.out.println("Members loaded from file\n");
+      } else {
+         System.out.print("No members saved in file\n");
+      }         
    }
    
    public static void fillDivList(){
@@ -824,9 +830,13 @@ public class Menu implements Serializable{
 
    //////////////////administrate member////////////////////
    public static void adminMember()throws IOException{
+<<<<<<< HEAD
 
      // Scanner input = new Scanner(System.in);
 
+=======
+      // Scanner input = new Scanner(System.in);
+>>>>>>> d1fb8aa7934435010e6e04193f73d431d4e5a08d
       boolean choice;
       int option;
       System.out.println("Please select a member.");
@@ -834,7 +844,7 @@ public class Menu implements Serializable{
          System.out.println("Member :"+i+" - "+listOfMembers.get(i).getName());
       }
       int whichMember2 = antiJarl();
-      if(whichMember2<=0 || whichMember2>=listOfMembers.size()){
+      if(whichMember2<0 || whichMember2>listOfMembers.size()){
          System.out.println("Are you trying to provoke an Index.OutOfBounds.Exception?... naughty naughty");
       } else {
          adminMemberMenu();
@@ -931,10 +941,7 @@ public class Menu implements Serializable{
       String username;
       String password; 
       File f = new File("Logins.txt");
-      File b = new File ("members.ser");
-      if(b.canRead()){
-         fillMembers();
-      }
+      
       BufferedReader bs = new BufferedReader(new FileReader(f));
    
    
@@ -948,7 +955,7 @@ public class Menu implements Serializable{
        
    
       if (bs.readLine() != null){
-         System.out.println("File");
+         System.out.println("Logins loaded from file\n");
          int count = 0;
          Scanner go = new Scanner(f);
          while(go.hasNext() && count < 3){
@@ -960,7 +967,7 @@ public class Menu implements Serializable{
             count++;    
          }
       }else{
-         System.out.println("Hardcoded");
+         System.out.println("Logins are hardcoded\n");
          listOfAdmins[0] = new User("Trainer","1234");
          listOfAdmins[1] = new User("Admin","7894");
          listOfAdmins[2] = new User("Cashier","1337");  

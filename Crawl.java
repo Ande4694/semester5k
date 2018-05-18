@@ -11,11 +11,11 @@ public class Crawl extends Back{
    }
    
    public void setChosen(){
-      super.setChosen();
+      this.chosen = true;
    }  
    
    public void setUnChosen(){
-      super.setUnChosen();
+      this.chosen = false;
    }
    
    public ArrayList<Double> getTime(){
@@ -23,7 +23,7 @@ public class Crawl extends Back{
    }
    
    public boolean getChosen(){
-      return chosen;
+      return this.chosen;
    }
    
    public Crawl(boolean chosen){
