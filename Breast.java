@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Breast extends Back{
 
-   private ArrayList<Double> time = new ArrayList<>();
+ /*  private ArrayList<Double> time = new ArrayList<>();
    private boolean chosen;
    
    public void addTime(double tid){
@@ -25,10 +25,10 @@ public class Breast extends Back{
    public boolean getChosen(){
       return this.chosen;
    }
-   
-   public Breast(boolean chosen){
-      this.chosen = chosen;
-   }
+   */
+ //  public Breast(boolean chosen){
+  //    this.chosen = chosen;
+  // }
    
    public Breast(){
    }

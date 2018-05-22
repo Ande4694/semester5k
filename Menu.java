@@ -534,7 +534,7 @@ public class Menu implements Serializable{
      
    public static void regTime()throws IOException{
       Scanner input = new Scanner(System.in);
-      boolean choice;
+      boolean choice = true;
       int whichMember;
       int option;
       System.out.println("To register a swim time please select a member.");
@@ -547,7 +547,7 @@ public class Menu implements Serializable{
       } else {
          System.out.println("Now you need to select which disciplin you wish to register a swim time to.");
          addTimeMenu();
-         choice = true;
+        // choice = true;
          while (choice){
             option = antiJarl();
             switch(option){
@@ -579,7 +579,7 @@ public class Menu implements Serializable{
                      Collections.sort(backTider);
                      System.out.println("Time registered\n");
                   } else {
-                     System.out.println("this member is not active in Back");
+                     System.out.println("This member is not active in Back");
                   }
                   choice = false;
                   break;
@@ -830,13 +830,12 @@ public class Menu implements Serializable{
 
    //////////////////administrate member////////////////////
    public static void adminMember()throws IOException{
-<<<<<<< HEAD
 
      // Scanner input = new Scanner(System.in);
 
-=======
+
       // Scanner input = new Scanner(System.in);
->>>>>>> d1fb8aa7934435010e6e04193f73d431d4e5a08d
+
       boolean choice;
       int option;
       System.out.println("Please select a member.");
@@ -1043,13 +1042,13 @@ public class Menu implements Serializable{
       {
          System.out.println("\nUser successfully logged in: "+loggedInUser.getUsername()+"\n");
          
-         if (User.getTrainer() == true){
+         if (User.getTrainer()){
             trainerCase();
          }
-         else if (User.getAdmin() == true){
+         else if (User.getAdmin()){
             adminCase();
          }
-         else if (User.getCashier() == true){
+         else if (User.getCashier()){
             cashierCase();
          }else{
             System.out.println("Not working");
