@@ -5,7 +5,7 @@ public class Crawl extends Back{
 
    private ArrayList<Double> time = new ArrayList<>();
    private boolean chosen;
-   
+   /*
    public void addTime(double tid){
       super.addTime(tid);
    }
@@ -32,5 +32,5 @@ public class Crawl extends Back{
    
    public Crawl(){
    }
-
+*/
 }
