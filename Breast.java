@@ -5,9 +5,9 @@ public class Breast extends Back{
 
    private ArrayList<Double> time = new ArrayList<>();
    private boolean chosen;
-   
+  /* 
    public void addTime(double tid){
-      super.addTime(tid);
+      time.add(tid);
    }
    
    public void setChosen(){
@@ -32,5 +32,5 @@ public class Breast extends Back{
    
    public Breast(){
    }
-
+*/
 }
